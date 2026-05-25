@@ -29,4 +29,4 @@ shadow_enabled = true
 [node name="Node3D" type="Node3D" parent="." unique_id=1858002470]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=27831976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 0.6467765, 0.7626796, 0, -0.7626796, 0.6467765, -0.0025037304, 6.1970587, 1.9915693)
