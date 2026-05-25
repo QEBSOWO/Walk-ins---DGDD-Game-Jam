@@ -34,8 +34,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 4.9081078)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.582708, 15.333119)
 
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=27831976]
-transform = Transform3D(1, 0, 0, 0, 0.47167385, 0.8817731, 0, -0.8817731, 0.47167385, 0, -7.229907, -4.6533203)
+transform = Transform3D(1, 0, 0, 0, 0.6135137, 0.78968406, 0, -0.78968406, 0.6135137, -0.25885832, -2.8103886, -4.719474)
+projection = 1
 fov = 88.2
+size = 18.543
 
 [node name="GridMaps" type="Node3D" parent="." unique_id=935892337]
 
