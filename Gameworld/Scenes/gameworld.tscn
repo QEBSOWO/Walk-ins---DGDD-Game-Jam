@@ -28,7 +28,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Character" parent="." unique_id=473502338 instance=ExtResource("1_d2dbi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1858002470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.582708, 15.333119)
