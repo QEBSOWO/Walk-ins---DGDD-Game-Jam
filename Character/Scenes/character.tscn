@@ -41,10 +41,10 @@ metadata/_custom_type_script = "uid://bruvjm404sc3l"
 script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
-[node name="Attacking" type="Node" parent="StateMachine" unique_id=148179914]
+[node name="Grappled" type="Node" parent="StateMachine" unique_id=2076557621]
 script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
-[node name="Damaged" type="Node" parent="StateMachine" unique_id=2076557621]
+[node name="Attacking" type="Node" parent="StateMachine" unique_id=148179914]
 script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"

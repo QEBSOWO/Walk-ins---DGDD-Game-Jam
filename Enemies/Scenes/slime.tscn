@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bp4ga5dtxn5pp"]
+
+[ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="1_j1v0w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j1v0w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0qcm"]
+albedo_color = Color(0, 0.7826693, 0.3927038, 1)
+
+[node name="Slime" type="CharacterBody3D" unique_id=962367046]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=534333558]
+shape = SubResource("SphereShape3D_2g11s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1842560744]
+mesh = SubResource("SphereMesh_j1v0w")
+surface_material_override/0 = SubResource("StandardMaterial3D_x0qcm")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1716553239]
+script = ExtResource("1_j1v0w")
+metadata/_custom_type_script = "uid://drfbp3k16v0sj"
