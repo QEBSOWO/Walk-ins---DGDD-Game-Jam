@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bp4ga5dtxn5pp"]
 
+[ext_resource type="Script" uid="uid://b87rt6ryphl0w" path="res://Enemies/enemy_class.gd" id="1_6jihr"]
 [ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="1_j1v0w"]
+[ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scenes/patrolling.gd" id="3_qqxm8"]
+[ext_resource type="Script" uid="uid://bavb23ukvhahn" path="res://Enemies/Scripts/States/enemystate_class.gd" id="4_h4xfy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
 
@@ -11,6 +14,7 @@ albedo_color = Color(0, 0.7826693, 0.3927038, 1)
 
 [node name="Slime" type="CharacterBody3D" unique_id=962367046]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_6jihr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=534333558]
 shape = SubResource("SphereShape3D_2g11s")
@@ -19,6 +23,24 @@ shape = SubResource("SphereShape3D_2g11s")
 mesh = SubResource("SphereMesh_j1v0w")
 surface_material_override/0 = SubResource("StandardMaterial3D_x0qcm")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=17330551]
+
 [node name="StateMachine" type="Node" parent="." unique_id=1716553239]
 script = ExtResource("1_j1v0w")
 metadata/_custom_type_script = "uid://drfbp3k16v0sj"
+
+[node name="Patrolling" type="Node" parent="StateMachine" unique_id=1911792853]
+script = ExtResource("3_qqxm8")
+metadata/_custom_type_script = "uid://bavb23ukvhahn"
+
+[node name="Chasing" type="Node" parent="StateMachine" unique_id=963049120]
+script = ExtResource("4_h4xfy")
+metadata/_custom_type_script = "uid://bavb23ukvhahn"
+
+[node name="Grappling" type="Node" parent="StateMachine" unique_id=2016453128]
+script = ExtResource("4_h4xfy")
+metadata/_custom_type_script = "uid://bavb23ukvhahn"
+
+[node name="Damaged" type="Node" parent="StateMachine" unique_id=1733669281]
+script = ExtResource("4_h4xfy")
+metadata/_custom_type_script = "uid://bavb23ukvhahn"
