@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d3l14muabbs2"]
 
 [ext_resource type="Script" uid="uid://cpiehtvaugwby" path="res://Character/Scripts/Player/character.gd" id="1_cbaar"]
-[ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Character/Scripts/StateMachine/statemachine_class.gd" id="2_8bgmc"]
-[ext_resource type="Script" uid="uid://bruvjm404sc3l" path="res://Character/Scripts/StateMachine/playerstate_class.gd" id="3_e3ner"]
+[ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="2_8bgmc"]
+[ext_resource type="Script" uid="uid://bruvjm404sc3l" path="res://Character/Scripts/Player/PlayerStates/playerstate_class.gd" id="3_e3ner"]
 [ext_resource type="Script" uid="uid://dvb83jdxiwy7r" path="res://Character/Scripts/Player/PlayerStates/idle.gd" id="3_esjsu"]
 [ext_resource type="Script" uid="uid://c812dkgj28ylf" path="res://Character/Scripts/Player/PlayerStates/moving.gd" id="4_esjsu"]
 
