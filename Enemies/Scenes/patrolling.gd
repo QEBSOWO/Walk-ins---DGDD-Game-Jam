@@ -21,14 +21,15 @@ func _actor_setup():
 	# Wait for first physics frame so NavigationServer can sync
 	await get_tree().physics_frame
 	
-	#Now navigation map is no longer empty, set movement target
+	# Now navigation map is no longer empty, set movement target
 	_set_movement_target(movement_target_position)
 
 
 func _connect_signals():
 	enemy.get_node("PlayerDetection").body_entered.connect(_on_body_entered)
 
-
+## Essentially, when the player enteres the enemy's detection range,
+## the enemy will start chasing after the player
 func _on_body_entered(body: Node3D):
 	if body is Player:
 		finished.emit(CHASING)
