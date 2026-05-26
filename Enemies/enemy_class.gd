@@ -18,7 +18,6 @@ var is_player_detected: bool = false
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
-
 signal stagger
 
 func initialize():
@@ -62,17 +61,15 @@ func grapple_player():
 	player.is_grappled = true
 	print("Player grappled")
 	
-	# Release from player grapple
-	await get_tree().create_timer(grapple_cooldown).timeout #3s timer to reset attack. Change if needed
-	release_grappled_player()
+	#TODO: Player Interrupt grapple
+
 
 func release_grappled_player():
-	stagger.emit()
 	player.is_grappled = false
 	is_player_in_attack_range = false
 	print("Player cannot be grappled")
 	
-	velocity = (self.position - player.position).normalized() * grapple_escape_force
+	velocity = (position-player.position).normalized() * grapple_escape_force
 
 
 func get_player_position() -> Vector3:
