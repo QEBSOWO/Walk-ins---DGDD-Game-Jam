@@ -4,7 +4,7 @@ const SPAWNING = "Spawning"
 const PATROLLING = "Patrolling"
 const CHASING = "Chasing"
 const GRAPPLING = "Grappling"
-const DAMAGED = "Damaged"
+const STAGGERED = "Staggered"
 
 var enemy: Enemy
 

@@ -15,7 +15,11 @@ var is_player_detected: bool = false
 # Grappling/Attack related variables
 @export var grapple_cooldown: float = 2.5
 @export var grapple_escape_force: float = 10.0
+@export var knockback_duration: float = 0.1
+@export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
+
+signal stagger
 
 func initialize():
 	# To be adjusted later for actor speed and navigation layout
@@ -63,6 +67,7 @@ func grapple_player():
 	release_grappled_player()
 
 func release_grappled_player():
+	stagger.emit()
 	player.is_grappled = false
 	is_player_in_attack_range = false
 	print("Player cannot be grappled")

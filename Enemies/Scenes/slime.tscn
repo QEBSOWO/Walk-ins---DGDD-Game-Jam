@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="1_j1v0w"]
 [ext_resource type="Script" uid="uid://de8mkqb6kma6n" path="res://Enemies/Scripts/States/spawning.gd" id="3_h4xfy"]
 [ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scripts/States/patrolling.gd" id="3_qqxm8"]
-[ext_resource type="Script" uid="uid://bavb23ukvhahn" path="res://Enemies/Scripts/States/enemystate_class.gd" id="4_h4xfy"]
 [ext_resource type="Script" uid="uid://co3nj5l4o5gxo" path="res://Enemies/Scripts/States/chasing.gd" id="4_qqxm8"]
 [ext_resource type="Script" uid="uid://bm78n6405u37d" path="res://Enemies/Scripts/States/grappling.gd" id="6_x4vl3"]
+[ext_resource type="Script" uid="uid://bu7sr3rmtloud" path="res://Enemies/Scenes/staggered.gd" id="7_x4vl3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
 
@@ -67,6 +67,6 @@ metadata/_custom_type_script = "uid://bavb23ukvhahn"
 script = ExtResource("6_x4vl3")
 metadata/_custom_type_script = "uid://bavb23ukvhahn"
 
-[node name="Damaged" type="Node" parent="StateMachine" unique_id=1733669281]
-script = ExtResource("4_h4xfy")
+[node name="Staggered" type="Node" parent="StateMachine" unique_id=1733669281]
+script = ExtResource("7_x4vl3")
 metadata/_custom_type_script = "uid://bavb23ukvhahn"
