@@ -10,5 +10,3 @@ func physics_update(_delta: float) -> void:
 	# Handle State change
 	if input_dir.x != 0 or input_dir.y != 0:
 		finished.emit(MOVING)
-	elif player.is_grappled:
-		finished.emit(GRAPPLED)

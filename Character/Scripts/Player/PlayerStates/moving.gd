@@ -19,5 +19,3 @@ func physics_update(_delta: float) -> void:
 	# Handle State change
 	if is_equal_approx(input_dir.x, 0.0) and is_equal_approx(input_dir.y, 0.0):
 		finished.emit(IDLE)
-	elif player.is_grappled:
-		finished.emit(GRAPPLED)
