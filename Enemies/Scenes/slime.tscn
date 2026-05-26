@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b87rt6ryphl0w" path="res://Enemies/enemy_class.gd" id="1_6jihr"]
 [ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="1_j1v0w"]
-[ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scenes/patrolling.gd" id="3_qqxm8"]
+[ext_resource type="Script" uid="uid://de8mkqb6kma6n" path="res://Enemies/Scripts/States/spawning.gd" id="3_h4xfy"]
+[ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scripts/States/patrolling.gd" id="3_qqxm8"]
 [ext_resource type="Script" uid="uid://bavb23ukvhahn" path="res://Enemies/Scripts/States/enemystate_class.gd" id="4_h4xfy"]
-[ext_resource type="Script" uid="uid://co3nj5l4o5gxo" path="res://Enemies/Scenes/chasing.gd" id="4_qqxm8"]
+[ext_resource type="Script" uid="uid://co3nj5l4o5gxo" path="res://Enemies/Scripts/States/chasing.gd" id="4_qqxm8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
 
@@ -34,9 +35,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x0qcm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1009859209]
 shape = SubResource("SphereShape3D_6jihr")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1716553239]
+[node name="StateMachine" type="Node" parent="." unique_id=1716553239 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_j1v0w")
+initial_state = NodePath("Spawning")
 metadata/_custom_type_script = "uid://drfbp3k16v0sj"
+
+[node name="Spawning" type="Node" parent="StateMachine" unique_id=1557635516]
+script = ExtResource("3_h4xfy")
+metadata/_custom_type_script = "uid://bavb23ukvhahn"
 
 [node name="Patrolling" type="Node" parent="StateMachine" unique_id=1911792853]
 script = ExtResource("3_qqxm8")

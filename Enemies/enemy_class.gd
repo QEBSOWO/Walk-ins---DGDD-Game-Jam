@@ -4,3 +4,4 @@ class_name Enemy extends CharacterBody3D
 @export var is_armored: bool = false
 @export var max_hp: int = 5
 @export var damage: int = 1
+var current_hp: int
