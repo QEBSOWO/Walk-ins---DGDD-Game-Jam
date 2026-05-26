@@ -9,6 +9,3 @@ func _ready() -> void:
 
 func interact(player):
 	pass
-
-func _process(delta):
-	pass

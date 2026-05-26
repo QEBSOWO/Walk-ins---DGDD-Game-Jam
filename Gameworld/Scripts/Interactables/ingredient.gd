@@ -1,4 +1,4 @@
-extends Interactable
+class_name Ingredient extends Interactable
 
 var is_spawner: bool = true
 var is_grabbed: bool = false
