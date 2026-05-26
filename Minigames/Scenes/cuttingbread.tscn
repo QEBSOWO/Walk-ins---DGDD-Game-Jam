@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2qm86ef21awm" path="res://Assets/Cutting/bread_cut_1.png" id="2_x33n7"]
 [ext_resource type="Texture2D" uid="uid://byolefh5gtgwh" path="res://Assets/Cutting/bread_cut_2.png" id="3_1sveo"]
 [ext_resource type="Texture2D" uid="uid://cynri5i4w8r35" path="res://Assets/Cutting/bread_cutlines.png" id="4_tagm3"]
+[ext_resource type="Texture2D" uid="uid://cjl1gf0tt2wuw" path="res://Assets/Cutting/cutline-Sheet.png" id="6_1sveo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kv8i"]
 animations = [{
@@ -41,6 +42,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tagm3"]
+atlas = ExtResource("6_1sveo")
+region = Rect2(0, 0, 63, 644)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kv8i"]
+atlas = ExtResource("6_1sveo")
+region = Rect2(63, 0, 63, 644)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbfqp"]
+atlas = ExtResource("6_1sveo")
+region = Rect2(126, 0, 63, 644)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w3ss"]
+atlas = ExtResource("6_1sveo")
+region = Rect2(189, 0, 63, 644)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4uga4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tagm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kv8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbfqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w3ss")
+}],
+"loop": true,
+"name": &"cutline",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1sveo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CuttingBread" type="Node2D" unique_id=1589990561]
 script = ExtResource("1_x33n7")
 
@@ -48,3 +93,8 @@ script = ExtResource("1_x33n7")
 position = Vector2(432, 317)
 sprite_frames = SubResource("SpriteFrames_7kv8i")
 animation = &"base"
+
+[node name="Cutline" type="AnimatedSprite2D" parent="." unique_id=373820123]
+sprite_frames = SubResource("SpriteFrames_4uga4")
+animation = &"cutline"
+frame_progress = 0.98355794

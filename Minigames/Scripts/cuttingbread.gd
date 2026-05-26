@@ -3,20 +3,26 @@ extends Node2D
 var sprite_arr = ["base", "cutlines", "cut_1", "cut_2"]
 var current_sprite = 0;
 @onready var bread_sprite = $BreadSprite
+@onready var cutline = $Cutline
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	cutline.play("cutline")
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_cut_bread()
-	
+	_set_cutline_pos()
+
+func _set_cutline_pos():
+	cutline.position = get_global_mouse_position()
 
 func _cut_bread():
 	if Input.is_action_just_pressed("cut"):
 		_change_current_sprite()
+		print(get_global_mouse_position())
 
 func _change_current_sprite():
 	current_sprite = current_sprite + 1
