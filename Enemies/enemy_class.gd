@@ -49,6 +49,7 @@ func handle_movement():
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
 	
 	velocity = current_agent_position.direction_to(next_path_position) * speed
+	look_at(next_path_position)
 	move_and_slide()
 
 
@@ -58,6 +59,7 @@ func grapple_player():
 	print("Player grappled")
 	
 	await get_tree().create_timer(grapple_cooldown).timeout #3s timer to reset attack. Change if needed
+	player.is_grappled = false
 	is_player_in_attack_range = false
 	print("Player cannot be grappled")
 
