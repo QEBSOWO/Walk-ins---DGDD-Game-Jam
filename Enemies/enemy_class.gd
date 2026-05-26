@@ -11,6 +11,9 @@ var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
 var player: Player
 var is_player_detected: bool = false
+
+# Grappling/Attack related variables
+@export var grapple_cooldown: float = 2.5
 var is_player_in_attack_range: bool = false
 
 func initialize():
@@ -47,6 +50,16 @@ func handle_movement():
 	
 	velocity = current_agent_position.direction_to(next_path_position) * speed
 	move_and_slide()
+
+
+func grapple_player():
+	#TODO: Handle grapple on player end
+	player.is_grappled = true
+	print("Player grappled")
+	
+	await get_tree().create_timer(grapple_cooldown).timeout #3s timer to reset attack. Change if needed
+	is_player_in_attack_range = false
+	print("Player cannot be grappled")
 
 
 func get_player_position() -> Vector3:
