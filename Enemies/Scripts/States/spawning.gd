@@ -6,7 +6,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	enemy.initialize()
 
 func physics_update(_delta: float) -> void:
-	if is_player_detected:
+	if enemy.is_player_detected:
 		finished.emit(CHASING)
 	else:
 		finished.emit(PATROLLING)

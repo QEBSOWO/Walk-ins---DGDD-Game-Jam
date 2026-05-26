@@ -9,8 +9,9 @@ var current_hp: int
 # Movement related variables
 var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
-var player #: Player
-
+var player: Player
+var is_player_detected: bool = false
+var is_player_in_attack_range: bool = false
 
 func initialize():
 	# To be adjusted later for actor speed and navigation layout

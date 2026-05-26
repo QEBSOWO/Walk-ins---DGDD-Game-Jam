@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scripts/States/patrolling.gd" id="3_qqxm8"]
 [ext_resource type="Script" uid="uid://bavb23ukvhahn" path="res://Enemies/Scripts/States/enemystate_class.gd" id="4_h4xfy"]
 [ext_resource type="Script" uid="uid://co3nj5l4o5gxo" path="res://Enemies/Scripts/States/chasing.gd" id="4_qqxm8"]
+[ext_resource type="Script" uid="uid://bm78n6405u37d" path="res://Enemies/Scripts/States/grappling.gd" id="6_x4vl3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
 
@@ -16,6 +17,9 @@ albedo_color = Color(0, 0.7826693, 0.3927038, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6jihr"]
 radius = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h4xfy"]
+radius = 1.5
 
 [node name="Slime" type="CharacterBody3D" unique_id=962367046]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -35,6 +39,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x0qcm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1009859209]
 shape = SubResource("SphereShape3D_6jihr")
 
+[node name="AttackZone" type="Area3D" parent="." unique_id=175574520]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackZone" unique_id=633918216]
+shape = SubResource("SphereShape3D_h4xfy")
+debug_color = Color(0.98582226, 0, 0.3345947, 0.41960785)
+
 [node name="StateMachine" type="Node" parent="." unique_id=1716553239 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_j1v0w")
 initial_state = NodePath("Spawning")
@@ -53,7 +63,7 @@ script = ExtResource("4_qqxm8")
 metadata/_custom_type_script = "uid://bavb23ukvhahn"
 
 [node name="Grappling" type="Node" parent="StateMachine" unique_id=2016453128]
-script = ExtResource("4_h4xfy")
+script = ExtResource("6_x4vl3")
 metadata/_custom_type_script = "uid://bavb23ukvhahn"
 
 [node name="Damaged" type="Node" parent="StateMachine" unique_id=1733669281]

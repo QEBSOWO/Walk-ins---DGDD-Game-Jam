@@ -5,5 +5,5 @@ extends EnemyState
 func physics_update(_delta: float) -> void:
 	enemy.handle_movement()
 	
-	if is_player_detected:
+	if enemy.is_player_detected:
 		finished.emit(CHASING)
