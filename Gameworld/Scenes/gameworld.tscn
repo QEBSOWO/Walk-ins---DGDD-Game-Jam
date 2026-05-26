@@ -5,6 +5,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cv0yh1o6nbv0d" path="res://Gameworld/Assets/MeshLibraries/WallsMeshLibrary.meshlib" id="3_v0svn"]
 [ext_resource type="MeshLibrary" uid="uid://ypskavi3u15s" path="res://Gameworld/Assets/MeshLibraries/DecorationsMeshLibrary.meshlib" id="4_rqfb0"]
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="5_r0ysc"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/station.tscn" id="6_p7xed"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -71,3 +72,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5064887, -0.016124308, 1.5
 
 [node name="barrel3" parent="." unique_id=132578508 instance=ExtResource("5_r0ysc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4408846, 0, 1.4692657)
+
+[node name="stall2" parent="." unique_id=997585042 instance=ExtResource("6_p7xed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5009768, 0.0010301471, 5.547123)
