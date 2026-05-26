@@ -60,12 +60,14 @@ func handle_movement():
 
 
 func grapple_player():
+	player.is_grappled = true
 	print("Player grappled")
 	
 	#TODO: Player Interrupt grapple
 
 
 func release_grappled_player():
+	player.is_grappled = false
 	is_player_in_attack_range = false
 	print("Player cannot be grappled")
 	

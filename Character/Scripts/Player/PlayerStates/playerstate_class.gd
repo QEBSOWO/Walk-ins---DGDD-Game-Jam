@@ -17,11 +17,3 @@ func _ready() -> void:
 	player = owner as Player
 	assert(player != null, "The PlayerState state type must be used only in the player scene. It needs the
 owner to be a Player node")
-
-
-func _connect_signals() -> void:
-	player.grappled.connect(_on_player_grappled)
-
-
-func _on_player_grappled() -> void:
-	finished.emit(GRAPPLED)
