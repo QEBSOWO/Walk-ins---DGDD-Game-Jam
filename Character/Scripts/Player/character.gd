@@ -5,10 +5,9 @@ class_name Player extends CharacterBody3D
 var current_hp: int
 var interactables_in_range: Array[Interactable]
 var interact_area: Area3D
-@export var is_holding: bool
+var holding: Interactable 	# to be used as reference for what player is holding
 
 func _ready() -> void:
-	is_holding = false
 	current_hp = max_hp
 	interactables_in_range = [] 	# Keep array of interactable objects local to character
 	interact_area = $InteractArea
@@ -23,14 +22,14 @@ func _process(delta):
 		
 		# If player is not holding anything, pick up from spawner or ground
 		# If player is holding something, prevent other items from being picked up
-		if not is_holding:
+		if not holding:
 			if interactable is Ingredient:
 				interactable.interact(self)
-				is_holding = true
+				holding = interactable
 		else:
 			if interactable.is_grabbed == true:
 				interactable.interact(self)
-				is_holding = false
+				holding = null
 
 ## Calculates the interactable object closest to the player
 func get_closest_interactable() -> Interactable:

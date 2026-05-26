@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass
 
 func interact(player: Player):
+	# Grabbing an ingredient from a spawner
 	if is_spawner:
 		var ingredient_scene = load("res://Gameworld/Scenes/barrel.tscn")
 		var new_ingredient = ingredient_scene.instantiate()
@@ -18,6 +19,9 @@ func interact(player: Player):
 		new_ingredient.is_grabbed = true
 		new_ingredient.collision_layer = 2
 	
+	# Sets the ingredient to be grabbed by the player
+	# If grabbed, is placed on top of the player and follows 
+	# If dropped, prevents player from colliding with instanced node
 	if not is_spawner and not is_grabbed:
 		axis_lock_linear_x = false
 		axis_lock_linear_z = false
