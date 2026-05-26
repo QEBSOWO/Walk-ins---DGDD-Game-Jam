@@ -30,11 +30,7 @@ func _connect_signals():
 ## the enemy will start chasing after the player
 func _on_DetectionRange_entered(body: Node3D):
 	if body is Player:
-		enemy.is_player_detected = true
-
-func _on_DetectionRange_exited(body: Node3D):
-	if body is Player:
-		enemy.is_player_detected = false
+		enemy.player_detected.emit()
 
 func _on_AttackRange_entered(body: Node3D):
 	if body is Player:

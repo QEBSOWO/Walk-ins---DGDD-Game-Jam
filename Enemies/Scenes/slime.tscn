@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scripts/States/patrolling.gd" id="3_qqxm8"]
 [ext_resource type="Script" uid="uid://co3nj5l4o5gxo" path="res://Enemies/Scripts/States/chasing.gd" id="4_qqxm8"]
 [ext_resource type="Script" uid="uid://bm78n6405u37d" path="res://Enemies/Scripts/States/grappling.gd" id="6_x4vl3"]
-[ext_resource type="Script" uid="uid://bd3f0f4nh0fnw" path="res://Enemies/Scenes/knockedback.gd" id="7_60o3f"]
-[ext_resource type="Script" uid="uid://bu7sr3rmtloud" path="res://Enemies/Scenes/staggered.gd" id="7_x4vl3"]
+[ext_resource type="Script" uid="uid://bd3f0f4nh0fnw" path="res://Enemies/Scripts/States/knockedback.gd" id="7_60o3f"]
+[ext_resource type="Script" uid="uid://bu7sr3rmtloud" path="res://Enemies/Scripts/States/staggered.gd" id="7_x4vl3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
 

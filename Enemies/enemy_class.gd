@@ -10,7 +10,8 @@ var current_hp: int
 var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
 var player: Player
-var is_player_detected: bool = false
+
+signal player_detected
 
 # Grappling/Attack related variables
 @export var grapple_cooldown: float = 2.5
@@ -18,6 +19,7 @@ var is_player_detected: bool = false
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
+
 signal stagger
 
 func initialize():

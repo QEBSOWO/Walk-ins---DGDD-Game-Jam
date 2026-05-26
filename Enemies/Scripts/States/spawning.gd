@@ -1,12 +1,9 @@
 extends EnemyState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	_connect_signals()
-	
+	enemy.player_detected.connect(_on_player_detected)
 	enemy.initialize()
+	finished.emit(PATROLLING)
 
-func physics_update(_delta: float) -> void:
-	if enemy.is_player_detected:
-		finished.emit(CHASING)
-	else:
-		finished.emit(PATROLLING)
+func _on_player_detected() -> void:
+	finished.emit(CHASING)
