@@ -14,6 +14,7 @@ var is_player_detected: bool = false
 
 # Grappling/Attack related variables
 @export var grapple_cooldown: float = 2.5
+@export var grapple_escape_force: float = 10.0
 var is_player_in_attack_range: bool = false
 
 func initialize():
@@ -54,14 +55,19 @@ func handle_movement():
 
 
 func grapple_player():
-	#TODO: Handle grapple on player end
 	player.is_grappled = true
 	print("Player grappled")
 	
+	# Release from player grapple
 	await get_tree().create_timer(grapple_cooldown).timeout #3s timer to reset attack. Change if needed
+	release_grappled_player()
+
+func release_grappled_player():
 	player.is_grappled = false
 	is_player_in_attack_range = false
 	print("Player cannot be grappled")
+	
+	velocity = (self.position - player.position).normalized() * grapple_escape_force
 
 
 func get_player_position() -> Vector3:
