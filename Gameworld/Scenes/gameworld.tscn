@@ -4,6 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://dfn0jaoopchsk" path="res://Gameworld/Assets/MeshLibraries/FloorMeshLibrary.meshlib" id="2_bcwsw"]
 [ext_resource type="MeshLibrary" uid="uid://cv0yh1o6nbv0d" path="res://Gameworld/Assets/MeshLibraries/WallsMeshLibrary.meshlib" id="3_v0svn"]
 [ext_resource type="MeshLibrary" uid="uid://ypskavi3u15s" path="res://Gameworld/Assets/MeshLibraries/DecorationsMeshLibrary.meshlib" id="4_rqfb0"]
+[ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="5_r0ysc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -64,3 +65,9 @@ cell_center_y = false
 data = {
 "cells": PackedInt32Array(65523, 3, 655362, 65531, 65534, 655362, 4, 65534, 655362, 11, 3, 655362, 3, 9, 655362, 65532, 9, 655362)
 }
+
+[node name="barrel2" parent="." unique_id=967789684 instance=ExtResource("5_r0ysc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47860348, 0, 1.5395508)
+
+[node name="barrel3" parent="." unique_id=132578508 instance=ExtResource("5_r0ysc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4408846, 0, 1.4692657)

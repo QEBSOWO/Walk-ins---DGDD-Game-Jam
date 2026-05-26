@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6it37vpblnon"]
+
+[ext_resource type="PackedScene" uid="uid://bjgdalrldmunu" path="res://Gameworld/Assets/barrel.glb" id="1_luijc"]
+[ext_resource type="Script" uid="uid://4hmmqxy531cv" path="res://Gameworld/Scripts/Interactables/interactable.gd" id="2_30qgq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5l0t"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="barrel2" unique_id=967789684 instance=ExtResource("1_luijc")]
+script = ExtResource("2_30qgq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=589229098]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1765160299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24951172, 0)
+shape = SubResource("BoxShape3D_k5l0t")
