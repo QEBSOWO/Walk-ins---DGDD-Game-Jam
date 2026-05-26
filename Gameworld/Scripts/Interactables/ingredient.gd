@@ -7,14 +7,14 @@ var is_grabbed: bool = false
 func _ready() -> void:
 	pass
 
-func interact(player: Player):
+func interact(player_area: Area3D):
 	# Grabbing an ingredient from a spawner
 	if is_spawner:
 		var ingredient_scene = load("res://Gameworld/Scenes/barrel.tscn")
 		var new_ingredient = ingredient_scene.instantiate()
 		add_child(new_ingredient)
 		new_ingredient.reparent(self.get_parent())
-		new_ingredient.player = player
+		new_ingredient.player_area = player_area
 		new_ingredient.is_spawner = false
 		new_ingredient.is_grabbed = true
 		new_ingredient.collision_layer = 2
@@ -39,4 +39,4 @@ func interact(player: Player):
 
 func _process(delta):
 	if is_grabbed:
-		self.global_position = player.global_position + Vector3(0, 1, 0)
+		self.global_position = player_area.global_position + Vector3(0, 1, 0)
