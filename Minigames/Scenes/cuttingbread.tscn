@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://oytg8wlodm8l"]
+
+[ext_resource type="Texture2D" uid="uid://rt2s5kdfj2q7" path="res://Assets/Cutting/bread_uncut.png" id="1_k55dn"]
+[ext_resource type="Script" uid="uid://clqmse1nucfcs" path="res://Minigames/Scripts/cuttingbread.gd" id="1_x33n7"]
+[ext_resource type="Texture2D" uid="uid://2qm86ef21awm" path="res://Assets/Cutting/bread_cut_1.png" id="2_x33n7"]
+[ext_resource type="Texture2D" uid="uid://byolefh5gtgwh" path="res://Assets/Cutting/bread_cut_2.png" id="3_1sveo"]
+[ext_resource type="Texture2D" uid="uid://cynri5i4w8r35" path="res://Assets/Cutting/bread_cutlines.png" id="4_tagm3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kv8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k55dn")
+}],
+"loop": true,
+"name": &"base",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x33n7")
+}],
+"loop": true,
+"name": &"cut_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1sveo")
+}],
+"loop": true,
+"name": &"cut_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tagm3")
+}],
+"loop": true,
+"name": &"cutlines",
+"speed": 5.0
+}]
+
+[node name="CuttingBread" type="Node2D" unique_id=1589990561]
+script = ExtResource("1_x33n7")
+
+[node name="BreadSprite" type="AnimatedSprite2D" parent="." unique_id=2094814775]
+position = Vector2(432, 317)
+sprite_frames = SubResource("SpriteFrames_7kv8i")
+animation = &"base"
