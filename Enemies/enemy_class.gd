@@ -24,7 +24,6 @@ func initialize():
 	assert(player != null, "Player could not be found during actor_setup")
 	
 	actor_setup.call_deferred()
-	
 
 
 func actor_setup():
