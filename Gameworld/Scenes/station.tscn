@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cvsjmnawsbpyy"]
+[gd_scene format=4 uid="uid://dyxm5b86nunmb"]
 
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="1_6ktwo"]
 [ext_resource type="Script" uid="uid://bjk0mplfnjqo5" path="res://Gameworld/Scripts/Interactables/station.gd" id="1_imwww"]
