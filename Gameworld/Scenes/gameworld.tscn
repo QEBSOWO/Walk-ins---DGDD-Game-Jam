@@ -67,7 +67,7 @@ data = {
 }
 
 [node name="barrel2" parent="." unique_id=967789684 instance=ExtResource("5_r0ysc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47860348, 0, 1.5395508)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5064887, -0.016124308, 1.5845196)
 
 [node name="barrel3" parent="." unique_id=132578508 instance=ExtResource("5_r0ysc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4408846, 0, 1.4692657)

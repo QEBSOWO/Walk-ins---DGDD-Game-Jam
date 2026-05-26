@@ -21,7 +21,7 @@ func _process(delta):
 		
 		# Replace with grabbing
 		if interactable:
-			interactable.interact()
+			interactable.interact(self)
 
 ## Calculates the interactable object closest to the player
 func get_closest_interactable() -> Interactable:
@@ -41,9 +41,9 @@ func get_closest_interactable() -> Interactable:
 	return closest
 
 func _entered_interactable_area(body):
-	if body.get_parent() is Interactable:
-		interactables_in_range.append(body.get_parent())
+	if body is Interactable:
+		interactables_in_range.append(body)
 		
 func _exited_interactable_area(body):
-	if body.get_parent() is Interactable:
-		interactables_in_range.erase(body.get_parent())
+	if body is Interactable:
+		interactables_in_range.erase(body)

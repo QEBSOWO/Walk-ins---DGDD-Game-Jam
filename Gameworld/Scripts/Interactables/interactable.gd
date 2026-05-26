@@ -1,8 +1,14 @@
-class_name Interactable extends Node3D
+class_name Interactable extends RigidBody3D
+
+var interactable: Interactable
+var player: Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-# Replace with duplicating the interacted object
-func interact():
-	print("interacted with player")
+
+func interact(player):
+	pass
+
+func _process(delta):
+	pass
