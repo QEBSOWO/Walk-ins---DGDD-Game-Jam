@@ -14,6 +14,7 @@ var player: Player
 signal player_detected
 
 # Grappling/Attack related variables
+@onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
 @export var grapple_cooldown: float = 2.5
 @export var grapple_escape_force: float = 10.0
 @export var knockback_duration: float = 0.1
@@ -64,6 +65,7 @@ func grapple_player():
 	print("Player grappled")
 	
 	#TODO: Player Interrupt grapple
+	grapple_qte.start_qte()
 
 
 func release_grappled_player():
