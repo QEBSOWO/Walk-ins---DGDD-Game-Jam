@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://oytg8wlodm8l"]
 
-[ext_resource type="Texture2D" uid="uid://rt2s5kdfj2q7" path="res://Assets/Cutting/bread_uncut.png" id="1_k55dn"]
-[ext_resource type="Script" uid="uid://clqmse1nucfcs" path="res://Minigames/Scripts/cuttingbread.gd" id="1_x33n7"]
-[ext_resource type="Texture2D" uid="uid://byolefh5gtgwh" path="res://Assets/Cutting/bread_cut_2.png" id="3_1sveo"]
-[ext_resource type="Texture2D" uid="uid://6nkwb2rqvdyy" path="res://Assets/Cutting/bread_cut_1png.png" id="3_tagm3"]
-[ext_resource type="Texture2D" uid="uid://cynri5i4w8r35" path="res://Assets/Cutting/bread_cutlines.png" id="4_tagm3"]
-[ext_resource type="Texture2D" uid="uid://cjl1gf0tt2wuw" path="res://Assets/Cutting/cutline-Sheet.png" id="6_1sveo"]
+[ext_resource type="Script" uid="uid://clqmse1nucfcs" path="res://Minigames/Scripts/cuttingbread.gd" id="1_bs01n"]
+[ext_resource type="Texture2D" uid="uid://rt2s5kdfj2q7" path="res://Assets/Cutting/bread_uncut.png" id="2_3qxm5"]
+[ext_resource type="Texture2D" uid="uid://6nkwb2rqvdyy" path="res://Assets/Cutting/bread_cut_1png.png" id="3_8s8mg"]
+[ext_resource type="Texture2D" uid="uid://2qm86ef21awm" path="res://Assets/Cutting/bread_cut_1.png" id="4_8jgp5"]
+[ext_resource type="Texture2D" uid="uid://byolefh5gtgwh" path="res://Assets/Cutting/bread_cut_2.png" id="5_iwbii"]
+[ext_resource type="Texture2D" uid="uid://cynri5i4w8r35" path="res://Assets/Cutting/bread_cutlines.png" id="6_r5ckg"]
+[ext_resource type="Texture2D" uid="uid://bgysi70b1lww" path="res://Assets/Cutting/bread_cutlines_blink.png" id="7_jmgdc"]
+[ext_resource type="Texture2D" uid="uid://cjl1gf0tt2wuw" path="res://Assets/Cutting/cutline-Sheet.png" id="8_ariws"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kv8i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_k55dn")
+"texture": ExtResource("2_3qxm5")
 }],
 "loop": true,
 "name": &"base",
@@ -19,7 +21,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tagm3")
+"texture": ExtResource("3_8s8mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8jgp5")
 }],
 "loop": true,
 "name": &"cut_1",
@@ -27,7 +32,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1sveo")
+"texture": ExtResource("5_iwbii")
 }],
 "loop": true,
 "name": &"cut_2",
@@ -35,7 +40,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_tagm3")
+"texture": ExtResource("6_r5ckg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jmgdc")
 }],
 "loop": true,
 "name": &"cutlines",
@@ -43,19 +51,19 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tagm3"]
-atlas = ExtResource("6_1sveo")
+atlas = ExtResource("8_ariws")
 region = Rect2(0, 0, 63, 644)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kv8i"]
-atlas = ExtResource("6_1sveo")
+atlas = ExtResource("8_ariws")
 region = Rect2(63, 0, 63, 644)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbfqp"]
-atlas = ExtResource("6_1sveo")
+atlas = ExtResource("8_ariws")
 region = Rect2(126, 0, 63, 644)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6w3ss"]
-atlas = ExtResource("6_1sveo")
+atlas = ExtResource("8_ariws")
 region = Rect2(189, 0, 63, 644)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4uga4"]
@@ -79,20 +87,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_1sveo")
+"texture": ExtResource("8_ariws")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="CuttingBread" type="Node2D" unique_id=1589990561]
-script = ExtResource("1_x33n7")
+[node name="Cutting" type="Node2D" unique_id=1589990561]
+script = ExtResource("1_bs01n")
 
 [node name="BreadSprite" type="AnimatedSprite2D" parent="." unique_id=2094814775]
 position = Vector2(432, 317)
 sprite_frames = SubResource("SpriteFrames_7kv8i")
-animation = &"cut_1"
+animation = &"cut_2"
 
 [node name="Cutline" type="AnimatedSprite2D" parent="." unique_id=373820123]
 sprite_frames = SubResource("SpriteFrames_4uga4")
