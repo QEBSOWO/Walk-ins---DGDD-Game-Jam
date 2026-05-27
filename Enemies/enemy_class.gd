@@ -19,7 +19,6 @@ signal player_detected
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
-var can_grapple: bool = true
 
 signal stagger
 
@@ -60,9 +59,9 @@ func handle_movement():
 
 
 func grapple_player():
-	can_grapple = false
 	player.is_grappled = true
 	print("Player grappled")
+	await get_tree().create_timer(grapple_windup).timeout
 	grapple_qte.start_qte()
 
 
