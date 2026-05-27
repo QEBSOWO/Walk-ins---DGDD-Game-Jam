@@ -8,6 +8,7 @@ const COOKING = "Cooking" # This is the state for when the player's in a minigam
 const AIMING = "Aiming"
 const GRAPPLED = "Grappled"
 const ATTACKING = "Attacking"
+const DIE = "Die"
 
 var player: Player
 

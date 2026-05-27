@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b111d6tpqjlf5"]
+
+[ext_resource type="Script" uid="uid://drdyrmm080772" path="res://Gameworld/Scripts/qte_tester.gd" id="1_h81sy"]
+[ext_resource type="PackedScene" uid="uid://dnodtfdyd44o0" path="res://Enemies/Scenes/grapple_qte.tscn" id="2_e065l"]
+
+[node name="QteTester" type="Control" unique_id=1947545138]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h81sy")
+
+[node name="GrappleQte" parent="." unique_id=2112554198 instance=ExtResource("2_e065l")]
+visible = false
+layout_mode = 1

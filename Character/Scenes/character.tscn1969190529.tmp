@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bruvjm404sc3l" path="res://Character/Scripts/Player/PlayerStates/playerstate_class.gd" id="3_e3ner"]
 [ext_resource type="Script" uid="uid://dvb83jdxiwy7r" path="res://Character/Scripts/Player/PlayerStates/idle.gd" id="3_esjsu"]
 [ext_resource type="Script" uid="uid://c812dkgj28ylf" path="res://Character/Scripts/Player/PlayerStates/moving.gd" id="4_esjsu"]
-[ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
+[ext_resource type="Script" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53kqe"]
@@ -53,10 +53,6 @@ script = ExtResource("6_v4uwq")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
 [node name="Attacking" type="Node" parent="StateMachine" unique_id=148179914]
-script = ExtResource("3_e3ner")
-metadata/_custom_type_script = "uid://bruvjm404sc3l"
-
-[node name="Die" type="Node" parent="StateMachine" unique_id=1155444877]
 script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
