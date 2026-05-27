@@ -8,5 +8,5 @@ var is_grappled: bool = false
 func _ready() -> void:
 	current_hp = max_hp
 	
-func _process(delta):
-	pass
+func take_damage(dmg: int):
+	current_hp -= dmg

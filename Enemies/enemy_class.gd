@@ -2,8 +2,7 @@ class_name Enemy extends CharacterBody3D
 
 @export var speed: float = 2.0
 @export var is_armored: bool = false
-@export var max_hp: int = 3
-@export var damage: int = 1
+@export var max_hp: int = 1
 var current_hp: int
 
 # Movement related variables
@@ -52,7 +51,6 @@ func set_movement_target(movement_target: Vector3):
 func handle_movement():
 	if nav_agent.is_navigation_finished():
 		return
-	
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
 	
@@ -65,8 +63,6 @@ func grapple_player():
 	can_grapple = false
 	player.is_grappled = true
 	print("Player grappled")
-	
-	#TODO: Player Interrupt grapple
 	grapple_qte.start_qte()
 
 
@@ -78,6 +74,8 @@ func release_grappled_player():
 	velocity = (position-player.position).normalized() * grapple_escape_force
 
 
+func take_damage(dmg: int):
+	current_hp -= dmg
 
 
 func _unhandled_input(event: InputEvent) -> void:

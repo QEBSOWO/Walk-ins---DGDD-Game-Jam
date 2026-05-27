@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bm78n6405u37d" path="res://Enemies/Scripts/States/grappling.gd" id="6_x4vl3"]
 [ext_resource type="Script" uid="uid://bd3f0f4nh0fnw" path="res://Enemies/Scripts/States/knockedback.gd" id="7_60o3f"]
 [ext_resource type="Script" uid="uid://bu7sr3rmtloud" path="res://Enemies/Scripts/States/staggered.gd" id="7_x4vl3"]
+[ext_resource type="Script" uid="uid://dw1hcy1gum5em" path="res://Enemies/Scripts/States/die.gd" id="11_3jvux"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2g11s"]
 
@@ -90,4 +91,8 @@ metadata/_custom_type_script = "uid://bavb23ukvhahn"
 
 [node name="Staggered" type="Node" parent="StateMachine" unique_id=1733669281]
 script = ExtResource("7_x4vl3")
+metadata/_custom_type_script = "uid://bavb23ukvhahn"
+
+[node name="Die" type="Node" parent="StateMachine" unique_id=1526506366]
+script = ExtResource("11_3jvux")
 metadata/_custom_type_script = "uid://bavb23ukvhahn"

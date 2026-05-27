@@ -12,6 +12,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 
 func _on_successful_qte():
 	enemy.release_grappled_player()
+	enemy.take_damage(1)
 	finished.emit(KNOCKEDBACK)
 
 
