@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bp4ga5dtxn5pp" path="res://Enemies/Scenes/slime.tscn" id="5_r0ysc"]
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
-[ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
+[ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_ratt4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -92,3 +93,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46306, 0.049999952, 0.45015
 
 [node name="fire_station" parent="." unique_id=1807396969 instance=ExtResource("8_ke4fj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5144477, 0.05000019, 0.480453)
+
+[node name="serve_station" parent="." unique_id=801594181 instance=ExtResource("9_ratt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.451326, 0.049999952, -0.547446)
