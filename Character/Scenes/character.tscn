@@ -56,6 +56,10 @@ metadata/_custom_type_script = "uid://bruvjm404sc3l"
 script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
+[node name="Die" type="Node" parent="StateMachine" unique_id=1155444877]
+script = ExtResource("3_e3ner")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
 [node name="InteractArea" type="Area3D" parent="." unique_id=498216232]
 collision_mask = 2
 script = ExtResource("7_rhp1d")
