@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c812dkgj28ylf" path="res://Character/Scripts/Player/PlayerStates/moving.gd" id="4_esjsu"]
 [ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
+[ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53kqe"]
 
@@ -67,3 +68,7 @@ script = ExtResource("7_rhp1d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=429420749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_esjsu")
+
+[node name="PlayerHUD" type="CanvasLayer" parent="." unique_id=241342495]
+
+[node name="Inventory" parent="PlayerHUD" unique_id=217252950 instance=ExtResource("8_ie5jk")]
