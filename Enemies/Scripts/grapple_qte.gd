@@ -11,13 +11,15 @@ var active: bool # Used to know if qte is still accepting input
 signal successful_input
 signal failed_input
 
-var tween = create_tween()
+var tween: Tween 
 
 func start_qte():
 	timer = get_tree().create_timer(duration)
 	timer.timeout.connect(end_qte)
 	active = true
-	#tween.tween_property(color_rect, "material:shader_paremeter/progress", 0, duration)
+	tween = get_tree().create_tween()
+	tween.tween_property(color_rect, "material:shader_parameter/progress", 0, duration)
+	tween.play()
 
 func end_qte(successful: bool = false):
 	active = false # Stop accepting input
@@ -29,6 +31,7 @@ func end_qte(successful: bool = false):
 		emit_signal("failed_input")
 	
 	timer.timeout.disconnect(end_qte)
+	color_rect.material.set_shader_parameter("progress", 1.0)
 
 func _input(event):
 	if active and event.is_action_pressed("interact"):
