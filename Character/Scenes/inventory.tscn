@@ -1,20 +1,9 @@
 [gd_scene format=3 uid="uid://dsxb56x3g4jle"]
 
 [ext_resource type="Script" uid="uid://bjgc2xfuuc8np" path="res://Character/Scripts/Player/inventory.gd" id="1_w3eqg"]
-[ext_resource type="StyleBox" uid="uid://cvit3kmi1wi3k" path="res://Character/Assets/Inventory/item_base.tres" id="2_gfmqw"]
+[ext_resource type="StyleBox" uid="uid://c7opmphfjld8e" path="res://Character/Assets/Inventory/item_selected.tres" id="2_gfmqw"]
 [ext_resource type="Texture2D" uid="uid://eefmctvmaim" path="res://icon.svg" id="2_qr80u"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi3xi"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[ext_resource type="StyleBox" uid="uid://cvit3kmi1wi3k" path="res://Character/Assets/Inventory/item_base.tres" id="3_gfmqw"]
 
 [node name="Inventory" type="Control" unique_id=217252950]
 layout_mode = 3
@@ -44,17 +33,32 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 7
 
-[node name="InventoryOutline" type="PanelContainer" parent="WeaponContainer" unique_id=2030994328]
+[node name="InventoryWeapon" type="PanelContainer" parent="WeaponContainer" unique_id=780365595]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_hi3xi")
+theme_override_styles/panel = ExtResource("3_gfmqw")
 
-[node name="InventoryWeapon" type="PanelContainer" parent="WeaponContainer/InventoryOutline" unique_id=780365595]
+[node name="InventoryOutline" type="PanelContainer" parent="WeaponContainer/InventoryWeapon" unique_id=2030994328]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_gfmqw")
 
-[node name="WeaponIcon" type="Sprite2D" parent="WeaponContainer/InventoryOutline/InventoryWeapon" unique_id=945656415]
+[node name="WeaponIcon" type="Sprite2D" parent="WeaponContainer/InventoryWeapon" unique_id=945656415]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qr80u")
+offset = Vector2(75, 75)
+
+[node name="InventoryWeapon2" type="PanelContainer" parent="WeaponContainer" unique_id=527736190]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("3_gfmqw")
+
+[node name="InventoryOutline" type="PanelContainer" parent="WeaponContainer/InventoryWeapon2" unique_id=169322853]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_gfmqw")
+
+[node name="WeaponIcon" type="Sprite2D" parent="WeaponContainer/InventoryWeapon2" unique_id=855898693]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_qr80u")
 offset = Vector2(75, 75)

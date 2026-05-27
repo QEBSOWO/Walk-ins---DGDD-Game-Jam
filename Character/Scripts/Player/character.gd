@@ -4,6 +4,7 @@ class_name Player extends CharacterBody3D
 @export var max_hp: int = 5
 var current_hp: int
 var is_grappled: bool = false
+var active_weapon: Weapon
 
 func _ready() -> void:
 	current_hp = max_hp
