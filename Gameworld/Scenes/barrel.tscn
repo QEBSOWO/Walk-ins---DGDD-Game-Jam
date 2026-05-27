@@ -5,7 +5,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_30qgq"]
 height = 0.5
-radius = 0.3
+radius = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjl7m"]
 resource_name = "colormap"

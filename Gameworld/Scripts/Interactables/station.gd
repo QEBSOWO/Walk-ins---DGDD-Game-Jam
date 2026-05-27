@@ -10,8 +10,13 @@ func interact(player_area: Area3D):
 	if player_area.holding:
 		var held_item = player_area.holding
 		item_on_table = held_item
-		item_on_table.global_position = self.global_position + Vector3(0, 1, 0)
+		item_on_table.global_position = self.global_position + Vector3(0, 0.5, 0)
+		item_on_table.freeze_object()
 	else:
 		if item_on_table:
-			player_area.holding = item_on_table
-			item_on_table.interact(player_area)
+			print("Entered cooking minigame")
+
+func release_item(player_area: Area3D):
+	item_on_table.unfreeze_object()
+	player_area.holding = item_on_table
+	item_on_table.interact(player_area)

@@ -10,7 +10,7 @@ func _ready() -> void:
 func interact(player_area: Area3D):
 	# Grabbing an ingredient from a spawner
 	if is_spawner:
-		var ingredient_scene = load("res://Gameworld/Scenes/barrel.tscn")
+		var ingredient_scene = load(scene_file_path)
 		var new_ingredient = ingredient_scene.instantiate()
 		add_child(new_ingredient)
 		new_ingredient.reparent(self.get_parent())
@@ -25,20 +25,26 @@ func interact(player_area: Area3D):
 	# If dropped, prevents player from colliding with instanced node
 	if not is_spawner and not is_grabbed:
 		player_area.holding = self
-		axis_lock_linear_x = false
-		axis_lock_linear_z = false
-		axis_lock_angular_x = false
-		axis_lock_angular_y = false
-		axis_lock_angular_z = false
+		unfreeze_object()
 		is_grabbed = true
 	else:
-		axis_lock_linear_x = true
-		axis_lock_linear_z = true
-		axis_lock_angular_x = true
-		axis_lock_angular_y = true
-		axis_lock_angular_z = true
+		freeze_object()
 		is_grabbed = false
 
 func _process(delta):
 	if is_grabbed:
 		self.global_position = player_area.global_position + Vector3(0, 1, 0)
+		
+func freeze_object():
+	axis_lock_linear_x = true
+	axis_lock_linear_z = true
+	axis_lock_angular_x = true
+	axis_lock_angular_y = true
+	axis_lock_angular_z = true
+	
+func unfreeze_object():
+	axis_lock_linear_x = false
+	axis_lock_linear_z = false
+	axis_lock_angular_x = false
+	axis_lock_angular_y = false
+	axis_lock_angular_z = false
