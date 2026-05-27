@@ -12,6 +12,7 @@ shader_parameter/fill_direction = 1.0
 shader_parameter/progress = 1.0
 
 [node name="GrappleQte" type="Control" unique_id=2112554198]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

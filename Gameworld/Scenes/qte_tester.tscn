@@ -13,4 +13,5 @@ grow_vertical = 2
 script = ExtResource("1_h81sy")
 
 [node name="GrappleQte" parent="." unique_id=2112554198 instance=ExtResource("2_e065l")]
+visible = false
 layout_mode = 1

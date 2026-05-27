@@ -14,6 +14,7 @@ signal failed_input
 var tween: Tween 
 
 func start_qte():
+	self.show()
 	timer = get_tree().create_timer(duration)
 	timer.timeout.connect(end_qte)
 	active = true
@@ -31,6 +32,7 @@ func end_qte(successful: bool = false):
 		emit_signal("failed_input")
 	
 	timer.timeout.disconnect(end_qte)
+	self.hide()
 	color_rect.material.set_shader_parameter("progress", 1.0)
 
 func _input(event):
