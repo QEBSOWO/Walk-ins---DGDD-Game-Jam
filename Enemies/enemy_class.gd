@@ -2,7 +2,7 @@ class_name Enemy extends CharacterBody3D
 
 @export var speed: float = 2.0
 @export var is_armored: bool = false
-@export var max_hp: int = 5
+@export var max_hp: int = 3
 @export var damage: int = 1
 var current_hp: int
 
@@ -20,6 +20,7 @@ signal player_detected
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
+var can_grapple: bool = true
 
 signal stagger
 
@@ -61,6 +62,7 @@ func handle_movement():
 
 
 func grapple_player():
+	can_grapple = false
 	player.is_grappled = true
 	print("Player grappled")
 	
@@ -76,8 +78,10 @@ func release_grappled_player():
 	velocity = (position-player.position).normalized() * grapple_escape_force
 
 
+
+
 func _unhandled_input(event: InputEvent) -> void:
-	if grapple_qte.active and event.is_action_pressed("interact"):
+	if grapple_qte.active and event.is_action_pressed("interact") and player.is_grappled:
 		grapple_qte.end_qte(true) # On button press, qte ends successfully
 
 

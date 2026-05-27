@@ -34,8 +34,3 @@ func end_qte(successful: bool = false):
 	
 	timer.timeout.disconnect(end_qte)
 	self.hide()
-
-
-#func _input(event):
-	#if active and event.is_action_pressed("interact"):
-		#end_qte(true) # On button press, qte ends successfully
