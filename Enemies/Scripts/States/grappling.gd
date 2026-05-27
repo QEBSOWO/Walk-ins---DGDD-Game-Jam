@@ -7,7 +7,6 @@ func enter(previous_state_path: String, data := {}) -> void:
 	print("Grappling")
 	enemy.velocity.x = 0
 	enemy.velocity.z = 0
-	await get_tree().create_timer(enemy.grapple_windup).timeout
 	enemy.grapple_player()
 
 func _on_successful_qte():
