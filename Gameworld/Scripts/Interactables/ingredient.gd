@@ -24,6 +24,7 @@ func interact(player_area: Area3D):
 	# If grabbed, is placed on top of the player and follows 
 	# If dropped, prevents player from colliding with instance
 	if not is_spawner and not is_grabbed:
+		self.player_area = player_area
 		player_area.holding = self
 		unfreeze_object()
 		is_grabbed = true
