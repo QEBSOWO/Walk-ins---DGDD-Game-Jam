@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b87rt6ryphl0w" path="res://Enemies/enemy_class.gd" id="1_6jihr"]
 [ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="1_j1v0w"]
+[ext_resource type="PackedScene" uid="uid://dnodtfdyd44o0" path="res://Enemies/Scenes/grapple_qte.tscn" id="2_bbx3g"]
+[ext_resource type="Script" uid="uid://sbw8wb8vy516" path="res://Enemies/Scripts/qte_display.gd" id="2_sbuob"]
 [ext_resource type="Script" uid="uid://de8mkqb6kma6n" path="res://Enemies/Scripts/States/spawning.gd" id="3_h4xfy"]
 [ext_resource type="Script" uid="uid://bknqt66m034jt" path="res://Enemies/Scripts/States/patrolling.gd" id="3_qqxm8"]
 [ext_resource type="Script" uid="uid://co3nj5l4o5gxo" path="res://Enemies/Scripts/States/chasing.gd" id="4_qqxm8"]
@@ -24,6 +26,8 @@ radius = 1.0
 
 [node name="Slime" type="CharacterBody3D" unique_id=962367046]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_6jihr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=534333558]
@@ -46,6 +50,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackZone" unique_id=633918216]
 shape = SubResource("SphereShape3D_h4xfy")
 debug_color = Color(0.98582226, 0, 0.3345947, 0.41960785)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=143554025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+billboard = 1
+script = ExtResource("2_sbuob")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1146698695]
+transparent_bg = true
+
+[node name="GrappleQte" parent="Sprite3D/SubViewport" unique_id=2112554198 instance=ExtResource("2_bbx3g")]
+visible = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=1716553239 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_j1v0w")
