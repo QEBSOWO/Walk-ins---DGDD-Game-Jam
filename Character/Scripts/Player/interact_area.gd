@@ -21,13 +21,11 @@ func _process(delta):
 	if Input.is_action_just_released("interact") and held_interact == false:
 		var interactable = get_closest_interactable()
 		
-		
 		# If player is not holding anything, pick up from spawner or ground
 		# If player is holding something, prevent other items from being picked up
 		if interactable is Ingredient:
 			if not holding: 
 				interactable.interact(self)
-				#holding = interactable
 			else:
 				if interactable.is_grabbed == true:
 					interactable.interact(self)
@@ -36,6 +34,7 @@ func _process(delta):
 		if interactable is Station:
 			if holding:
 				interactable.interact(self)
+				holding.freeze_object()
 				holding.is_grabbed = false
 				holding = null
 			else:

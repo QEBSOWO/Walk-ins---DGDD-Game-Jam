@@ -22,7 +22,7 @@ func interact(player_area: Area3D):
 	
 	# Sets the ingredient to be grabbed by the player
 	# If grabbed, is placed on top of the player and follows 
-	# If dropped, prevents player from colliding with instanced node
+	# If dropped, prevents player from colliding with instance
 	if not is_spawner and not is_grabbed:
 		player_area.holding = self
 		unfreeze_object()

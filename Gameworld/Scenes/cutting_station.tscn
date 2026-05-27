@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://bwktnj1rkp8al"]
 
+[ext_resource type="Script" uid="uid://dcwfa4ndudjm0" path="res://Gameworld/Scripts/Interactables/cutting_station.gd" id="1_6kjjb"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="1_6ktwo"]
-[ext_resource type="Script" uid="uid://bjk0mplfnjqo5" path="res://Gameworld/Scripts/Interactables/station.gd" id="1_imwww"]
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="2_imwww"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_biifs"]
-size = Vector3(1, 0.4, 1)
+size = Vector3(0.8, 0.4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2cq6"]
 resource_name = "colormap"
@@ -92,7 +92,7 @@ shadow_mesh = SubResource("ArrayMesh_fhxjd")
 [node name="cutting_station" type="RigidBody3D" unique_id=1269356892]
 collision_layer = 3
 freeze = true
-script = ExtResource("1_imwww")
+script = ExtResource("1_6kjjb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1116023362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24951172, 0)
