@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dnodtfdyd44o0"]
+
+[ext_resource type="Script" uid="uid://cvlxxs6u5kub6" path="res://Enemies/Scripts/grapple_qte.gd" id="1_8x08a"]
+[ext_resource type="Shader" uid="uid://hpd6is8hfab" path="res://Enemies/Assets/grapple_qte.gdshader" id="1_lurwa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8x08a"]
+shader = ExtResource("1_lurwa")
+shader_parameter/base_color = Color(0, 1, 0, 1)
+shader_parameter/outer_bound = 0.4
+shader_parameter/inner_bound = 0.3
+shader_parameter/fill_direction = 1.0
+shader_parameter/progress = 1.0
+
+[node name="GrappleQte" type="Control" unique_id=2112554198]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8x08a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1135384286]
+material = SubResource("ShaderMaterial_8x08a")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyLabel" type="Label" parent="ColorRect" unique_id=1409276529]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -34.5
+offset_right = 20.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 50
+text = "E"
