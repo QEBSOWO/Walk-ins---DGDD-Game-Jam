@@ -36,6 +36,6 @@ func end_qte(successful: bool = false):
 	self.hide()
 
 
-func _input(event):
-	if active and event.is_action_pressed("interact"):
-		end_qte(true) # On button press, qte ends successfully
+#func _input(event):
+	#if active and event.is_action_pressed("interact"):
+		#end_qte(true) # On button press, qte ends successfully

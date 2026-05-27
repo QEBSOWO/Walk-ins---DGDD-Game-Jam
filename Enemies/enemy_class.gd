@@ -15,7 +15,7 @@ signal player_detected
 
 # Grappling/Attack related variables
 @onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
-@export var grapple_cooldown: float = 2.5
+@export var grapple_windup: float = 1.0
 @export var grapple_escape_force: float = 10.0
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
@@ -74,6 +74,11 @@ func release_grappled_player():
 	print("Player cannot be grappled")
 	
 	velocity = (position-player.position).normalized() * grapple_escape_force
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if grapple_qte.active and event.is_action_pressed("interact"):
+		grapple_qte.end_qte(true) # On button press, qte ends successfully
 
 
 func get_player_position() -> Vector3:

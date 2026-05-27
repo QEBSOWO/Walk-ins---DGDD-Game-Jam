@@ -58,6 +58,7 @@ script = ExtResource("2_sbuob")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1146698695]
 transparent_bg = true
+handle_input_locally = false
 
 [node name="GrappleQte" parent="Sprite3D/SubViewport" unique_id=2112554198 instance=ExtResource("2_bbx3g")]
 visible = false
