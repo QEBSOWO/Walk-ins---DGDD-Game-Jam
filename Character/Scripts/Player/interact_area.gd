@@ -19,14 +19,30 @@ func _process(delta):
 		
 		# If player is not holding anything, pick up from spawner or ground
 		# If player is holding something, prevent other items from being picked up
-		if not holding:
-			if interactable is Ingredient:
+		if interactable is Ingredient:
+			if not holding: 
 				interactable.interact(self)
-				holding = interactable
-		else:
-			if interactable.is_grabbed == true:
+				#holding = interactable
+			else:
+				if interactable.is_grabbed == true:
+					interactable.interact(self)
+					holding = null
+					
+		if interactable is Station:
+			if holding:
 				interactable.interact(self)
+				holding.is_grabbed = false
 				holding = null
+			else:
+				interactable.interact(self)
+		#if not holding:
+			#if interactable is Ingredient:
+				#interactable.interact(self)
+				#holding = interactable
+		#else:
+			#if interactable.is_grabbed == true:
+				#interactable.interact(self)
+				#holding = null
 
 ## Calculates the interactable object closest to the player
 func get_closest_interactable() -> Interactable:

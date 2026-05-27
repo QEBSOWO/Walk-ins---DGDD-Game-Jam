@@ -1,8 +1,10 @@
-[gd_scene format=4 uid="uid://dyxm5b86nunmb"]
+[gd_scene format=4 uid="uid://bwktnj1rkp8al"]
 
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="1_6ktwo"]
 [ext_resource type="Script" uid="uid://bjk0mplfnjqo5" path="res://Gameworld/Scripts/Interactables/station.gd" id="1_imwww"]
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="2_imwww"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_biifs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2cq6"]
 resource_name = "colormap"
@@ -86,11 +88,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fhxjd")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_biifs"]
-
-[node name="stall2" type="RigidBody3D" unique_id=1269356892]
+[node name="cutting_station" type="RigidBody3D" unique_id=1269356892]
+collision_layer = 3
 freeze = true
 script = ExtResource("1_imwww")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1116023362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_biifs")
 
 [node name="stall" type="MeshInstance3D" parent="." unique_id=1939732811]
 mesh = SubResource("ArrayMesh_57uc0")
@@ -99,7 +104,3 @@ mesh = SubResource("ArrayMesh_57uc0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36520863, 0)
 material_override = SubResource("StandardMaterial3D_7seiy")
 mesh = SubResource("ArrayMesh_a4jq2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1116023362]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_biifs")

@@ -15,6 +15,7 @@ func interact(player_area: Area3D):
 		add_child(new_ingredient)
 		new_ingredient.reparent(self.get_parent())
 		new_ingredient.player_area = player_area
+		player_area.holding = new_ingredient
 		new_ingredient.is_spawner = false
 		new_ingredient.is_grabbed = true
 		new_ingredient.collision_layer = 2
@@ -23,6 +24,7 @@ func interact(player_area: Area3D):
 	# If grabbed, is placed on top of the player and follows 
 	# If dropped, prevents player from colliding with instanced node
 	if not is_spawner and not is_grabbed:
+		player_area.holding = self
 		axis_lock_linear_x = false
 		axis_lock_linear_z = false
 		axis_lock_angular_x = false
