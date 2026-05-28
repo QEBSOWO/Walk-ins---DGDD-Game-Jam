@@ -73,8 +73,6 @@ func release_grappled_player():
 	player.is_grappled = false
 	is_player_in_attack_range = false
 	print("Player cannot be grappled")
-	
-	velocity = (position-player.position).normalized() * grapple_escape_force
 
 
 func take_damage(dmg: int = 1):
@@ -89,7 +87,6 @@ func take_damage(dmg: int = 1):
 	
 	is_attacked = true
 	can_be_damaged = false
-	velocity = (position-player.position).normalized() * 2 * grapple_escape_force
 
 
 func lose_hp(dmg: int = 1):
