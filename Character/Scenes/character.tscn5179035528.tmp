@@ -40,10 +40,8 @@ shape = SubResource("CapsuleShape3D_53kqe")
 transform = Transform3D(-3.090862e-08, 3.090862e-08, 1, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -4.371139e-08, -0.7, 1, 0)
 
 [node name="sword" parent="Pivot/WeaponHolder" unique_id=1845533604 instance=ExtResource("4_r3i75")]
-freeze = true
 
 [node name="hammer" parent="Pivot/WeaponHolder" unique_id=372298452 instance=ExtResource("5_dw6it")]
-freeze = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=578957644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
