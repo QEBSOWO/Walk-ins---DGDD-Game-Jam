@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_released("aim"):
 		is_aiming = false
 	
-	if Input.is_action_pressed("attack") && can_attack:
+	if Input.is_action_pressed("attack") && can_attack && is_aiming:
 		can_attack = false
 		is_attacking = true
 
