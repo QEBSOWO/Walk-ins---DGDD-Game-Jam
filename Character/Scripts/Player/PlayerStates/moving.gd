@@ -5,7 +5,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	pass
 
 func physics_update(_delta: float) -> void:
-	player.handle_rotation(Vector3(player.input_dir.x, 0, player.input_dir.y))
+	player.handle_rotation()
 	player.handle_movement()
 	
 	# Handle State change

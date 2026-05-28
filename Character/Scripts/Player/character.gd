@@ -22,8 +22,10 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_released("aim"):
 		is_aiming = false
 
+
 func take_damage(dmg: int):
 	current_hp -= dmg
+
 
 func handle_movement(move_speed: float = self.speed):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -36,5 +38,18 @@ func handle_movement(move_speed: float = self.speed):
 	
 	move_and_slide()
 
-func handle_rotation(dir_vector: Vector3) -> void:
-	pivot.look_at(global_position - dir_vector)
+
+func handle_rotation() -> void:
+	pivot.look_at(global_position - Vector3(input_dir.x, 0, input_dir.y))
+
+
+func look_at_cursor() -> void:
+	var target_plane_mouse = Plane(Vector3(0,1,0), position.y)
+	var ray_length = 1000
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * ray_length
+	var cursor_pos_on_plane = target_plane_mouse.intersects_ray(from, to)
+	
+	pivot.look_at(-cursor_pos_on_plane, Vector3.UP, 0)
+	
