@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody3D
 
+@onready var pivot = $Pivot
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
@@ -24,5 +25,10 @@ func handle_movement(move_speed: float = self.speed):
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 		velocity.z = move_toward(velocity.z, 0, move_speed)
-
+	
 	move_and_slide()
+	#print(direction)
+
+func handle_rotation() -> void:
+	pivot.look_at(global_position - Vector3(input_dir.x, 0, input_dir.y))
+	print(input_dir)

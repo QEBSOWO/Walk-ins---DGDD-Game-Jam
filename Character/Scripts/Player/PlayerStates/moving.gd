@@ -4,7 +4,8 @@ func enter(previous_state_path: String, data := {}) -> void:
 	# TODO: Play animation here
 	pass
 
-func physics_update(_delta: float) -> void:
+func physics_update(delta: float) -> void:
+	player.handle_rotation()
 	player.handle_movement()
 	
 	# Handle State change

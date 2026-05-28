@@ -12,7 +12,7 @@ func _ready() -> void:
 	assert(player != null, "Inventory not a child of Player. Player is missing or 
 Inventory needs to be connected")
 	
-	for weapon in player.get_node("WeaponHolder").get_children():
+	for weapon in player.get_node("Pivot").get_node("WeaponHolder").get_children():
 		weapon_array.append(weapon)
 		weapon.visible = false
 	
