@@ -1,6 +1,6 @@
 extends EnemyState
 
-var enemy_recovered: bool = false
+var enemy_recovered = false
 
 func enter(previous_state_path: String, data := {}) -> void:
 	enemy.velocity.x = 0
@@ -18,3 +18,7 @@ func physics_update(_delta: float) -> void:
 			finished.emit(DIE)
 		else:
 			finished.emit(CHASING)
+
+func exit() -> void:
+	enemy_recovered = false
+	enemy.is_attacked = false

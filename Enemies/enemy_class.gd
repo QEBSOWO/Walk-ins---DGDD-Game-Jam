@@ -10,7 +10,6 @@ var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
 var player: Player
 
-var is_player_detected: bool = false
 
 # Grappling/Attack related variables
 @onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
@@ -18,14 +17,15 @@ var is_player_detected: bool = false
 @export var grapple_escape_force: float = 10.0
 @export var knockback_duration: float = 0.2
 @export var stagger_duration: float = 0.5
-var is_player_in_attack_range: bool = false
 
-# Damage handling
+# State handling
 var is_attacked: bool = false
+var is_player_detected: bool = false
+var is_player_in_attack_range: bool = false
 var can_be_damaged: bool = true
 var can_grapple: bool = true
+var knockback_complete: bool = false
 
-signal stagger
 
 func initialize():
 	# To be adjusted later for actor speed and navigation layout
