@@ -19,6 +19,7 @@ signal player_detected
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
+var is_attacked: bool = false
 
 signal stagger
 

@@ -6,6 +6,9 @@ func enter(previous_state_path: String, data := {}) -> void:
 
 func physics_update(_delta: float) -> void:
 	enemy.handle_movement()
+	
+	if enemy.is_attacked:
+		finished.emit(KNOCKEDBACK)
 
 func _on_player_detected() -> void:
 	finished.emit(CHASING)

@@ -13,6 +13,11 @@ func physics_update(_delta: float) -> void:
 	player.look_at_cursor()
 	player.handle_movement(aiming_speed)
 	# TODO: Handle damage
+	for body in player.attack_zone.get_overlapping_bodies():
+		if body is Enemy:
+			body.is_attacked = true
+			body.take_damage(1)
+			body.velocity = (body.position-body.player.position).normalized() * 2 * body.grapple_escape_force
 	
 	if player.is_grappled:
 		finished.emit(GRAPPLED)

@@ -13,6 +13,7 @@ var input_dir: Vector2
 var camera: Camera3D
 
 # Attacking related variables
+@onready var attack_zone: Area3D = $Pivot/AttackZone
 var is_attacking: bool = false
 var can_attack: bool = true
 

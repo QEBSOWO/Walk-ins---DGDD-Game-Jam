@@ -9,3 +9,5 @@ func physics_update(_delta: float) -> void:
 	
 	if enemy.is_player_in_attack_range:
 		finished.emit(GRAPPLING)
+	elif enemy.is_attacked:
+		finished.emit(KNOCKEDBACK)

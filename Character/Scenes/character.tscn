@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
-length = 0.001
+length = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,7 +49,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_vxums"]
@@ -186,6 +186,7 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/AttackZone" unique_id=183987082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.7)
 shape = SubResource("SphereShape3D_dw6it")
+disabled = true
 
 [node name="InteractArea" type="Area3D" parent="." unique_id=498216232]
 collision_mask = 2
