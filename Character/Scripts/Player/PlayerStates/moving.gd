@@ -13,3 +13,5 @@ func physics_update(_delta: float) -> void:
 		finished.emit(IDLE)
 	elif player.is_grappled:
 		finished.emit(GRAPPLED)
+	elif player.is_aiming:
+		finished.emit(AIMING)

@@ -5,14 +5,22 @@ class_name Player extends CharacterBody3D
 @export var max_hp: int = 5
 var current_hp: int
 var is_grappled: bool = false
+var is_aiming: bool = false
 var active_weapon: Weapon
 var input_dir: Vector2
+var camera: Camera3D
 
 func _ready() -> void:
 	current_hp = max_hp
+	camera = owner.get_node("Node3D").get_node("Camera3D")
 
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if Input.is_action_pressed("aim"):
+		is_aiming = true
+	elif Input.is_action_just_released("aim"):
+		is_aiming = false
 
 func take_damage(dmg: int):
 	current_hp -= dmg
