@@ -29,6 +29,7 @@ func equip_slot(index: int) -> void:
 	
 	if weapon_collected_array[index]:
 		player.active_weapon.visible = true
+		weapon_array[index-1].visible = false
 
 
 func _process(_delta: float) -> void:
