@@ -2,8 +2,7 @@ class_name Enemy extends CharacterBody3D
 
 @export var speed: float = 2.0
 @export var is_armored: bool = false
-@export var max_hp: int = 5
-@export var damage: int = 1
+@export var max_hp: int = 1
 var current_hp: int
 
 # Movement related variables
@@ -14,7 +13,8 @@ var player: Player
 signal player_detected
 
 # Grappling/Attack related variables
-@export var grapple_cooldown: float = 2.5
+@onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
+@export var grapple_windup: float = 1.0
 @export var grapple_escape_force: float = 10.0
 @export var knockback_duration: float = 0.1
 @export var stagger_duration: float = 0.5
@@ -50,7 +50,6 @@ func set_movement_target(movement_target: Vector3):
 func handle_movement():
 	if nav_agent.is_navigation_finished():
 		return
-	
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
 	
@@ -62,8 +61,8 @@ func handle_movement():
 func grapple_player():
 	player.is_grappled = true
 	print("Player grappled")
-	
-	#TODO: Player Interrupt grapple
+	await get_tree().create_timer(grapple_windup).timeout
+	grapple_qte.start_qte()
 
 
 func release_grappled_player():
@@ -72,6 +71,15 @@ func release_grappled_player():
 	print("Player cannot be grappled")
 	
 	velocity = (position-player.position).normalized() * grapple_escape_force
+
+
+func take_damage(dmg: int):
+	current_hp -= dmg
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if grapple_qte.active and event.is_action_pressed("interact") and player.is_grappled:
+		grapple_qte.end_qte(true) # On button press, qte ends successfully
 
 
 func get_player_position() -> Vector3:

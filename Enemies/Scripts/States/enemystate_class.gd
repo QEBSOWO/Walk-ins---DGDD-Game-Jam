@@ -6,6 +6,7 @@ const CHASING = "Chasing"
 const GRAPPLING = "Grappling"
 const KNOCKEDBACK = "Knockedback"
 const STAGGERED = "Staggered"
+const DIE = "Die"
 
 var enemy: Enemy
 
