@@ -23,7 +23,7 @@ albedo_color = Color(0, 0.7826693, 0.3927038, 1)
 radius = 5.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h4xfy"]
-radius = 1.0
+radius = 0.7
 
 [node name="Slime" type="CharacterBody3D" unique_id=962367046]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -49,6 +49,7 @@ shape = SubResource("SphereShape3D_6jihr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackZone" unique_id=633918216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2266798)
 shape = SubResource("SphereShape3D_h4xfy")
 debug_color = Color(0.98582226, 0, 0.3345947, 0.41960785)
 

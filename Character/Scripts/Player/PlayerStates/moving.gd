@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	# TODO: Play animation here
+	player.anim_player.play("RESET")
 	pass
 
 func physics_update(_delta: float) -> void:

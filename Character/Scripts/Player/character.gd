@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody3D
 
 @onready var pivot = $Pivot
+@onready var weapon_holder = $Pivot/WeaponHolder
+@onready var anim_player = $AnimationPlayer
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
@@ -9,6 +11,10 @@ var is_aiming: bool = false
 var active_weapon: Weapon
 var input_dir: Vector2
 var camera: Camera3D
+
+# Attacking related variables
+var is_attacking: bool = false
+var can_attack: bool = true
 
 func _ready() -> void:
 	current_hp = max_hp
@@ -21,6 +27,10 @@ func _process(_delta: float) -> void:
 		is_aiming = true
 	elif Input.is_action_just_released("aim"):
 		is_aiming = false
+	
+	if Input.is_action_pressed("attack") && can_attack:
+		can_attack = false
+		is_attacking = true
 
 
 func take_damage(dmg: int):
@@ -52,4 +62,3 @@ func look_at_cursor() -> void:
 	var cursor_pos_on_plane = target_plane_mouse.intersects_ray(from, to)
 	
 	pivot.look_at(-cursor_pos_on_plane, Vector3.UP, 0)
-	
