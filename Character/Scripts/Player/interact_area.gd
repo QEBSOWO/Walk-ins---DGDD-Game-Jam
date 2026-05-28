@@ -39,6 +39,9 @@ func _process(delta):
 				holding = null
 			else:
 				interactable.interact(self)
+		
+		if interactable is Weapon:
+			interactable.interact(self)
 				
 	if Input.is_action_pressed("interact"):
 		var interactable = get_closest_interactable()

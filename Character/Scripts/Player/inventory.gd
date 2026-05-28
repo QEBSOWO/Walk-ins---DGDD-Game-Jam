@@ -5,7 +5,7 @@ var panel_container_array: Array[PanelContainer]
 
 var player: Player
 var weapon_array: Array[Weapon]
-var weapon_collected_array: Array[bool] = [true, true] # Array for which weapons that are in inventory
+var weapon_collected_array: Array[bool] = [false, false] # Array for which weapons that are in inventory
 
 func _ready() -> void:
 	player = owner as Player
@@ -42,3 +42,8 @@ func _process(_delta: float) -> void:
 		equip_slot(0)
 	elif Input.is_action_pressed("equip_second"):
 		equip_slot(1)
+		
+		
+func collect_weapon(weapon: int):
+	weapon_collected_array[weapon] = true
+	_ready()

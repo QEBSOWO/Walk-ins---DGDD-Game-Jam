@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 [ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
-[ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
-[ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667
@@ -169,6 +169,7 @@ freeze = true
 visible = false
 freeze = true
 is_armor_piercing = true
+durability = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=578957644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

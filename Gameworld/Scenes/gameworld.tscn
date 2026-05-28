@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
+[ext_resource type="PackedScene" uid="uid://dpc02afht63d3" path="res://Gameworld/Scenes/pan.tscn" id="9_ratt4"]
+[ext_resource type="PackedScene" uid="uid://c0usm6g12ee6a" path="res://Gameworld/Scenes/pot.tscn" id="10_l5n3e"]
+[ext_resource type="PackedScene" uid="uid://dam7672bm1nlh" path="res://Gameworld/Scenes/mug.tscn" id="11_cw2yi"]
+[ext_resource type="PackedScene" uid="uid://1v6a3fnl3ibm" path="res://Character/Scenes/Equipment/hammer.tscn" id="12_v3fmh"]
+[ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="13_83nf5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -92,3 +97,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46306, 0.049999952, 0.45015
 
 [node name="fire_station" parent="." unique_id=1807396969 instance=ExtResource("8_ke4fj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5144477, 0.05000019, 0.480453)
+
+[node name="pan" parent="." unique_id=615307035 instance=ExtResource("9_ratt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.134695, 0.049999952, 0.59411335)
+
+[node name="pot" parent="." unique_id=553347901 instance=ExtResource("10_l5n3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15755, 0.049999952, 1.3228457)
+
+[node name="mug" parent="." unique_id=1472508465 instance=ExtResource("11_cw2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6245625, 0.049999952, -0.33142412)
+
+[node name="hammer" parent="." unique_id=372298452 instance=ExtResource("12_v3fmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889716, 0.44410366, -0.16173816)
+collision_layer = 7
+collision_mask = 1
+is_armor_piercing = false
+durability = 1
+
+[node name="sword" parent="." unique_id=1845533604 instance=ExtResource("13_83nf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.131981, 0.41576552, -0.14958405)
+collision_layer = 6
+collision_mask = 1
