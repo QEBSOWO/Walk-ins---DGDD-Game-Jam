@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://7y7pyqwgyjsb" path="res://Assets/Pouring/Bucket_third.png" id="7_h2c7g"]
 [ext_resource type="Texture2D" uid="uid://dndnrx3tht4vx" path="res://Assets/Pouring/cauldron.png" id="9_o6tst"]
 [ext_resource type="Texture2D" uid="uid://4t8wf5ltxi1d" path="res://Assets/Pouring/cauldron_full.png" id="10_6xv0r"]
+[ext_resource type="Script" uid="uid://crk0oy7664a7y" path="res://Minigames/Scripts/cauldron.gd" id="11_6xv0r"]
 [ext_resource type="Texture2D" uid="uid://dnje0n5bhis3a" path="res://Assets/Pouring/cauldron_half.png" id="11_itdui"]
 [ext_resource type="Texture2D" uid="uid://6ilarlyq5fhs" path="res://Assets/Pouring/cauldron_third.png" id="12_og3gg"]
 
@@ -50,6 +51,44 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6tst"]
 size = Vector2(300, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6h3m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_o6tst")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_6xv0r")
+}],
+"loop": false,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_itdui")
+}],
+"loop": false,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_og3gg")
+}],
+"loop": false,
+"name": &"third",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlcjv"]
+size = Vector2(332, 215)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ey76v"]
 animations = [{
@@ -95,44 +134,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_r6h3m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_o6tst")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_6xv0r")
-}],
-"loop": false,
-"name": &"full",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_itdui")
-}],
-"loop": false,
-"name": &"half",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_og3gg")
-}],
-"loop": false,
-"name": &"third",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlcjv"]
-size = Vector2(332, 215)
-
 [node name="Pouring" type="Node2D" unique_id=938641310]
 script = ExtResource("1_yso07")
 
@@ -149,6 +150,18 @@ position = Vector2(-4, -5)
 position = Vector2(4, -96)
 shape = SubResource("RectangleShape2D_o6tst")
 
+[node name="Cauldron" type="AnimatedSprite2D" parent="." unique_id=114456286]
+position = Vector2(889, 353)
+sprite_frames = SubResource("SpriteFrames_r6h3m")
+animation = &"full"
+script = ExtResource("11_6xv0r")
+
+[node name="Area2D" type="Area2D" parent="Cauldron" unique_id=943501123]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Area2D" unique_id=1529904777]
+position = Vector2(7, -105.5)
+shape = SubResource("RectangleShape2D_nlcjv")
+
 [node name="Spoon" type="AnimatedSprite2D" parent="." unique_id=440654761]
 position = Vector2(152, 220)
 sprite_frames = SubResource("SpriteFrames_ey76v")
@@ -156,14 +169,3 @@ sprite_frames = SubResource("SpriteFrames_ey76v")
 [node name="Ladle" type="AnimatedSprite2D" parent="." unique_id=19165068]
 sprite_frames = SubResource("SpriteFrames_o6tst")
 animation = &"water"
-
-[node name="Cauldron" type="AnimatedSprite2D" parent="." unique_id=114456286]
-position = Vector2(889, 353)
-sprite_frames = SubResource("SpriteFrames_r6h3m")
-animation = &"full"
-
-[node name="Area2D" type="Area2D" parent="Cauldron" unique_id=943501123]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/Area2D" unique_id=1529904777]
-position = Vector2(7, -105.5)
-shape = SubResource("RectangleShape2D_nlcjv")

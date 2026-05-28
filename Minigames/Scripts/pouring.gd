@@ -7,25 +7,29 @@ extends Node2D
 @onready var cauldron : AnimatedSprite2D = $Cauldron
 @onready var cauldron_area : Area2D = $Cauldron/Area2D
 var pourer: AnimatedSprite2D
+var pourer_full = false
 var pour_weight = 1
 var bucket_treshold = 0
+var cauldron_treshold = 0
 var using_ladle = false
 var in_bucket = false
 var in_cauldron = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	enter(false)
+	enter(true)
 	_connect_signals()
 
 func enter(is_ladle):
 	using_ladle = is_ladle
 	if(is_ladle):
 		pourer = ladle
+		pourer.play("default")
 		spoon.visible = false
 		pour_weight = 3
 	else:
 		pourer = self.spoon
+		pourer.play("default")
 		ladle.visible = false
 		pour_weight = 1
 	
@@ -39,13 +43,23 @@ func _handle_input():
 		if in_bucket:
 			if bucket.get_water_level() != 0: 
 				pourer.play("water")
-				bucket_treshold += pour_weight
+				if !pourer_full: 
+					bucket_treshold += pour_weight
+					pourer_full = true
 				if bucket_treshold >= 3: 
 					bucket.adjust_water_level()
 					bucket_treshold = 0
 		elif in_cauldron:
 			pourer.play("default")
-		else: pourer.play("default")
+			if pourer_full: 
+				cauldron_treshold += pour_weight
+				pourer_full = false
+			if cauldron_treshold >= 3: 
+				cauldron.adjust_water_level()
+				cauldron_treshold = 0
+		else:
+			pourer.play("default")
+			pourer_full = false
 
 func _set_spoon_pos():
 	if ladle:
