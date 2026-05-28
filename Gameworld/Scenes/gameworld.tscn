@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bp4ga5dtxn5pp" path="res://Enemies/Scenes/slime.tscn" id="5_r0ysc"]
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
-[ext_resource type="PackedScene" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
-[ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_ratt4"]
+[ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/serve_station.tscn" id="9_ratt4"]
+[ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
+[ext_resource type="PackedScene" uid="uid://blv2uqmiofb4g" path="res://Gameworld/Scenes/berries.tscn" id="11_edv4u"]
+[ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -96,3 +99,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5144477, 0.05000019, 0.480
 
 [node name="serve_station" parent="." unique_id=801594181 instance=ExtResource("9_ratt4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.451326, 0.049999952, -0.547446)
+
+[node name="moss" parent="." unique_id=1944833147 instance=ExtResource("10_cw2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4506238, 0.05000022, 7.590488)
+
+[node name="1l-oil" parent="." unique_id=1505580988 instance=ExtResource("12_edv4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2525184, 0.049999952, 7.6272945)
+
+[node name="berries" parent="." unique_id=1877346905 instance=ExtResource("11_edv4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9113824, 0.07259931, 7.4276705)
