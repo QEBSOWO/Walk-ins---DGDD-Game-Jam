@@ -5,7 +5,7 @@ var panel_container_array: Array[PanelContainer]
 
 var player: Player
 var weapon_array: Array[Weapon]
-var weapon_collected_array: Array[bool] = [false, true] # Array for which weapons that are in inventory
+var weapon_collected_array: Array[bool] = [true, true] # Array for which weapons that are in inventory
 
 func _ready() -> void:
 	player = owner as Player

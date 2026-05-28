@@ -63,3 +63,7 @@ func look_at_cursor() -> void:
 	var cursor_pos_on_plane = target_plane_mouse.intersects_ray(from, to)
 	
 	pivot.look_at(-cursor_pos_on_plane, Vector3.UP, 0)
+
+
+func is_active_weapon_armor_piercing() -> bool:
+	return active_weapon.is_armor_piercing

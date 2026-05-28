@@ -168,6 +168,7 @@ freeze = true
 [node name="hammer" parent="Pivot/WeaponHolder" unique_id=372298452 instance=ExtResource("5_dw6it")]
 visible = false
 freeze = true
+is_armor_piercing = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=578957644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

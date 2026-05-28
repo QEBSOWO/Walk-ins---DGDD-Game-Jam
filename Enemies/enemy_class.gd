@@ -10,16 +10,19 @@ var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
 var player: Player
 
-signal player_detected
+var is_player_detected: bool = false
 
 # Grappling/Attack related variables
 @onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
 @export var grapple_windup: float = 1.0
 @export var grapple_escape_force: float = 10.0
-@export var knockback_duration: float = 0.1
+@export var knockback_duration: float = 0.2
 @export var stagger_duration: float = 0.5
 var is_player_in_attack_range: bool = false
+
+# Damage handling
 var is_attacked: bool = false
+var can_be_damaged: bool = true
 
 signal stagger
 
@@ -74,7 +77,22 @@ func release_grappled_player():
 	velocity = (position-player.position).normalized() * grapple_escape_force
 
 
-func take_damage(dmg: int):
+func take_damage(dmg: int = 1):
+	print("Take damage")
+	if is_armored:
+		if player.is_active_weapon_armor_piercing():
+			lose_hp(dmg)
+		else:
+			is_armored = false
+	else:
+		lose_hp(dmg)
+	
+	is_attacked = true
+	can_be_damaged = false
+	velocity = (position-player.position).normalized() * 2 * grapple_escape_force
+
+
+func lose_hp(dmg: int = 1):
 	current_hp -= dmg
 
 
