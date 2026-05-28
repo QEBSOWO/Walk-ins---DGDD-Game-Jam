@@ -4,11 +4,14 @@ extends Node2D
 @onready var ladle : AnimatedSprite2D = $Ladle
 @onready var bucket : AnimatedSprite2D = $Bucket
 @onready var bucket_area : Area2D = $Bucket/Area2D
+@onready var cauldron : AnimatedSprite2D = $Cauldron
+@onready var cauldron_area : Area2D = $Cauldron/Area2D
 var pourer: AnimatedSprite2D
 var pour_weight = 1
 var bucket_treshold = 0
 var using_ladle = false
 var in_bucket = false
+var in_cauldron = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,12 +36,15 @@ func _process(delta):
 
 func _handle_input():
 	if Input.is_action_just_pressed("cut"):
-		if in_bucket and bucket.get_water_level() != 0: 
-			pourer.play("water")
-			bucket_treshold += pour_weight
-			if bucket_treshold >= 3: 
-				bucket.adjust_water_level()
-				bucket_treshold = 0
+		if in_bucket:
+			if bucket.get_water_level() != 0: 
+				pourer.play("water")
+				bucket_treshold += pour_weight
+				if bucket_treshold >= 3: 
+					bucket.adjust_water_level()
+					bucket_treshold = 0
+		elif in_cauldron:
+			pourer.play("default")
 		else: pourer.play("default")
 
 func _set_spoon_pos():
@@ -50,9 +56,17 @@ func _set_spoon_pos():
 func _connect_signals():
 	bucket_area.mouse_entered.connect(_on_bucket_area_mouse_entered)
 	bucket_area.mouse_exited.connect(_on_bucket_area_mouse_exited)
+	cauldron_area.mouse_entered.connect(_on_cauldron_area_mouse_entered)
+	cauldron_area.mouse_exited.connect(_on_cauldron_area_mouse_exited)
 
 func _on_bucket_area_mouse_entered():
 	in_bucket = true
 
 func _on_bucket_area_mouse_exited():
 	in_bucket = false
+
+func _on_cauldron_area_mouse_entered():
+	in_cauldron = true
+
+func _on_cauldron_area_mouse_exited():
+	in_cauldron = false
