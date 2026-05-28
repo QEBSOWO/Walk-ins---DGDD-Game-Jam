@@ -9,6 +9,9 @@ func physics_update(_delta: float) -> void:
 	player.look_at_cursor()
 	player.handle_movement(aiming_speed)
 	
+	if player.is_grappled:
+		finished.emit(GRAPPLED)
+	
 	if !player.is_aiming:
 		if player.input_dir.x != 0 or player.input_dir.y != 0:
 			finished.emit(MOVING)
