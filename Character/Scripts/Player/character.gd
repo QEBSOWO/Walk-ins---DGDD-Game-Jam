@@ -27,8 +27,6 @@ func handle_movement(move_speed: float = self.speed):
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 	
 	move_and_slide()
-	#print(direction)
 
-func handle_rotation() -> void:
-	pivot.look_at(global_position - Vector3(input_dir.x, 0, input_dir.y))
-	print(input_dir)
+func handle_rotation(dir_vector: Vector3) -> void:
+	pivot.look_at(global_position - dir_vector)
