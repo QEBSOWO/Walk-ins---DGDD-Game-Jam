@@ -2,6 +2,7 @@ extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	player.is_aiming = false
+	player.can_attack = false
 	player.anim_player.play("RESET")
 	player.velocity.x = 0.0
 	player.velocity.z = 0.0
