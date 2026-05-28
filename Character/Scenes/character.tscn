@@ -159,7 +159,7 @@ shape = SubResource("CapsuleShape3D_53kqe")
 [node name="Pivot" type="Node3D" parent="." unique_id=1730721635]
 
 [node name="WeaponHolder" type="Node3D" parent="Pivot" unique_id=158003473]
-transform = Transform3D(-3.0908616e-08, 3.0908605e-08, 0.9999997, 0.7071067, 0.7071065, 0, -0.7071067, 0.7071065, -4.3711374e-08, -0.6093037, 0.97186095, 0)
+transform = Transform3D(-3.0908616e-08, 3.0908605e-08, 0.9999997, 0.7071067, 0.7071064, 0, -0.7071067, 0.7071064, -4.3711374e-08, -0.6093037, 0.97186095, 0)
 
 [node name="sword" parent="Pivot/WeaponHolder" unique_id=1845533604 instance=ExtResource("4_r3i75")]
 transform = Transform3D(0.96909416, 0.08781597, 0.23053595, -0.07002795, 0.99398136, -0.084256664, -0.23654729, 0.06550801, 0.969411, 0.040880322, -0.19469398, -0.0952048)
@@ -179,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.3)
 mesh = SubResource("BoxMesh_dw6it")
 
 [node name="AttackZone" type="Area3D" parent="Pivot" unique_id=858559028]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.59849536)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.78496194)
 collision_layer = 2
 collision_mask = 2
 monitorable = false

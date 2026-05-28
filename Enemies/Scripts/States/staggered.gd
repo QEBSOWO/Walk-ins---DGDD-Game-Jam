@@ -1,6 +1,8 @@
 extends EnemyState
 
 func enter(previous_state_path: String, data := {}) -> void:
+	enemy.velocity.x = 0
+	enemy.velocity.z = 0
 	enemy.can_be_damaged = true
 	print("Enemy Staggered")
 
