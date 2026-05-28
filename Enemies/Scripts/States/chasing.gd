@@ -10,4 +10,6 @@ func physics_update(_delta: float) -> void:
 	if enemy.is_attacked:
 		finished.emit(KNOCKEDBACK)
 	elif enemy.is_player_in_attack_range:
-		finished.emit(GRAPPLING)
+		await get_tree().create_timer(0.3).timeout
+		if enemy.is_player_in_attack_range:
+			finished.emit(GRAPPLING)
