@@ -1,3 +1,118 @@
 [gd_scene format=3 uid="uid://ctopwfw7weu8c"]
 
+[ext_resource type="Script" uid="uid://che26e06wxt4x" path="res://Minigames/Scripts/pouring.gd" id="1_yso07"]
+[ext_resource type="Texture2D" uid="uid://wr6y8jd7il0t" path="res://Assets/Pouring/spoon.png" id="2_7658a"]
+[ext_resource type="Texture2D" uid="uid://bg5aeq57gjaf0" path="res://Assets/Pouring/spoon_water.png" id="3_hub6f"]
+[ext_resource type="Texture2D" uid="uid://c8480s3q6weh6" path="res://Assets/Pouring/Bucket.png" id="4_7jg6c"]
+[ext_resource type="Texture2D" uid="uid://cg1rcgpxvkchh" path="res://Assets/Pouring/Bucket_full.png" id="5_g7j75"]
+[ext_resource type="Script" uid="uid://dcw68tsh5v86b" path="res://Minigames/Scripts/bucket.gd" id="6_g7j75"]
+[ext_resource type="Texture2D" uid="uid://cmccya2svt8m5" path="res://Assets/Pouring/Bucket_half.png" id="6_ut27m"]
+[ext_resource type="Texture2D" uid="uid://7y7pyqwgyjsb" path="res://Assets/Pouring/Bucket_third.png" id="7_h2c7g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5726d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7jg6c")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_g7j75")
+}],
+"loop": false,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ut27m")
+}],
+"loop": false,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_h2c7g")
+}],
+"loop": false,
+"name": &"third",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6tst"]
+size = Vector2(300, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ey76v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7658a")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hub6f")
+}],
+"loop": false,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7jg6c"]
+load_path = "res://.godot/imported/ladle.png-004b53d91c6c6325b8e16954538389c6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g7j75"]
+load_path = "res://.godot/imported/ladle_water.png-f31b4abb708562ac8ebf108ae12a8fc8.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6tst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7jg6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_g7j75")
+}],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
+
 [node name="Pouring" type="Node2D" unique_id=938641310]
+script = ExtResource("1_yso07")
+
+[node name="Bucket" type="AnimatedSprite2D" parent="." unique_id=1741061983]
+position = Vector2(480, 309)
+sprite_frames = SubResource("SpriteFrames_5726d")
+animation = &"third"
+script = ExtResource("6_g7j75")
+
+[node name="Area2D" type="Area2D" parent="Bucket" unique_id=910099136]
+position = Vector2(-4, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket/Area2D" unique_id=1540527368]
+position = Vector2(4, -96)
+shape = SubResource("RectangleShape2D_o6tst")
+
+[node name="Spoon" type="AnimatedSprite2D" parent="." unique_id=440654761]
+position = Vector2(152, 220)
+sprite_frames = SubResource("SpriteFrames_ey76v")
+
+[node name="Ladle" type="AnimatedSprite2D" parent="." unique_id=19165068]
+sprite_frames = SubResource("SpriteFrames_o6tst")
+animation = &"water"
+
+[node name="Cauldron" type="AnimatedSprite2D" parent="." unique_id=114456286]

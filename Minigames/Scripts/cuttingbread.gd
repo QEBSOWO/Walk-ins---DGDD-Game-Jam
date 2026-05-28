@@ -35,8 +35,8 @@ func _cut_bread(sword : bool):
 		knife.play("cutline")
 		var mouse_x = get_global_mouse_position().x
 		print(get_global_mouse_position())
-		if (mouse_x < knife_positions[current_sprite] + 10
-		and mouse_x > knife_positions[current_sprite] - 10):
+		if (mouse_x < knife_positions[current_sprite] + 15
+		and mouse_x > knife_positions[current_sprite] - 15):
 			if(sword):
 				_change_current_sprite()
 			else:
