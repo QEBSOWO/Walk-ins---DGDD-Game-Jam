@@ -6,6 +6,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	enemy.velocity.x = 0
 	enemy.velocity.z = 0
 	enemy.can_be_damaged = true
+	enemy.can_grapple = true
 	print("Enemy Staggered")
 	
 	await get_tree().create_timer(enemy.stagger_duration).timeout

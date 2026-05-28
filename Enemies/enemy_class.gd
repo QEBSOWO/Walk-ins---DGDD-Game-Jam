@@ -23,6 +23,7 @@ var is_player_in_attack_range: bool = false
 # Damage handling
 var is_attacked: bool = false
 var can_be_damaged: bool = true
+var can_grapple: bool = true
 
 signal stagger
 
