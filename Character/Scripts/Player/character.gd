@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody3D
 
 @onready var pivot = $Pivot
+@onready var weapon_holder = $Pivot/WeaponHolder
+@onready var anim_player = $AnimationPlayer
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
@@ -10,6 +12,11 @@ var active_weapon: Weapon
 var input_dir: Vector2
 var camera: Camera3D
 
+# Attacking related variables
+@onready var attack_zone: Area3D = $Pivot/AttackZone
+var is_attacking: bool = false
+var can_attack: bool = true
+
 func _ready() -> void:
 	current_hp = max_hp
 	camera = owner.get_node("Node3D").get_node("Camera3D")
@@ -17,10 +24,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if Input.is_action_pressed("aim"):
+	if Input.is_action_pressed("aim") && can_attack:
 		is_aiming = true
 	elif Input.is_action_just_released("aim"):
 		is_aiming = false
+	
+	if Input.is_action_pressed("attack") && can_attack && is_aiming:
+		can_attack = false
+		is_attacking = true
 
 
 func take_damage(dmg: int):
@@ -52,4 +63,7 @@ func look_at_cursor() -> void:
 	var cursor_pos_on_plane = target_plane_mouse.intersects_ray(from, to)
 	
 	pivot.look_at(-cursor_pos_on_plane, Vector3.UP, 0)
-	
+
+
+func is_active_weapon_armor_piercing() -> bool:
+	return active_weapon.is_armor_piercing
