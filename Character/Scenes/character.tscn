@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 [ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
+[ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53kqe"]
 
@@ -78,7 +79,7 @@ script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
 [node name="Aiming" type="Node" parent="StateMachine" unique_id=1746072991]
-script = ExtResource("3_e3ner")
+script = ExtResource("10_dw6it")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
 [node name="Grappled" type="Node" parent="StateMachine" unique_id=2076557621]
