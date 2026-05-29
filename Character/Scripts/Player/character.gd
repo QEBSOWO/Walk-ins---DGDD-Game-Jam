@@ -9,6 +9,7 @@ class_name Player extends CharacterBody3D
 var current_hp: int
 var is_grappled: bool = false
 var is_aiming: bool = false
+var can_move: bool = true
 var active_weapon: Weapon
 var input_dir: Vector2
 var camera: Camera3D
