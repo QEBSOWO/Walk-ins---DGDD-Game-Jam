@@ -60,7 +60,6 @@ func _change_current_sprite():
 
 func _on_timer_timeout():
 	cutting = false;
-	print(cutting)
 	
 func check_current_sprite():
 	current_sprite = bread_sprite.get_sprite()
