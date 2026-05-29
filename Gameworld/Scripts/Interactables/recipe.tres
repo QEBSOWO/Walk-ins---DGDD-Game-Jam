@@ -16,10 +16,11 @@ var all_recipes: Dictionary = {
 	\"sandwich\" = slime_sandwich
 	}
 	
-var salad = \"res://Gameworld/Scenes/sandwich.tscn\"
-var stew = \"res://Gameworld/Scenes/stew.tscn\"
-var sandwich = \"res://Gameworld/Scenes/salad.tscn\"
-var all_dishes = [salad, stew, sandwich]
+var all_dishes = {
+	\"salad\" = \"res://Gameworld/Scenes/salad.tscn\",
+	\"stew\" = \"res://Gameworld/Scenes/stew.tscn\",
+	\"sandwich\" = \"res://Gameworld/Scenes/sandwich.tscn\"
+}
 
 var items_on_table_string: Array[String] = []
 var built_recipe: String = \"\"
@@ -49,13 +50,12 @@ func check_recipe(items_on_table: Array[Ingredient]):
 	else:
 		built_recipe = \"\"
 		items_on_table_string.clear()
-	#print(built_recipe)
 	return is_valid_recipe
 	
 func get_cooked_dish():
 	for dish in all_recipes.keys():
 		if built_recipe == dish:
-			return all_dishes[all_dishes.find(built_recipe)]
+			return all_dishes[built_recipe]
 	
 "
 
