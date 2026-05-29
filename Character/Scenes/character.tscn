@@ -23,6 +23,7 @@
 [ext_resource type="Animation" uid="uid://bcmancoet6je6" path="res://Character/Assets/Character/Animations/Throw.res" id="11_wwmld"]
 [ext_resource type="Animation" uid="uid://b7r0dvm2ldxwm" path="res://Character/Assets/Character/Animations/Walking_C.res" id="12_4navr"]
 [ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
+[ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667
@@ -687,5 +688,5 @@ script = ExtResource("12_vxums")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
 [node name="Die" type="Node" parent="StateMachine" unique_id=1155444877]
-script = ExtResource("3_e3ner")
+script = ExtResource("24_oth3v")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"

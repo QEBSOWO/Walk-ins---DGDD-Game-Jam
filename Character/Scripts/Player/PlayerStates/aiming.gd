@@ -3,7 +3,7 @@ extends PlayerState
 var aiming_speed: float
 
 func enter(previous_state_path: String, data := {}) -> void:
-	print("Player Aiming")
+	#print("Player Aiming")
 	aiming_speed = player.speed / 2
 	player.anim_player.play("aim")
 	player.model_animator.play("Player/Walking_C")

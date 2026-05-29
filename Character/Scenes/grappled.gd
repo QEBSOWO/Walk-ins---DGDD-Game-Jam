@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	print("Grappled")
+	#print("Grappled")
 	player.is_aiming = false
 	player.can_move = false
 	player.anim_player.play("RESET")
