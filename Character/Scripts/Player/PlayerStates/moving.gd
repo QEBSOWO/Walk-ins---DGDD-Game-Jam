@@ -1,7 +1,6 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	print("Player Moving")
 	player.anim_player.play("RESET")
 	player.model_animator.play("Player/Running_A")
 

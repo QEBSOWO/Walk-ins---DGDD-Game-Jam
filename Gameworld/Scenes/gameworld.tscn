@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
+[ext_resource type="PackedScene" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
+[ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
+[ext_resource type="PackedScene" uid="uid://dam7672bm1nlh" path="res://Gameworld/Scenes/mug.tscn" id="11_cw2yi"]
 [ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
 [ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
 [ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
@@ -139,6 +143,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3729258, 0.049999714, -2.2
 
 [node name="pot" parent="." unique_id=553347901 instance=ExtResource("18_vom33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2646646, 0.049999952, -3.6459174)
+
+
+[node name="mug" parent="." unique_id=1380579326 instance=ExtResource("11_cw2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1397114, 0.049999833, 3.1273189)
 
 [node name="EnemySpawner" parent="." unique_id=1841068851 instance=ExtResource("19_jmapi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.231, 0, 3.591)

@@ -13,10 +13,12 @@ func _ready():
 func enter(using_hammer):
 	if(using_hammer): 
 		peeler = hammer
-		knife.visible = false
+		knife.hide()
+		hammer.show()
 	else:
 		peeler = knife
-		hammer.visible = false
+		knife.show()
+		hammer.hide()
 		
 
 func _process(delta):
@@ -28,10 +30,17 @@ func _handle_input():
 		var damage = peeler.use()
 		if damage > 0:
 			peelee.peel(damage)
-			
+		if peelee.health <= 0:
+			exit()
 
 func _update_peeler_position():
-	peeler.position = get_global_mouse_position()
+	peeler.global_position = get_global_mouse_position()
 
-func _connect_signals():
-	pass
+func exit():
+	var exit_timer = $ExitTimer
+	exit_timer.timeout.connect(
+		func():
+			peelee.reset()
+			self.hide()
+	)
+	exit_timer.start()

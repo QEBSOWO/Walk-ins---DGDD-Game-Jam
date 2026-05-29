@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dbw1kxqy7ygca"]
 
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="1_0lswl"]
-[ext_resource type="Script" uid="uid://biqaomhkkm17e" path="res://Gameworld/Scripts/Interactables/bread.gd" id="1_or3qo"]
+[ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_or3qo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c1t6"]
 resource_name = "colormap"
@@ -50,7 +50,7 @@ size = Vector3(0.9033203, 0.4645996, 0.6542969)
 collision_layer = 2
 script = ExtResource("1_or3qo")
 
-[node name="loaf-round" type="MeshInstance3D" parent="." unique_id=371747793]
+[node name="bread" type="MeshInstance3D" parent="." unique_id=371747793]
 mesh = SubResource("ArrayMesh_vu3nk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=532088278]
