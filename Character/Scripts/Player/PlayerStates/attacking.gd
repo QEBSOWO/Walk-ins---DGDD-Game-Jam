@@ -8,8 +8,6 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.can_attack = false
 	player.anim_player.animation_finished.connect(_on_animation_finished)
 	
-	if player.is_grappled:
-		finished.emit(GRAPPLED)
 
 
 func physics_update(_delta: float) -> void:
@@ -19,6 +17,9 @@ func physics_update(_delta: float) -> void:
 	for body in player.attack_zone.get_overlapping_bodies():
 		if body is Enemy && body.can_be_damaged:
 			body.take_damage()
+	
+	if player.is_grappled:
+		finished.emit(GRAPPLED)
 
 func _on_animation_finished(_anim_name: StringName) -> void:
 	player.can_attack = true
