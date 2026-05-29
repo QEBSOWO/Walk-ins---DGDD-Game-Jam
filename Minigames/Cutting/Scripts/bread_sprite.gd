@@ -49,3 +49,11 @@ func _on_cut_2_mouse_entered():
 
 func _on_cut_2_mouse_exited():
 	in_cut_2 = false
+	
+func get_sprite() -> int:
+	return current_sprite
+	
+func reset():
+	current_sprite = 1
+	play(sprite_arr[current_sprite])
+	health = 10

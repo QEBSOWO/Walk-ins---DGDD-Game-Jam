@@ -46,6 +46,7 @@ height = 0.35
 radius = 0.2
 
 [node name="mug" type="RigidBody3D" unique_id=1380579326]
+collision_layer = 2
 script = ExtResource("1_5bw2p")
 
 [node name="mug" type="MeshInstance3D" parent="." unique_id=1339176025]
