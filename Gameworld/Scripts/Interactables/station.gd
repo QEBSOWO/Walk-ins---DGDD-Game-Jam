@@ -16,12 +16,9 @@ func interact(player_area: Area3D):
 		items_on_table.push_front(held_item)
 		held_item.freeze_object()
 		held_item.global_position = self.global_position + Vector3(0, 1, 0)
-		#print(str(items_on_table.size()) + "/" + str(max_items))
-		#if items_on_table.any(func(item): return item is Berries): print(items_on_table)
 		can_cook = recipes.check_recipe(items_on_table)
 	else:
 		can_cook = recipes.check_recipe(items_on_table)
-		#print(can_cook)
 		if can_cook: print("Cooking minigame here")
 
 func release_item(player_area: Area3D):
