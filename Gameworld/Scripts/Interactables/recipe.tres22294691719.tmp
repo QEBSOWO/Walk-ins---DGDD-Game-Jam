@@ -8,7 +8,7 @@ script/source = "class_name Recipe extends Resource
 #var berries: Ingredient = preload(\"res://Gameworld/Scenes/berries.tscn\").instantiate()
 
 var slime_sandwich = [\"slime_ingredient\", \"bread\"]
-var dungeon_crab_stew = [\"crab\", \"water\", \"water2\", \"pot\", \"spice\"]
+var dungeon_crab_stew: Array[Ingredient] = []
 var moss_salad = [\"moss\", \"1l-oil\", \"Berries\"]
 var all_recipes: Dictionary = {
 	\"salad\" = moss_salad, 
@@ -27,17 +27,20 @@ var built_recipe: String = \"\"
 var is_valid_recipe: bool = false
 
 func check_recipe(items_on_table: Array[Ingredient]):
-	is_valid_recipe = false
-	var current_ingredients: Array = []
-	for item in items_on_table:
-		if item != null:
-			current_ingredients.append(str(item.name))
-	current_ingredients.sort()
-	
 	for recipe in all_recipes.values():
-		recipe.sort()
-		if recipe == current_ingredients:
-			is_valid_recipe = true
+		if items_on_table.size() != recipe.size():
+			#print(str(items_on_table.size()) + \"/\" + str(recipe.size()))
+			print(str(items_on_table.size()) + \" - \" + recipe)
+			is_valid_recipe = false
+			#print(is_valid_recipe)
+			continue
+		else:
+			for item in items_on_table:
+				if recipe.has(item.name):
+					is_valid_recipe = true
+				else:
+					is_valid_recipe = false
+					break
 	
 	if is_valid_recipe:
 		for ingredient in items_on_table:

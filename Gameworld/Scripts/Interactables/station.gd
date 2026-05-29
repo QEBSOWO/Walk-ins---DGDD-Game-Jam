@@ -4,6 +4,8 @@ class_name Station extends Interactable
 var can_cook: bool
 @export var max_items: int
 @export var recipes = Resource
+var cuttable = ["moss", "1l-oil", "Berries", "slime_ingredient", "bread"]
+var fireable = ["crab", "water", "water2", "pot", "spice"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,11 +14,19 @@ func _ready() -> void:
 
 func interact(player_area: Area3D):
 	var held_item = player_area.holding
-	if player_area.holding and items_on_table.size() < max_items:
-		items_on_table.push_front(held_item)
-		held_item.freeze_object()
-		held_item.global_position = self.global_position + Vector3(0, 1, 0)
-		can_cook = recipes.check_recipe(items_on_table)
+	if held_item != null:
+		if self is CuttingStation and str(held_item.name) in cuttable:
+			if player_area.holding and items_on_table.size() < max_items:
+				items_on_table.push_front(held_item)
+				held_item.freeze_object()
+				held_item.global_position = self.global_position + Vector3(0, 1, 0)
+				can_cook = recipes.check_recipe(items_on_table)
+		elif self is FireStation and str(held_item.name) in fireable:
+			if player_area.holding and items_on_table.size() < max_items:
+				items_on_table.push_front(held_item)
+				held_item.freeze_object()
+				held_item.global_position = self.global_position + Vector3(0, 1, 0)
+				can_cook = recipes.check_recipe(items_on_table)
 	else:
 		can_cook = recipes.check_recipe(items_on_table)
 		if can_cook: 
