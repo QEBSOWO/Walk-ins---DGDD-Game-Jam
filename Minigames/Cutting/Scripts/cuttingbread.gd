@@ -23,11 +23,13 @@ func enter(has_sword):
 	self.using_sword = has_sword
 	if using_sword:
 		cutter = sword
-		knife.visible = false
+		sword.show()
+		knife.hide()
 		damage = 10
 	else:
 		cutter = knife
-		sword.visible = false
+		sword.hide()
+		knife.show()
 		damage = 1
 	cutter.play("default")
 
@@ -38,7 +40,7 @@ func _process(delta):
 	_set_cutline_pos()
 
 func _set_cutline_pos():
-	cutter.position = get_global_mouse_position()
+	cutter.global_position = get_global_mouse_position()
 
 func _cut_bread(sword : bool):
 	if Input.is_action_just_pressed("cut") and not cutting:
@@ -47,6 +49,7 @@ func _cut_bread(sword : bool):
 		cutter.play("cutline")
 		var mouse_x = get_global_mouse_position().x
 		bread_sprite.change_current_sprite(damage)
+		check_current_sprite()
 
 func _change_current_sprite():
 	current_sprite = current_sprite + 1
@@ -57,3 +60,16 @@ func _change_current_sprite():
 func _on_timer_timeout():
 	cutting = false;
 	print(cutting)
+	
+func check_current_sprite():
+	current_sprite = bread_sprite.get_sprite()
+	if current_sprite >= 3: exit()
+
+func exit():
+	var exit_timer = $ExitTimer
+	exit_timer.timeout.connect(func(): 
+		self.hide()
+		bread_sprite.reset()
+		)
+	exit_timer.start()
+	

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://oytg8wlodm8l"]
 
-[ext_resource type="Script" uid="uid://clqmse1nucfcs" path="res://Minigames/Scripts/cuttingbread.gd" id="1_71m31"]
+[ext_resource type="Script" uid="uid://clqmse1nucfcs" path="res://Minigames/Cutting/Scripts/cuttingbread.gd" id="1_71m31"]
 [ext_resource type="Texture2D" uid="uid://rt2s5kdfj2q7" path="res://Assets/Cutting/bread_uncut.png" id="2_u1r8u"]
 [ext_resource type="Texture2D" uid="uid://6nkwb2rqvdyy" path="res://Assets/Cutting/bread_cut_1png.png" id="3_2kpmx"]
 [ext_resource type="Texture2D" uid="uid://2qm86ef21awm" path="res://Assets/Cutting/bread_cut_1.png" id="4_cpduv"]
@@ -153,3 +153,7 @@ one_shot = true
 [node name="Sword" type="AnimatedSprite2D" parent="." unique_id=1554563024]
 sprite_frames = SubResource("SpriteFrames_h7pwg")
 animation = &"cutline"
+
+[node name="ExitTimer" type="Timer" parent="." unique_id=2016886640]
+wait_time = 2.0
+one_shot = true

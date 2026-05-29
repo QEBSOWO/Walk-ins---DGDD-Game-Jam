@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dkv1q7xceuqgo"]
 
-[ext_resource type="Script" uid="uid://c2jbi07ffuk3g" path="res://Gameworld/Scripts/Interactables/crab.gd" id="1_pnm4e"]
+[ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_pnm4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ytxh"]
 resource_name = "Main"
@@ -123,7 +123,7 @@ size = Vector3(0.41210938, 0.25354004, 0.35375977)
 collision_layer = 2
 script = ExtResource("1_pnm4e")
 
-[node name="Crab" type="MeshInstance3D" parent="." unique_id=1184764983]
+[node name="crab" type="MeshInstance3D" parent="." unique_id=1184764983]
 transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09, 0, 0.1375638, -0.10029477)
 mesh = SubResource("ArrayMesh_q6476")
 skin = SubResource("Skin_bgrib")

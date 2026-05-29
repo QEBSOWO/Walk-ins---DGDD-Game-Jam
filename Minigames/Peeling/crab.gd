@@ -35,3 +35,7 @@ func _on_mouse_exited():
 func _connect_signals():
 	hitbox.mouse_entered.connect(_on_mouse_entered)
 	hitbox.mouse_exited.connect(_on_mouse_exited)
+
+func reset():
+	health = 10
+	play("default")

@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://ctopwfw7weu8c"]
 
-[ext_resource type="Script" uid="uid://che26e06wxt4x" path="res://Minigames/Scripts/pouring.gd" id="1_yso07"]
+[ext_resource type="Script" uid="uid://che26e06wxt4x" path="res://Minigames/Pouring/pouring.gd" id="1_yso07"]
 [ext_resource type="Texture2D" uid="uid://wr6y8jd7il0t" path="res://Assets/Pouring/spoon.png" id="2_7658a"]
 [ext_resource type="Texture2D" uid="uid://bg5aeq57gjaf0" path="res://Assets/Pouring/spoon_water.png" id="3_hub6f"]
 [ext_resource type="Texture2D" uid="uid://c8480s3q6weh6" path="res://Assets/Pouring/Bucket.png" id="4_7jg6c"]
 [ext_resource type="Texture2D" uid="uid://cg1rcgpxvkchh" path="res://Assets/Pouring/Bucket_full.png" id="5_g7j75"]
-[ext_resource type="Script" uid="uid://dcw68tsh5v86b" path="res://Minigames/Scripts/bucket.gd" id="6_g7j75"]
+[ext_resource type="Script" uid="uid://dcw68tsh5v86b" path="res://Minigames/Pouring/bucket.gd" id="6_g7j75"]
 [ext_resource type="Texture2D" uid="uid://cmccya2svt8m5" path="res://Assets/Pouring/Bucket_half.png" id="6_ut27m"]
 [ext_resource type="Texture2D" uid="uid://7y7pyqwgyjsb" path="res://Assets/Pouring/Bucket_third.png" id="7_h2c7g"]
 [ext_resource type="Texture2D" uid="uid://dndnrx3tht4vx" path="res://Assets/Pouring/cauldron.png" id="9_o6tst"]
 [ext_resource type="Texture2D" uid="uid://4t8wf5ltxi1d" path="res://Assets/Pouring/cauldron_full.png" id="10_6xv0r"]
-[ext_resource type="Script" uid="uid://crk0oy7664a7y" path="res://Minigames/Scripts/cauldron.gd" id="11_6xv0r"]
+[ext_resource type="Script" uid="uid://crk0oy7664a7y" path="res://Minigames/Pouring/cauldron.gd" id="11_6xv0r"]
 [ext_resource type="Texture2D" uid="uid://wnvwf31ic35l" path="res://Assets/Pouring/cauldron_half.png" id="11_itdui"]
 [ext_resource type="Texture2D" uid="uid://dm1hyhjsvrxw1" path="res://Assets/Pouring/cauldron_third.png" id="12_og3gg"]
 [ext_resource type="Texture2D" uid="uid://j6y7jk7v4oam" path="res://Assets/Pouring/Mug.png" id="14_og3gg"]
@@ -164,3 +164,7 @@ sprite_frames = SubResource("SpriteFrames_ey76v")
 
 [node name="Mug" type="AnimatedSprite2D" parent="." unique_id=19165068]
 sprite_frames = SubResource("SpriteFrames_o6tst")
+
+[node name="ExitTimer" type="Timer" parent="." unique_id=101623262]
+wait_time = 2.0
+one_shot = true

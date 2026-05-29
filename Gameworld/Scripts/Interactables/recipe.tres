@@ -8,7 +8,8 @@ script/source = "class_name Recipe extends Resource
 #var berries: Ingredient = preload(\"res://Gameworld/Scenes/berries.tscn\").instantiate()
 
 var slime_sandwich = [\"slime_ingredient\", \"bread\"]
-var dungeon_crab_stew = [\"crab\", \"water\", \"water2\", \"pot\", \"spice\"]
+var dungeon_crab_stew = [\"crab\", \"mug\", \"pot\", \"spice\", \"water\", \"water\"]
+var partial_stew = [\"crab\", \"pot\", \"spice\", \"water\", \"water\"]
 var moss_salad = [\"moss\", \"1l-oil\", \"Berries\"]
 var all_recipes: Dictionary = {
 	\"salad\" = moss_salad, 
@@ -25,37 +26,51 @@ var all_dishes = {
 var items_on_table_string: Array[String] = []
 var built_recipe: String = \"\"
 var is_valid_recipe: bool = false
+var partial_recipe: bool = false
 
 func check_recipe(items_on_table: Array[Ingredient]):
+	built_recipe = \"\"
 	is_valid_recipe = false
 	var current_ingredients: Array = []
 	for item in items_on_table:
 		if item != null:
-			current_ingredients.append(str(item.name))
+			current_ingredients.append(str(item.get_child(0).name))
 	current_ingredients.sort()
 	
 	for recipe in all_recipes.values():
 		recipe.sort()
 		if recipe == current_ingredients:
 			is_valid_recipe = true
+		elif recipe == dungeon_crab_stew and current_ingredients == partial_stew:
+			is_valid_recipe = true
+			partial_recipe = true
+			built_recipe = \"stew\"
+			break
 	
-	if is_valid_recipe:
-		for ingredient in items_on_table:
-			items_on_table_string.insert(items_on_table.find(ingredient), ingredient.name)
+	if is_valid_recipe and not partial_recipe:
+		for ingredient in current_ingredients:
+			items_on_table_string.insert(current_ingredients.find(ingredient), ingredient)
 		for recipe in all_recipes.values():
 			items_on_table_string.sort()
 			recipe.sort()
 			if items_on_table_string == recipe:
 				built_recipe = all_recipes.find_key(recipe)
-	else:
+	elif not partial_recipe:
 		built_recipe = \"\"
 		items_on_table_string.clear()
+	print(built_recipe)
 	return is_valid_recipe
 	
 func get_cooked_dish():
-	for dish in all_recipes.keys():
-		if built_recipe == dish:
-			return all_dishes[built_recipe]
+	var temp = built_recipe
+	reset()
+	return temp
+	
+func reset():
+	built_recipe = \"\"
+	is_valid_recipe = false
+	partial_recipe = false
+	
 	
 "
 

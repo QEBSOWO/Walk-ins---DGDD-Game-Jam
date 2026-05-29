@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkw3ckkan8cpp"]
 
-[ext_resource type="Script" uid="uid://cxs3ar2swyxiv" path="res://Gameworld/Scripts/Interactables/slime_ingredient.gd" id="1_baixh"]
+[ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_baixh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrx1x"]
 albedo_color = Color(0.29411766, 0.627451, 0.25882354, 1)
@@ -19,7 +19,7 @@ collision_layer = 2
 script = ExtResource("1_baixh")
 metadata/_custom_type_script = "uid://dsldj22pn1ety"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1381466147]
+[node name="slime_ingredient" type="MeshInstance3D" parent="." unique_id=1381466147]
 mesh = SubResource("SphereMesh_3xuv5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1004237594]
