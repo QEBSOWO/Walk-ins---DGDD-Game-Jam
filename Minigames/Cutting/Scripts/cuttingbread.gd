@@ -17,6 +17,7 @@ var cutter : AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_connect_signals()
 	bread_sprite.play("cutlines")
 	enter(false)
 
@@ -36,7 +37,6 @@ func enter(has_sword):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	timer.timeout.connect(_on_timer_timeout)
 	_cut_bread(using_sword)
 	_set_cutline_pos()
 
@@ -57,6 +57,9 @@ func _change_current_sprite():
 	if(current_sprite > 3):
 		current_sprite = 0
 	bread_sprite.play(sprite_arr[current_sprite])
+
+func _connect_signals():
+	timer.timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout():
 	cutting = false;
