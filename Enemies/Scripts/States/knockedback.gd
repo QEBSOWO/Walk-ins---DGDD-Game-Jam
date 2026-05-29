@@ -20,4 +20,4 @@ func exit() -> void:
 
 
 func _set_knockback_velocity():
-	enemy.velocity = (enemy.position-Vector3(enemy.player.position.x, 0, enemy.player.position.z)).normalized() * enemy.grapple_escape_force
+	enemy.velocity = (enemy.global_position-Vector3(enemy.player.global_position.x, 0, enemy.player.global_position.z)).normalized() * enemy.grapple_escape_force

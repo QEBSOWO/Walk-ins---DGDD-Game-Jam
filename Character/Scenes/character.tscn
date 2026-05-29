@@ -28,6 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://ctopwfw7weu8c" path="res://Minigames/Pouring/pouring.tscn" id="19_inqwm"]
 [ext_resource type="PackedScene" uid="uid://b8g4n6yuvgpbl" path="res://Minigames/Peeling/peeling.tscn" id="20_inqwm"]
 [ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
+[ext_resource type="PackedScene" uid="uid://plg8islfp68x" path="res://Character/Scenes/health_bar.tscn" id="18_oxori"]
+[ext_resource type="PackedScene" uid="uid://cg8ladjyhwu8q" path="res://Character/Scenes/recipe_display.tscn" id="19_3duy4"]
+[ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667
@@ -684,6 +687,12 @@ scale = Vector2(0.25, 0.25)
 visible = false
 position = Vector2(850, 25)
 scale = Vector2(0.25, 0.25)
+[node name="HealthBar" parent="PlayerHUD" unique_id=1816094719 instance=ExtResource("18_oxori")]
+
+[node name="RecipeDisplay" parent="PlayerHUD" unique_id=313717743 instance=ExtResource("19_3duy4")]
+offset_left = 5.0
+offset_right = 155.0
+offset_bottom = 150.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=799247560 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8bgmc")

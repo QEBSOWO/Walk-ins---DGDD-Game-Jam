@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	#print("Player Idle")
+	print("Player Idle")
 	player.velocity.x = 0.0
 	player.velocity.z = 0.0
 	player.anim_player.play("RESET")
@@ -9,7 +9,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 
 func physics_update(_delta: float) -> void:
 	# Handle State change
-	if (player.input_dir.x != 0 or player.input_dir.y != 0) && player.can_move:
+	if (player.input_dir.x != 0 or player.input_dir.y != 0) && !player.is_grappled:
 		finished.emit(MOVING)
 	elif player.is_grappled:
 		finished.emit(GRAPPLED)

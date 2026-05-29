@@ -8,8 +8,8 @@ func enter(previous_state_path: String, data := {}) -> void:
 	aiming_speed = player.speed/2
 	player.anim_player.play("attack")
 	has_hit = false
-	player.anim_player.animation_finished.connect(_on_animation_finished)
-
+	await get_tree().create_timer(player.attack_cooldown).timeout
+	_on_animation_finished()
 
 func physics_update(_delta: float) -> void:
 	player.handle_rotation()
@@ -23,7 +23,7 @@ func physics_update(_delta: float) -> void:
 		finished.emit(GRAPPLED)
 
 
-func _on_animation_finished(_anim_name: StringName) -> void:
+func _on_animation_finished() -> void:
 	player.is_attacking = false
 	
 	if (player.input_dir.x != 0 or player.input_dir.y != 0) && player.can_move:
@@ -33,8 +33,8 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	else:
 		finished.emit(IDLE)
 	
-	await get_tree().create_timer(player.attack_cooldown).timeout
 	player.can_attack = true
+
 
 func exit() -> void:
 	player.zone_sprite.modulate = player.zone_aiming

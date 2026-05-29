@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cg8ladjyhwu8q"]
+
+[ext_resource type="Texture2D" uid="uid://f6ui3ienx47l" path="res://Assets/UI/UI books & more.png" id="1_c1upp"]
+[ext_resource type="Theme" uid="uid://cn30lt12w1nx8" path="res://Assets/UI/recipe_theme.tres" id="1_i8jdt"]
+[ext_resource type="Script" uid="uid://cl88efyil74ha" path="res://Character/Scripts/Player/recipe_display.gd" id="2_u41ew"]
+[ext_resource type="PackedScene" uid="uid://bbss55ra5nvr0" path="res://Character/Scenes/ingredient_display.tscn" id="4_6c65t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inqwm"]
+atlas = ExtResource("1_c1upp")
+region = Rect2(561, 98, 46, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qs62i"]
+texture = SubResource("AtlasTexture_inqwm")
+
+[sub_resource type="Theme" id="Theme_wwmld"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_qs62i")
+
+[node name="RecipeSheet" type="HBoxContainer" unique_id=313717743]
+texture_filter = 1
+offset_left = 119.0
+offset_right = 269.0
+offset_bottom = 170.0
+theme = ExtResource("1_i8jdt")
+script = ExtResource("2_u41ew")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=426647858]
+custom_minimum_size = Vector2(150, 170)
+layout_mode = 2
+theme = SubResource("Theme_wwmld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=546640022]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1598341880]
+layout_mode = 2
+text = "Recipe Name"
+horizontal_alignment = 1
+
+[node name="Ingredient1" parent="PanelContainer/VBoxContainer" unique_id=764115370 instance=ExtResource("4_6c65t")]
+layout_mode = 2

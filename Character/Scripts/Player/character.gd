@@ -25,6 +25,8 @@ var camera: Camera3D
 var is_attacking: bool = false
 var can_attack: bool = true
 
+signal health_changed
+
 func _ready() -> void:
 	current_hp = max_hp
 	camera = owner.get_node("Node3D").get_node("Camera3D")
@@ -33,12 +35,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if Input.is_action_pressed("aim") && can_attack && active_weapon.visible:
-		zone_sprite.visible = true
-		is_aiming = true
-	elif Input.is_action_pressed("aim") && !active_weapon.visible:
-		zone_sprite.visible = false
-		is_aiming = false
+	if Input.is_action_just_pressed("aim"):
+		if can_attack && active_weapon.visible:
+			zone_sprite.visible = true
+			is_aiming = true
+		elif !active_weapon.visible:
+			zone_sprite.visible = false
+			is_aiming = false
 	elif Input.is_action_just_released("aim"):
 		zone_sprite.visible = false
 		is_aiming = false
@@ -51,6 +54,7 @@ func _process(_delta: float) -> void:
 
 func take_damage(dmg: int):
 	current_hp -= dmg
+	health_changed.emit()
 
 
 func handle_movement(move_speed: float = self.speed):
