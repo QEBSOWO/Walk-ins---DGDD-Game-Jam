@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://bbss55ra5nvr0"]
 
-[ext_resource type="Script" uid="uid://dehunj2m37uiu" path="res://Character/Scripts/ingredient_display.gd" id="1_aql2g"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6c65t"]
+[ext_resource type="Script" path="res://Character/Scripts/ingredient_display.gd" id="1_aql2g"]
 
 [node name="Ingredient1" type="HBoxContainer" unique_id=764115370]
 custom_minimum_size = Vector2(120, 0)
@@ -16,7 +14,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 30.0
-texture = SubResource("PlaceholderTexture2D_6c65t")
+expand_mode = 1
 
 [node name="NameLabel" type="Label" parent="." unique_id=1510020613]
 layout_mode = 2
