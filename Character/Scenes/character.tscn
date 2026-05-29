@@ -706,3 +706,12 @@ metadata/_custom_type_script = "uid://bruvjm404sc3l"
 [node name="Die" type="Node" parent="StateMachine" unique_id=1155444877]
 script = ExtResource("24_oth3v")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1277341525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.582708, 15.333119)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=230629627]
+transform = Transform3D(1, 0, 0, 0, 0.6135137, 0.78968406, 0, -0.78968406, 0.6135137, -0.259, 2, -4.719)
+projection = 1
+fov = 88.2
+size = 13.138161
