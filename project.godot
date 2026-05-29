@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Walk-ins"
-run/main_scene="uid://b8g4n6yuvgpbl"
+run/main_scene="uid://oytg8wlodm8l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
