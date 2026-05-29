@@ -1,11 +1,12 @@
 class_name Ingredient extends Interactable
 
-var is_spawner: bool = true
-var is_grabbed: bool = false
+var is_spawner: bool
+var is_grabbed: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	is_spawner = true
+	is_grabbed = false
 
 func interact(player_area: Area3D):
 	self.player_area = player_area

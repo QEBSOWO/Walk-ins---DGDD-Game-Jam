@@ -10,16 +10,26 @@ script/source = "class_name Recipe extends Resource
 var slime_sandwich: Array[Ingredient] = []
 var dungeon_crab_stew: Array[Ingredient] = []
 var moss_salad = [\"moss\", \"1l-oil\", \"Berries\"]
-				# BERRIES, MOSS, OIL
+var all_recipes: Dictionary = {
+	\"salad\" = moss_salad, 
+	\"stew\" = dungeon_crab_stew, 
+	\"sandwich\" = slime_sandwich
+	}
+	
+var salad = \"res://Gameworld/Scenes/sandwich.tscn\"
+var stew = \"res://Gameworld/Scenes/stew.tscn\"
+var sandwich = \"res://Gameworld/Scenes/salad.tscn\"
+var all_dishes = [salad, stew, sandwich]
 
-var all_recipes: Array[Array] = [slime_sandwich, dungeon_crab_stew, moss_salad]
-
+var items_on_table_string: Array[String] = []
+var built_recipe: String = \"\"
 var is_valid_recipe: bool = false
 
 func check_recipe(items_on_table: Array[Ingredient]):
-	for recipe in all_recipes:
+	for recipe in all_recipes.values():
 		for recipe_ingredient in recipe:
 			if items_on_table.size() != recipe.size():
+				is_valid_recipe = false
 				break
 			for item in items_on_table:
 				if recipe.has(item.name):
@@ -27,8 +37,26 @@ func check_recipe(items_on_table: Array[Ingredient]):
 				else:
 					is_valid_recipe = false
 					break
-					
+	
+	if is_valid_recipe:
+		for ingredient in items_on_table:
+			items_on_table_string.insert(items_on_table.find(ingredient), ingredient.name)
+		for recipe in all_recipes.values():
+			items_on_table_string.sort()
+			recipe.sort()
+			if items_on_table_string == recipe:
+				built_recipe = all_recipes.find_key(recipe)
+	else:
+		built_recipe = \"\"
+		items_on_table_string.clear()
+	#print(built_recipe)
 	return is_valid_recipe
+	
+func get_cooked_dish():
+	for dish in all_recipes.keys():
+		if built_recipe == dish:
+			return all_dishes[all_dishes.find(built_recipe)]
+	
 "
 
 [resource]

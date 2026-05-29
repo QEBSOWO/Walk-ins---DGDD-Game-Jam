@@ -19,7 +19,17 @@ func interact(player_area: Area3D):
 		can_cook = recipes.check_recipe(items_on_table)
 	else:
 		can_cook = recipes.check_recipe(items_on_table)
-		if can_cook: print("Cooking minigame here")
+		if can_cook: 
+			var cooked_dish: PackedScene
+			cooked_dish = load(recipes.get_cooked_dish())
+			var new_dish = cooked_dish.instantiate()
+			new_dish.global_position = self.global_position
+			new_dish.interact(player_area)
+			get_tree().root.get_child(0).add_child(new_dish)
+			can_cook = false
+			for item in items_on_table:
+				item.queue_free()
+			items_on_table.clear()
 
 func release_item(player_area: Area3D):
 	var recently_inserted = items_on_table.pop_front()

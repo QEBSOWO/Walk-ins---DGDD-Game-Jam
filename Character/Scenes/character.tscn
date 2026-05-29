@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 [ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
-[ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
-[ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667
@@ -163,11 +163,9 @@ transform = Transform3D(-3.0908616e-08, 3.0908602e-08, 0.9999997, 0.7071067, 0.7
 
 [node name="sword" parent="Pivot/WeaponHolder" unique_id=1845533604 instance=ExtResource("4_r3i75")]
 transform = Transform3D(0.96909416, 0.08781597, 0.23053595, -0.07002795, 0.99398136, -0.084256664, -0.23654729, 0.06550801, 0.969411, 0.040880322, -0.19469398, -0.0952048)
-freeze = true
 
 [node name="hammer" parent="Pivot/WeaponHolder" unique_id=372298452 instance=ExtResource("5_dw6it")]
 visible = false
-freeze = true
 is_armor_piercing = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=578957644]
