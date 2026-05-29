@@ -79,22 +79,18 @@ func release_grappled_player():
 	print("Player cannot be grappled")
 
 
-func take_damage(dmg: int = 1):
+func take_damage(dmg: int = 1, grapple_damage: bool = false):
 	print("Take damage")
 	if is_armored:
 		if player.is_active_weapon_armor_piercing():
-			lose_hp(dmg)
+			current_hp -= 1
 		else:
 			is_armored = false
 	else:
-		lose_hp(dmg)
+		current_hp -= 1
 	
 	is_attacked = true
 	can_be_damaged = false
-
-
-func lose_hp(dmg: int = 1):
-	current_hp -= dmg
 
 
 func _unhandled_input(event: InputEvent) -> void:

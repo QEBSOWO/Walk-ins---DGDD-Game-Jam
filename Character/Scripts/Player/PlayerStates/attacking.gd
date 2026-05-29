@@ -8,23 +8,23 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.can_attack = false
 	player.anim_player.animation_finished.connect(_on_animation_finished)
 	
-	if player.is_grappled:
-		finished.emit(GRAPPLED)
 
 
 func physics_update(_delta: float) -> void:
-	player.look_at_cursor()
+	player.handle_rotation()
 	player.handle_movement(aiming_speed)
-	# TODO: Handle damage
 	for body in player.attack_zone.get_overlapping_bodies():
 		if body is Enemy && body.can_be_damaged:
 			body.take_damage()
+	
+	if player.is_grappled:
+		finished.emit(GRAPPLED)
 
 func _on_animation_finished(_anim_name: StringName) -> void:
 	player.can_attack = true
 	player.is_attacking = false
 	
-	if player.input_dir.x != 0 or player.input_dir.y != 0:
+	if (player.input_dir.x != 0 or player.input_dir.y != 0) && player.can_move:
 		finished.emit(MOVING)
 	elif player.is_aiming:
 		finished.emit(AIMING)
