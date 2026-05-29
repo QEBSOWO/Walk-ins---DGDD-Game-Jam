@@ -8,7 +8,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.model_animator.play("Player/Walking_C")
 
 func physics_update(_delta: float) -> void:
-	player.look_at_cursor()
+	player.handle_rotation()
 	player.handle_movement(aiming_speed)
 	
 	if player.is_aiming:

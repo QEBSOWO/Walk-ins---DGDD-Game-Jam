@@ -13,7 +13,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 
 
 func physics_update(_delta: float) -> void:
-	player.look_at_cursor()
+	player.handle_rotation()
 	player.handle_movement(aiming_speed)
 	# TODO: Handle damage
 	for body in player.attack_zone.get_overlapping_bodies():
