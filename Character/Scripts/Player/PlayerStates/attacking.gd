@@ -1,11 +1,12 @@
 extends PlayerState
 
 var aiming_speed: float
-var has_hit: bool = false
+var has_hit: bool
 
 func enter(previous_state_path: String, data := {}) -> void:
 	aiming_speed = player.speed/2
 	player.anim_player.play("attack")
+	has_hit = false
 	player.anim_player.animation_finished.connect(_on_animation_finished)
 
 
@@ -31,8 +32,9 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	else:
 		finished.emit(IDLE)
 	
-	if has_hit:
-		player.inventory.decrease_equipped_durability()
-	
 	await get_tree().create_timer(player.attack_cooldown).timeout
 	player.can_attack = true
+
+func exit() -> void:
+	if has_hit:
+		player.inventory.decrease_equipped_durability()
