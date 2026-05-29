@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bbss55ra5nvr0"]
+
+[ext_resource type="Script" uid="uid://dehunj2m37uiu" path="res://Character/Scripts/ingredient_display.gd" id="1_aql2g"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6c65t"]
+
+[node name="Ingredient1" type="HBoxContainer" unique_id=764115370]
+custom_minimum_size = Vector2(120, 0)
+script = ExtResource("1_aql2g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1098050643]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1360212137]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+texture = SubResource("PlaceholderTexture2D_6c65t")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1510020613]
+layout_mode = 2
+text = "Ingredient"
