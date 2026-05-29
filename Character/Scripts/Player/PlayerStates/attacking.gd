@@ -1,13 +1,13 @@
 extends PlayerState
 
 var aiming_speed: float
+var has_hit: bool
 
 func enter(previous_state_path: String, data := {}) -> void:
 	aiming_speed = player.speed/2
 	player.anim_player.play("attack")
-	player.can_attack = false
+	has_hit = false
 	player.anim_player.animation_finished.connect(_on_animation_finished)
-	
 
 
 func physics_update(_delta: float) -> void:
@@ -16,12 +16,13 @@ func physics_update(_delta: float) -> void:
 	for body in player.attack_zone.get_overlapping_bodies():
 		if body is Enemy && body.can_be_damaged:
 			body.take_damage()
+			has_hit = true
 	
 	if player.is_grappled:
 		finished.emit(GRAPPLED)
 
+
 func _on_animation_finished(_anim_name: StringName) -> void:
-	player.can_attack = true
 	player.is_attacking = false
 	
 	if (player.input_dir.x != 0 or player.input_dir.y != 0) && player.can_move:
@@ -31,3 +32,9 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	else:
 		finished.emit(IDLE)
 	
+	await get_tree().create_timer(player.attack_cooldown).timeout
+	player.can_attack = true
+
+func exit() -> void:
+	if has_hit:
+		player.inventory.decrease_equipped_durability()
