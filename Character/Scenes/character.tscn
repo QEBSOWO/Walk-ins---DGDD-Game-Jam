@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cg8ladjyhwu8q" path="res://Character/Scenes/recipe_display.tscn" id="19_3duy4"]
 [ext_resource type="PackedScene" uid="uid://ctopwfw7weu8c" path="res://Minigames/Pouring/pouring.tscn" id="19_inqwm"]
 [ext_resource type="PackedScene" uid="uid://b8g4n6yuvgpbl" path="res://Minigames/Peeling/peeling.tscn" id="20_inqwm"]
+[ext_resource type="PackedScene" uid="uid://cx3ynl0k7goaj" path="res://MainMenu/Scenes/menu.tscn" id="23_wejwv"]
 [ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
@@ -668,6 +669,9 @@ scale = Vector2(0.25, 0.25)
 offset_left = 5.0
 offset_right = 155.0
 offset_bottom = 150.0
+
+[node name="Menu" parent="PlayerHUD" unique_id=23803340 instance=ExtResource("23_wejwv")]
+visible = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=799247560 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8bgmc")
