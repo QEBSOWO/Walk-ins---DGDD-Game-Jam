@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass
 
 func interact(player_area: Area3D):
+	self.player_area = player_area
 	# Grabbing an ingredient from a spawner
 	if is_spawner:
 		var ingredient_scene = load(scene_file_path)

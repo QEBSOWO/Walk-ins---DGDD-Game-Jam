@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bn5cmo1uoe3w"]
+
+[sub_resource type="GDScript" id="GDScript_n5tbw"]
+script/source = "class_name Recipe extends Resource
+
+#var moss: Ingredient = preload(\"res://Gameworld/Scenes/moss.tscn\").instantiate()
+#var oil: Ingredient = preload(\"res://Gameworld/Scenes/1l-oil.tscn\").instantiate()
+#var berries: Ingredient = preload(\"res://Gameworld/Scenes/berries.tscn\").instantiate()
+
+var slime_sandwich: Array[Ingredient] = []
+var dungeon_crab_stew: Array[Ingredient] = []
+var moss_salad = [\"moss\", \"1l-oil\", \"Berries\"]
+				# BERRIES, MOSS, OIL
+
+var all_recipes: Array[Array] = [slime_sandwich, dungeon_crab_stew, moss_salad]
+
+var is_valid_recipe: bool = false
+
+func check_recipe(items_on_table: Array[Ingredient]):
+	for recipe in all_recipes:
+		for recipe_ingredient in recipe:
+			if items_on_table.size() != recipe.size():
+				break
+			for item in items_on_table:
+				if recipe.has(item.name):
+					is_valid_recipe = true
+				else:
+					is_valid_recipe = false
+					break
+					
+	return is_valid_recipe
+"
+
+[resource]
+script = SubResource("GDScript_n5tbw")
