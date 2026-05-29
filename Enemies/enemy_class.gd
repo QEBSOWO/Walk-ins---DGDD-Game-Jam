@@ -9,7 +9,7 @@ var current_hp: int
 var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
 var player: Player
-
+@onready var anim_player : AnimationPlayer = $Enemy/AnimationPlayer
 
 # Grappling/Attack related variables
 @onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
@@ -59,11 +59,14 @@ func handle_movement():
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
 	
 	velocity = current_agent_position.direction_to(next_path_position) * speed
-	look_at(next_path_position)
+	look_at(Vector3(next_path_position.x, 0, next_path_position.z))
 	move_and_slide()
+	
+	anim_player.play("Walk")
 
 
 func grapple_player():
+	anim_player.play("Bite_Front")
 	player.is_grappled = true
 	print("Player grappled")
 	await get_tree().create_timer(grapple_windup).timeout
@@ -76,22 +79,18 @@ func release_grappled_player():
 	print("Player cannot be grappled")
 
 
-func take_damage(dmg: int = 1):
+func take_damage(dmg: int = 1, grapple_damage: bool = false):
 	print("Take damage")
 	if is_armored:
 		if player.is_active_weapon_armor_piercing():
-			lose_hp(dmg)
+			current_hp -= 1
 		else:
 			is_armored = false
 	else:
-		lose_hp(dmg)
+		current_hp -= 1
 	
 	is_attacked = true
 	can_be_damaged = false
-
-
-func lose_hp(dmg: int = 1):
-	current_hp -= dmg
 
 
 func _unhandled_input(event: InputEvent) -> void:
