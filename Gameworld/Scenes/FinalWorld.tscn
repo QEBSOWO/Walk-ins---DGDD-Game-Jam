@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://dsawqkomt422"]
+[gd_scene format=3 uid="uid://da275gjljs710"]
 
 [ext_resource type="PackedScene" uid="uid://d3l14muabbs2" path="res://Character/Scenes/character.tscn" id="1_5yf38"]
 [ext_resource type="MeshLibrary" uid="uid://dfn0jaoopchsk" path="res://Gameworld/Assets/MeshLibraries/FloorMeshLibrary.meshlib" id="2_7k8i1"]
 [ext_resource type="MeshLibrary" uid="uid://ypskavi3u15s" path="res://Gameworld/Assets/MeshLibraries/DecorationsMeshLibrary.meshlib" id="3_eh2ty"]
 [ext_resource type="MeshLibrary" uid="uid://ciy7t63q237dj" path="res://Gameworld/Assets/MeshLibraries/UpdatedWallsMeshLibrary.meshlib" id="4_kx58s"]
-[ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="5_eo0wl"]
+[ext_resource type="PackedScene" path="res://Enemies/Scenes/dungeon_crab.tscn" id="5_eo0wl"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_wik8m"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_2taah"]
 [ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_uwp47"]
@@ -85,15 +85,18 @@ data = {
 
 [node name="serve_station" parent="ServeStations" unique_id=801594181 instance=ExtResource("9_uwp47")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -3.5)
-freeze = true
+collision_layer = 1
+script = null
 
 [node name="serve_station2" parent="ServeStations" unique_id=304404381 instance=ExtResource("9_uwp47")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, 0, -3.5)
-freeze = true
+collision_layer = 1
+script = null
 
 [node name="serve_station3" parent="ServeStations" unique_id=185551771 instance=ExtResource("9_uwp47")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -3.5)
-freeze = true
+collision_layer = 1
+script = null
 
 [node name="FireStations" type="Node3D" parent="." unique_id=130265092]
 
