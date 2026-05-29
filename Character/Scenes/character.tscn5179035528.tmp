@@ -11,121 +11,6 @@
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 [ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
 [ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
-[ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
-
-[sub_resource type="Animation" id="Animation_dw6it"]
-length = 0.06666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/WeaponHolder:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.6093037, 0.97186095, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/WeaponHolder:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5707964, 0.7853982)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Pivot/AttackZone/CollisionShape3D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_vxums"]
-resource_name = "aim"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/WeaponHolder:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.6093037, 1.3740449, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/WeaponHolder:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.0471104, 1.5707964, -0.6580591)]
-}
-
-[sub_resource type="Animation" id="Animation_qwomk"]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/WeaponHolder:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.6093037, 1.3740449, 0), Vector3(0.09817782, 1.1507303, 0.99615407), Vector3(0.6805407, 0.74801207, 0.37442195)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/WeaponHolder:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.0471104, 1.5707964, -0.6580592), Vector3(-0.80379516, 1.0596706, 1.7296127), Vector3(-0.35577562, 2.128629, 2.150325)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Pivot/AttackZone/CollisionShape3D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.09807161, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0d6f"]
-_data = {
-&"RESET": SubResource("Animation_dw6it"),
-&"aim": SubResource("Animation_vxums"),
-&"attack": SubResource("Animation_qwomk")
-}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53kqe"]
 
@@ -138,19 +23,12 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_r3i75")
 size = Vector3(0.7, 0.2, 0.5)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_dw6it"]
-radius = 1.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_esjsu"]
 size = Vector3(2, 4, 2)
 
 [node name="Character" type="CharacterBody3D" unique_id=473502338]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_cbaar")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1494833879]
-libraries/ = SubResource("AnimationLibrary_i0d6f")
-speed_scale = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=720059377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -159,16 +37,11 @@ shape = SubResource("CapsuleShape3D_53kqe")
 [node name="Pivot" type="Node3D" parent="." unique_id=1730721635]
 
 [node name="WeaponHolder" type="Node3D" parent="Pivot" unique_id=158003473]
-transform = Transform3D(-3.0908616e-08, 3.0908602e-08, 0.9999997, 0.7071067, 0.7071064, 0, -0.7071067, 0.7071064, -4.3711374e-08, -0.6093037, 0.97186095, 0)
+transform = Transform3D(-3.090862e-08, 3.090862e-08, 1, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -4.371139e-08, -0.7, 1, 0)
 
 [node name="sword" parent="Pivot/WeaponHolder" unique_id=1845533604 instance=ExtResource("4_r3i75")]
-transform = Transform3D(0.96909416, 0.08781597, 0.23053595, -0.07002795, 0.99398136, -0.084256664, -0.23654729, 0.06550801, 0.969411, 0.040880322, -0.19469398, -0.0952048)
-freeze = true
 
 [node name="hammer" parent="Pivot/WeaponHolder" unique_id=372298452 instance=ExtResource("5_dw6it")]
-visible = false
-freeze = true
-is_armor_piercing = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=578957644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -177,17 +50,6 @@ mesh = SubResource("CapsuleMesh_cbaar")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/MeshInstance3D" unique_id=1936373471]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.3)
 mesh = SubResource("BoxMesh_dw6it")
-
-[node name="AttackZone" type="Area3D" parent="Pivot" unique_id=858559028]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.78496194)
-collision_layer = 2
-collision_mask = 2
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/AttackZone" unique_id=183987082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.7)
-shape = SubResource("SphereShape3D_dw6it")
-disabled = true
 
 [node name="InteractArea" type="Area3D" parent="." unique_id=498216232]
 collision_mask = 2
@@ -227,7 +89,7 @@ script = ExtResource("6_v4uwq")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
 [node name="Attacking" type="Node" parent="StateMachine" unique_id=148179914]
-script = ExtResource("12_vxums")
+script = ExtResource("3_e3ner")
 metadata/_custom_type_script = "uid://bruvjm404sc3l"
 
 [node name="Die" type="Node" parent="StateMachine" unique_id=1155444877]

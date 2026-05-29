@@ -26,13 +26,19 @@ Ensure that a NavigationAgent3D node is a child of an enemy")
 func _connect_signals():
 	enemy.get_node("PlayerDetection").body_entered.connect(_on_DetectionRange_entered)
 	enemy.get_node("AttackZone").body_entered.connect(_on_AttackRange_entered)
+	enemy.get_node("AttackZone").body_exited.connect(_on_AttackRange_exited)
 
 ## Essentially, when the player enteres the enemy's detection range,
 ## the enemy will start chasing after the player
 func _on_DetectionRange_entered(body: Node3D):
 	if body is Player:
-		enemy.player_detected.emit()
+		enemy.is_player_detected = true
 
 func _on_AttackRange_entered(body: Node3D):
 	if body is Player:
 		enemy.is_player_in_attack_range = true
+
+func _on_AttackRange_exited(body: Node3D):
+	if body is Player:
+		enemy.is_player_in_attack_range = false
+	

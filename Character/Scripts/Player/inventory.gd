@@ -12,7 +12,7 @@ func _ready() -> void:
 	assert(player != null, "Inventory not a child of Player. Player is missing or 
 Inventory needs to be connected")
 	
-	for weapon in player.get_node("WeaponHolder").get_children():
+	for weapon in player.get_node("Pivot").get_node("WeaponHolder").get_children():
 		weapon_array.append(weapon)
 		weapon.visible = false
 	
@@ -28,7 +28,13 @@ func equip_slot(index: int) -> void:
 	panel_container_array[index-1].get_node("InventoryOutline").visible = false
 	
 	if weapon_collected_array[index]:
+		player.can_attack = true
 		player.active_weapon.visible = true
+		weapon_array[index-1].visible = false
+	elif !weapon_collected_array[index]:
+		player.can_attack = false
+		player.active_weapon.visible = false
+		weapon_array[index-1].visible = false
 
 
 func _process(_delta: float) -> void:
