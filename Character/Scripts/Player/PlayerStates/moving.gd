@@ -2,7 +2,7 @@ extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	player.anim_player.play("RESET")
-	pass
+	player.model_animator.play("Player/Running_A")
 
 func physics_update(_delta: float) -> void:
 	player.handle_rotation()

@@ -4,6 +4,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.velocity.x = 0.0
 	player.velocity.z = 0.0
 	player.anim_player.play("RESET")
+	player.model_animator.play("Player/Idle_A")
 
 func physics_update(_delta: float) -> void:
 	# Handle State change
