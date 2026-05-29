@@ -1,3 +1,4 @@
+class_name Cutting
 extends Node2D
 
 var sprite_arr = ["base", "cutlines", "cut_1", "cut_2"]
@@ -16,7 +17,7 @@ var cutter : AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_change_current_sprite()
+	bread_sprite.play("cutlines")
 	enter(false)
 
 func enter(has_sword):
