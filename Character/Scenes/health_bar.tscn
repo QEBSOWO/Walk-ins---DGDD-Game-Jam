@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://plg8islfp68x"]
+
+[ext_resource type="Texture2D" uid="uid://b8v4c4vadbs3m" path="res://Assets/UI/UI.png" id="1_cf5be"]
+[ext_resource type="Script" uid="uid://dnswp0nhliiqo" path="res://Character/Scenes/health_bar.gd" id="2_b3fai"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cf5be"]
+load_path = "res://.godot/imported/UI.png-cb1bf9f2b76870b860a93eac299686b4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evn4m"]
+atlas = SubResource("CompressedTexture2D_cf5be")
+region = Rect2(769, 34, 46, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3fai"]
+atlas = ExtResource("1_cf5be")
+region = Rect2(866, 19, 44, 10)
+
+[node name="HealthBar" type="TextureProgressBar" unique_id=520676794]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -58.0
+offset_right = 56.0
+offset_bottom = -46.0
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture_under = SubResource("AtlasTexture_evn4m")
+texture_progress = SubResource("AtlasTexture_b3fai")
+texture_progress_offset = Vector2(1, 1)
+script = ExtResource("2_b3fai")

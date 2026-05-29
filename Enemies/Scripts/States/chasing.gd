@@ -15,4 +15,3 @@ func physics_update(_delta: float) -> void:
 			finished.emit(GRAPPLING)
 	elif !enemy.player.can_be_grappled:
 		finished.emit(PATROLLING)
-		pass
