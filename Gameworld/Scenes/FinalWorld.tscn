@@ -155,6 +155,7 @@ freeze = true
 [node name="EnemySpawner" parent="EnemySpawners" unique_id=1841068851 instance=ExtResource("19_etynj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0, 17)
 enemy = ExtResource("20_dnsdd")
+max_num_instances = 1
 
 [node name="PatrolPaths" type="Node3D" parent="." unique_id=1832281473]
 

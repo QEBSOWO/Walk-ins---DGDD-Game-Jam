@@ -63,6 +63,7 @@ func set_movement_target(movement_target: Vector3):
 
 func handle_movement():
 	if nav_agent.is_navigation_finished():
+		set_movement_target(select_random_waypoint())
 		return
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
