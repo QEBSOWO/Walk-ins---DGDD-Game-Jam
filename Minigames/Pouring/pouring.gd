@@ -6,6 +6,8 @@ extends Node2D
 @onready var bucket_area : Area2D = $Bucket/Area2D
 @onready var cauldron : AnimatedSprite2D = $Cauldron
 @onready var cauldron_area : Area2D = $Cauldron/Area2D
+@onready var water_mug_sfx = $water_mug
+@onready var water_spoon_sfx = $water_spoon
 var pourer: AnimatedSprite2D
 var pourer_full = false
 var pour_weight = 1
@@ -55,9 +57,14 @@ func _handle_input():
 					bucket_treshold = 0
 		elif in_cauldron:
 			pourer.play("default")
+			water_mug_sfx.play()
 			if pourer_full: 
 				cauldron_treshold += pour_weight
 				pourer_full = false
+			if pour_weight < 3:
+				water_mug_sfx.play()
+			else:
+				water_spoon_sfx.play()
 			if cauldron_treshold >= 3: 
 				cauldron.adjust_water_level()
 				cauldron_treshold = 0
