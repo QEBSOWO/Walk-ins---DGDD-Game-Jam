@@ -4,6 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://dfn0jaoopchsk" path="res://Gameworld/Assets/MeshLibraries/FloorMeshLibrary.meshlib" id="2_7k8i1"]
 [ext_resource type="MeshLibrary" uid="uid://ypskavi3u15s" path="res://Gameworld/Assets/MeshLibraries/DecorationsMeshLibrary.meshlib" id="3_eh2ty"]
 [ext_resource type="MeshLibrary" uid="uid://ciy7t63q237dj" path="res://Gameworld/Assets/MeshLibraries/UpdatedWallsMeshLibrary.meshlib" id="4_kx58s"]
+[ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="5_eo0wl"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_wik8m"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_2taah"]
 [ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_uwp47"]
@@ -153,8 +154,18 @@ freeze = true
 [node name="EnemySpawners" type="Node3D" parent="." unique_id=388451224]
 
 [node name="EnemySpawner" parent="EnemySpawners" unique_id=1841068851 instance=ExtResource("19_etynj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0, 17.5)
 enemy = ExtResource("20_dnsdd")
+max_num_instances = 1
+
+[node name="EnemySpawner2" parent="EnemySpawners" unique_id=1251207385 instance=ExtResource("19_etynj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 17.5)
+enemy = ExtResource("20_dnsdd")
+max_num_instances = 0
+
+[node name="EnemySpawner3" parent="EnemySpawners" unique_id=1432284551 instance=ExtResource("19_etynj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 14.5)
+enemy = ExtResource("5_eo0wl")
 max_num_instances = 1
 
 [node name="PatrolPaths" type="Node3D" parent="." unique_id=1832281473]
@@ -172,7 +183,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, 9)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 15)
 
 [node name="Point5" type="Marker3D" parent="PatrolPaths" unique_id=1209183928]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 19.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 18)
 
 [node name="Point6" type="Marker3D" parent="PatrolPaths" unique_id=448070329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16.5)
