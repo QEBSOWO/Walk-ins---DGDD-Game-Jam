@@ -144,3 +144,5 @@ freeze = true
 [node name="water" parent="IngredientSpawners" unique_id=1809958840 instance=ExtResource("16_u4jab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, 18)
 freeze = true
+
+[node name="EnemySpawners" type="Node3D" parent="." unique_id=388451224]
