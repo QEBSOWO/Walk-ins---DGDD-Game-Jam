@@ -8,11 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
-[ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
-[ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
-[ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
-[ext_resource type="PackedScene" uid="uid://blv2uqmiofb4g" path="res://Gameworld/Scenes/berries.tscn" id="11_edv4u"]
-[ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
+[ext_resource type="PackedScene" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
+[ext_resource type="PackedScene" uid="uid://be3yr2qtuqew5" path="res://Gameworld/Scenes/berries.tscn" id="11_edv4u"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
+[ext_resource type="PackedScene" uid="uid://dbw1kxqy7ygca" path="res://Gameworld/Scenes/bread.tscn" id="14_83nf5"]
+[ext_resource type="PackedScene" uid="uid://dkw3ckkan8cpp" path="res://Gameworld/Scenes/slime_ingredient.tscn" id="15_6jn8n"]
+[ext_resource type="PackedScene" uid="uid://dkv1q7xceuqgo" path="res://Gameworld/Scenes/crab.tscn" id="16_csh10"]
+[ext_resource type="PackedScene" uid="uid://b83vsc7gl1ka4" path="res://Gameworld/Scenes/water.tscn" id="17_jmapi"]
+[ext_resource type="PackedScene" uid="uid://b85bgggxmnqwo" path="res://Gameworld/Scenes/spice.tscn" id="18_jmapi"]
+[ext_resource type="PackedScene" uid="uid://vyi5d8i5tx8s" path="res://Gameworld/Scenes/pot.tscn" id="18_vom33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -107,10 +113,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5144477, 0.05000019, 0.480
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.451326, 0.049999952, -0.547446)
 
 [node name="moss" parent="." unique_id=1944833147 instance=ExtResource("10_cw2yi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4506238, 0.05000022, 7.590488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3767147, 0.05000022, 1.7603841)
 
 [node name="1l-oil" parent="." unique_id=1505580988 instance=ExtResource("12_edv4u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2525184, 0.049999952, 7.6272945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5002232, 0.049999952, 0.43601656)
 
 [node name="Berries" parent="." unique_id=1877346905 instance=ExtResource("11_edv4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3790796, 0.050000668, -1.2833605)
+
+[node name="bread" parent="." unique_id=903826411 instance=ExtResource("14_83nf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4127657, 0.05000019, -3.3437543)
+
+[node name="slime_ingredient" parent="." unique_id=925874444 instance=ExtResource("15_6jn8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0977142, 0.3000002, -3.3083177)
+
+[node name="crab" parent="." unique_id=277212434 instance=ExtResource("16_csh10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8435063, 0.054732054, -1.0872576)
+
+[node name="water" parent="." unique_id=1809958840 instance=ExtResource("17_jmapi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0127635, 0.05000019, -2.0462604)
+
+[node name="water2" parent="." unique_id=63496746 instance=ExtResource("17_jmapi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7572536, 0.049999952, -2.9838386)
+
+[node name="spice" parent="." unique_id=1494959242 instance=ExtResource("18_jmapi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3729258, 0.049999714, -2.2300289)
+
+[node name="pot" parent="." unique_id=553347901 instance=ExtResource("18_vom33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2646646, 0.049999952, -3.6459174)

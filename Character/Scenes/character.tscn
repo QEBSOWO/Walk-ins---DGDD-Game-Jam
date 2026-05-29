@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 [ext_resource type="Animation" uid="uid://ooeibk87e4tm" path="res://Character/Assets/Character/Animations/PickUp.res" id="8_3duy4"]
 [ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
 [ext_resource type="Animation" uid="uid://bt2xf7hrpsi5b" path="res://Character/Assets/Character/Animations/Running_A.res" id="9_inqwm"]
 [ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
 [ext_resource type="Animation" uid="uid://dfxiusvyu37xq" path="res://Character/Assets/Character/Animations/T-Pose.res" id="10_qs62i"]
