@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://c812dkgj28ylf" path="res://Character/Scripts/Player/PlayerStates/moving.gd" id="4_esjsu"]
 [ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="4_r3i75"]
 [ext_resource type="PackedScene" uid="uid://1v6a3fnl3ibm" path="res://Character/Scenes/Equipment/hammer.tscn" id="5_dw6it"]
-[ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
-[ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
+[ext_resource type="Script" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
 [ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
-[ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
-[ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667

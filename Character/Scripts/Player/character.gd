@@ -61,6 +61,7 @@ func look_at_cursor() -> void:
 	var from = camera.project_ray_origin(mouse_pos)
 	var to = from + camera.project_ray_normal(mouse_pos) * ray_length
 	var cursor_pos_on_plane = target_plane_mouse.intersects_ray(from, to)
+	print(to)
 	
 	pivot.look_at(-cursor_pos_on_plane, Vector3.UP, 0)
 
