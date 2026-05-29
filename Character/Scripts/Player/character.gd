@@ -3,6 +3,7 @@ class_name Player extends CharacterBody3D
 @onready var pivot = $Pivot
 @onready var weapon_holder = $Pivot/WeaponHolder
 @onready var anim_player = $AnimationPlayer
+@onready var model_animator = $Pivot/AnimationModel/AnimationPlayer
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
