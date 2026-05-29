@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://svrns2kkxa86"]
 
+[ext_resource type="Script" uid="uid://c1luice4pdej" path="res://Gameworld/Scripts/Interactables/serve_station.gd" id="1_sogsh"]
 [ext_resource type="Texture2D" uid="uid://bkyl6mc4f56nh" path="res://Gameworld/Assets/Textures/colormap3.png" id="1_xrx5m"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_sogsh"]
 
@@ -49,6 +50,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kadqi")
 
 [node name="serve_station" type="RigidBody3D" unique_id=801594181]
+collision_layer = 3
+freeze = true
+script = ExtResource("1_sogsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1976715127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

@@ -10,11 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
 [ext_resource type="PackedScene" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
 [ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
-[ext_resource type="PackedScene" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
-[ext_resource type="PackedScene" uid="uid://dam7672bm1nlh" path="res://Gameworld/Scenes/mug.tscn" id="11_cw2yi"]
-[ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
-[ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
 [ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
+[ext_resource type="PackedScene" uid="uid://dam7672bm1nlh" path="res://Gameworld/Scenes/mug.tscn" id="11_cw2yi"]
 [ext_resource type="PackedScene" uid="uid://be3yr2qtuqew5" path="res://Gameworld/Scenes/berries.tscn" id="11_edv4u"]
 [ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
 [ext_resource type="PackedScene" uid="uid://dbw1kxqy7ygca" path="res://Gameworld/Scenes/bread.tscn" id="14_83nf5"]
@@ -113,6 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5144477, 0.05000019, 0.480
 
 [node name="serve_station" parent="." unique_id=801594181 instance=ExtResource("10_v3fmh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.451326, 0.049999952, -0.547446)
+max_items = null
 
 [node name="moss" parent="." unique_id=1944833147 instance=ExtResource("10_cw2yi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3767147, 0.05000022, 1.7603841)
@@ -143,7 +141,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3729258, 0.049999714, -2.2
 
 [node name="pot" parent="." unique_id=553347901 instance=ExtResource("18_vom33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2646646, 0.049999952, -3.6459174)
-
 
 [node name="mug" parent="." unique_id=1380579326 instance=ExtResource("11_cw2yi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1397114, 0.049999833, 3.1273189)

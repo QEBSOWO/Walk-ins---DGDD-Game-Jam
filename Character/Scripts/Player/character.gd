@@ -31,6 +31,7 @@ func _ready() -> void:
 	current_hp = max_hp
 	camera = owner.get_node("Node3D").get_node("Camera3D")
 	zone_sprite.modulate = zone_aiming
+	
 
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
