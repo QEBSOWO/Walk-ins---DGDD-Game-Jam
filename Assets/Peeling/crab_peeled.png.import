@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wnvwf31ic35l"
-path="res://.godot/imported/cauldron_half.png-36b3a4d8e792270a223c2a1d7e89d169.ctex"
+uid="uid://b842d3d4g3o0"
+path="res://.godot/imported/crab_peeled.png-d8abe6493e62dcf381dd4ec681196bbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cauldron_half.png"
-dest_files=["res://.godot/imported/cauldron_half.png-36b3a4d8e792270a223c2a1d7e89d169.ctex"]
+source_file="res://Assets/Peeling/crab_peeled.png"
+dest_files=["res://.godot/imported/crab_peeled.png-d8abe6493e62dcf381dd4ec681196bbb.ctex"]
 
 [params]
 

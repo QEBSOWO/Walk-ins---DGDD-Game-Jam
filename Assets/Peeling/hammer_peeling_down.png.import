@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wnvwf31ic35l"
-path="res://.godot/imported/cauldron_half.png-429c6cd3e24317a8497c79f31d44a28e.ctex"
+uid="uid://c12xttk8r72qj"
+path="res://.godot/imported/hammer_peeling_down.png-5b7ce655a40c0eeb4c972f1cc0c7b14f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pouring/cauldron_half.png"
-dest_files=["res://.godot/imported/cauldron_half.png-429c6cd3e24317a8497c79f31d44a28e.ctex"]
+source_file="res://Assets/Peeling/hammer_peeling_down.png"
+dest_files=["res://.godot/imported/hammer_peeling_down.png-5b7ce655a40c0eeb4c972f1cc0c7b14f.ctex"]
 
 [params]
 

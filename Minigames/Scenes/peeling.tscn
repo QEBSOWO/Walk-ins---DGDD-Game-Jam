@@ -1,3 +1,60 @@
 [gd_scene format=3 uid="uid://b8g4n6yuvgpbl"]
 
+[ext_resource type="Texture2D" uid="uid://ck8lik144grds" path="res://Assets/Peeling/crab.png" id="1_tdfp7"]
+[ext_resource type="Texture2D" uid="uid://b842d3d4g3o0" path="res://Assets/Peeling/crab_peeled.png" id="2_3mn3u"]
+[ext_resource type="Texture2D" uid="uid://c3hapttx7m4rm" path="res://Assets/Peeling/hammer_minigame.png" id="3_3mn3u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50q1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tdfp7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3mn3u")
+}],
+"loop": true,
+"name": &"peeled",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdfp7"]
+size = Vector2(302, 258)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcy1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3mn3u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"peel",
+"speed": 5.0
+}]
+
 [node name="Peeling" type="Node2D" unique_id=2068586171]
+
+[node name="Crab" type="AnimatedSprite2D" parent="." unique_id=1709744464]
+position = Vector2(578, 331)
+sprite_frames = SubResource("SpriteFrames_50q1p")
+animation = &"peeled"
+
+[node name="Area2D" type="Area2D" parent="Crab" unique_id=652875124]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crab/Area2D" unique_id=2106698457]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_tdfp7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Crab" unique_id=1114641792]
+sprite_frames = SubResource("SpriteFrames_kcy1p")
+animation = &"peel"

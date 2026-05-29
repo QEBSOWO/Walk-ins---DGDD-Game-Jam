@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm1hyhjsvrxw1"
-path="res://.godot/imported/cauldron_third.png-215b9c758a779621e5c0f5aeeb8e2877.ctex"
+uid="uid://c3hapttx7m4rm"
+path="res://.godot/imported/hammer_minigame.png-1e8bb204324c5b5949f8e53165b7060b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cauldron_third.png"
-dest_files=["res://.godot/imported/cauldron_third.png-215b9c758a779621e5c0f5aeeb8e2877.ctex"]
+source_file="res://Assets/Peeling/hammer_minigame.png"
+dest_files=["res://.godot/imported/hammer_minigame.png-1e8bb204324c5b5949f8e53165b7060b.ctex"]
 
 [params]
 
