@@ -19,9 +19,9 @@ func _ready() -> void:
 
 
 func spawn_enemy() -> void:
-	var active_enemy: Enemy = enemy.instantiate()
-	add_child(active_enemy)
-	active_enemy.tree_exited.connect(_on_enemy_death)
+	var spawned_enemy: Enemy = enemy.instantiate()
+	add_child(spawned_enemy)
+	spawned_enemy.tree_exited.connect(_on_enemy_death)
 	current_num_instances += 1
 
 
