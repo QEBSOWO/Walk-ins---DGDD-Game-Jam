@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://oytg8wlodm8l"]
+
+[ext_resource type="Script" uid="uid://clqmse1nucfcs" path="res://Minigames/Scripts/cuttingbread.gd" id="1_71m31"]
+[ext_resource type="Texture2D" uid="uid://rt2s5kdfj2q7" path="res://Assets/Cutting/bread_uncut.png" id="2_u1r8u"]
+[ext_resource type="Texture2D" uid="uid://6nkwb2rqvdyy" path="res://Assets/Cutting/bread_cut_1png.png" id="3_2kpmx"]
+[ext_resource type="Texture2D" uid="uid://2qm86ef21awm" path="res://Assets/Cutting/bread_cut_1.png" id="4_cpduv"]
+[ext_resource type="Texture2D" uid="uid://byolefh5gtgwh" path="res://Assets/Cutting/bread_cut_2.png" id="5_i4esu"]
+[ext_resource type="Texture2D" uid="uid://cynri5i4w8r35" path="res://Assets/Cutting/bread_cutlines.png" id="6_ltidi"]
+[ext_resource type="Texture2D" uid="uid://bgysi70b1lww" path="res://Assets/Cutting/bread_cutlines_blink.png" id="7_42ixw"]
+[ext_resource type="Script" uid="uid://dxbdjhe3xj2pu" path="res://Minigames/Cutting/Scripts/bread_sprite.gd" id="8_cigmb"]
+[ext_resource type="Texture2D" uid="uid://bxus4px4mbfv0" path="res://Assets/Cutting/knife_tween.png" id="9_ddd3g"]
+[ext_resource type="Texture2D" uid="uid://bxg63ocll0iwg" path="res://Assets/Cutting/knife_down.png" id="10_ja165"]
+[ext_resource type="Texture2D" uid="uid://cb1kvc6rbc1j5" path="res://Assets/Cutting/knife.png" id="11_3our5"]
+[ext_resource type="Texture2D" uid="uid://bqopiei2o08au" path="res://Assets/Cutting/sword_side.png" id="12_a6fqh"]
+[ext_resource type="Texture2D" uid="uid://dxm7fijqnnucf" path="res://Assets/Cutting/sword_side_down.png" id="13_j14ua"]
+[ext_resource type="Texture2D" uid="uid://dwel8x303qhvp" path="res://Assets/Cutting/sword_big.png" id="14_46d68"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kv8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u1r8u")
+}],
+"loop": true,
+"name": &"base",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2kpmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cpduv")
+}],
+"loop": true,
+"name": &"cut_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i4esu")
+}],
+"loop": true,
+"name": &"cut_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ltidi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_42ixw")
+}],
+"loop": true,
+"name": &"cutlines",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71m31"]
+size = Vector2(50, 626)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4uga4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ddd3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ja165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ddd3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3our5")
+}],
+"loop": false,
+"name": &"cutline",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3our5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"tween",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7pwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_a6fqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j14ua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a6fqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_46d68")
+}],
+"loop": false,
+"name": &"cutline",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_46d68")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cutting" type="Node2D" unique_id=1589990561]
+script = ExtResource("1_71m31")
+
+[node name="BreadSprite" type="AnimatedSprite2D" parent="." unique_id=2094814775]
+position = Vector2(590, 330)
+sprite_frames = SubResource("SpriteFrames_7kv8i")
+animation = &"cutlines"
+script = ExtResource("8_cigmb")
+
+[node name="CutArea1" type="Area2D" parent="BreadSprite" unique_id=1006242870]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreadSprite/CutArea1" unique_id=210871231]
+position = Vector2(-163, 11)
+shape = SubResource("RectangleShape2D_71m31")
+
+[node name="CutArea2" type="Area2D" parent="BreadSprite" unique_id=2006865747]
+position = Vector2(-17, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreadSprite/CutArea2" unique_id=540768125]
+position = Vector2(-36, 8)
+shape = SubResource("RectangleShape2D_71m31")
+
+[node name="Knife" type="AnimatedSprite2D" parent="." unique_id=373820123]
+sprite_frames = SubResource("SpriteFrames_4uga4")
+animation = &"cutline"
+
+[node name="Timer" type="Timer" parent="." unique_id=1388172743]
+wait_time = 0.4
+one_shot = true
+
+[node name="Sword" type="AnimatedSprite2D" parent="." unique_id=1554563024]
+sprite_frames = SubResource("SpriteFrames_h7pwg")
+animation = &"cutline"
