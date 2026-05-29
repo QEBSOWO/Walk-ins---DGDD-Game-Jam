@@ -8,6 +8,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	enemy.can_be_damaged = true
 	enemy.can_grapple = true
 	print("Enemy Staggered")
+	enemy.anim_player.play("Dance")
 	
 	await get_tree().create_timer(enemy.stagger_duration).timeout
 	enemy_recovered = true
@@ -16,8 +17,10 @@ func physics_update(_delta: float) -> void:
 	if enemy_recovered:
 		if enemy.current_hp <= 0:
 			finished.emit(DIE)
-		else:
+		elif enemy.player.can_be_grappled:
 			finished.emit(CHASING)
+		elif !enemy.player.can_be_grappled:
+			finished.emit(PATROLLING)
 
 func exit() -> void:
 	enemy_recovered = false

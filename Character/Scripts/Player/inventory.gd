@@ -31,6 +31,7 @@ func equip_slot(index: int) -> void:
 		player.can_attack = true
 		player.active_weapon.visible = true
 		weapon_array[index-1].visible = false
+	
 	elif !weapon_collected_array[index]:
 		player.can_attack = false
 		player.active_weapon.visible = false
@@ -38,7 +39,22 @@ func equip_slot(index: int) -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("equip_first"):
-		equip_slot(0)
-	elif Input.is_action_pressed("equip_second"):
-		equip_slot(1)
+	if !player.is_attacking:
+		if Input.is_action_pressed("equip_first"):
+			equip_slot(0)
+		elif Input.is_action_pressed("equip_second"):
+			equip_slot(1)
+
+
+func decrease_equipped_durability() -> void:
+	player.active_weapon.durability -= 1
+	if player.active_weapon.durability <= 0:
+		var to_remove: int = weapon_array.find(player.active_weapon)
+		weapon_array[to_remove].visible = false
+		weapon_collected_array[to_remove] = false
+		
+		if weapon_collected_array[to_remove-1]:
+			if to_remove == 0:
+				equip_slot(1)
+			elif to_remove == 1:
+				equip_slot(0)
