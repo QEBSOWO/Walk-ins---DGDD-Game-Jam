@@ -143,3 +143,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2646646, 0.049999952, -3.6
 [node name="EnemySpawner" parent="." unique_id=1841068851 instance=ExtResource("19_jmapi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.231, 0, 3.591)
 enemy = ExtResource("5_r0ysc")
+max_num_instances = 0
