@@ -4,7 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://dfn0jaoopchsk" path="res://Gameworld/Assets/MeshLibraries/FloorMeshLibrary.meshlib" id="2_bcwsw"]
 [ext_resource type="MeshLibrary" uid="uid://cv0yh1o6nbv0d" path="res://Gameworld/Assets/MeshLibraries/WallsMeshLibrary.meshlib" id="3_v0svn"]
 [ext_resource type="MeshLibrary" uid="uid://ypskavi3u15s" path="res://Gameworld/Assets/MeshLibraries/DecorationsMeshLibrary.meshlib" id="4_rqfb0"]
-[ext_resource type="PackedScene" uid="uid://bp4ga5dtxn5pp" path="res://Enemies/Scenes/base_enemy.tscn" id="5_r0ysc"]
+[ext_resource type="PackedScene" uid="uid://bp4ga5dtxn5pp" path="res://Enemies/Scenes/slime.tscn" id="5_r0ysc"]
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]

@@ -9,7 +9,7 @@ var current_hp: int
 var nav_agent: NavigationAgent3D
 var movement_target_position: Vector3 = Vector3(0.0, 0.0, 9.5)
 var player: Player
-
+@onready var anim_player : AnimationPlayer = $Enemy/AnimationPlayer
 
 # Grappling/Attack related variables
 @onready var grapple_qte := $Sprite3D/SubViewport/GrappleQte
@@ -61,9 +61,12 @@ func handle_movement():
 	velocity = current_agent_position.direction_to(next_path_position) * speed
 	look_at(Vector3(next_path_position.x, 0, next_path_position.z))
 	move_and_slide()
+	
+	anim_player.play("Walk")
 
 
 func grapple_player():
+	anim_player.play("Bite_Front")
 	player.is_grappled = true
 	print("Player grappled")
 	await get_tree().create_timer(grapple_windup).timeout

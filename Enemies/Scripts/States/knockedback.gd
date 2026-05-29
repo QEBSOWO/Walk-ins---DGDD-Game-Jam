@@ -3,6 +3,7 @@ extends EnemyState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	_set_knockback_velocity()
+	enemy.anim_player.play("HitRecieve")
 	print("Enemy knocked back")
 	await get_tree().create_timer(enemy.knockback_duration).timeout
 	enemy.knockback_complete = true
