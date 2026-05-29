@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://be3yr2qtuqew5"]
 
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_30s6q"]
-[ext_resource type="Script" path="res://Gameworld/Scripts/Interactables/berries.gd" id="1_q34va"]
+[ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_q34va"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_q34va"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgj2i"]
@@ -54,12 +54,12 @@ size = Vector3(0.15, 0.19140625, 0.15)
 collision_layer = 2
 script = ExtResource("1_q34va")
 
-[node name="cherries" type="MeshInstance3D" parent="." unique_id=1869576620]
+[node name="Berries" type="MeshInstance3D" parent="." unique_id=1869576620]
 transform = Transform3D(1.947944, 0.45333663, 0, -0.45333663, 1.947944, 0, 0, 0, 2, -0.057, 0.1, 0)
 material_override = SubResource("StandardMaterial3D_lgj2i")
 mesh = SubResource("ArrayMesh_xrurc")
 
-[node name="cherries2" type="MeshInstance3D" parent="cherries" unique_id=1148610135]
+[node name="cherries2" type="MeshInstance3D" parent="Berries" unique_id=1148610135]
 transform = Transform3D(0.89667195, -0.44269568, 0, 0.44269568, 0.89667195, 0, 0, 0, 1, 0.07937859, 0.017168548, 0)
 material_override = SubResource("StandardMaterial3D_lgj2i")
 mesh = SubResource("ArrayMesh_xrurc")

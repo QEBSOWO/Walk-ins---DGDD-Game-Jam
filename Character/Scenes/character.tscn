@@ -24,6 +24,10 @@
 [ext_resource type="Animation" uid="uid://ciocak4bb7kv2" path="res://Character/Assets/Character/Animations/Walking_C.res" id="12_4navr"]
 [ext_resource type="Script" uid="uid://do4pxiuexwh2c" path="res://Character/Scripts/Player/PlayerStates/attacking.gd" id="12_vxums"]
 [ext_resource type="Texture2D" uid="uid://xjy4x25rncnl" path="res://Character/Assets/TargetCircle.png" id="15_lfk03"]
+[ext_resource type="PackedScene" uid="uid://oytg8wlodm8l" path="res://Minigames/Cutting/Scenes/cutting.tscn" id="18_3duy4"]
+[ext_resource type="PackedScene" uid="uid://ctopwfw7weu8c" path="res://Minigames/Pouring/pouring.tscn" id="19_inqwm"]
+[ext_resource type="PackedScene" uid="uid://b8g4n6yuvgpbl" path="res://Minigames/Peeling/peeling.tscn" id="20_inqwm"]
+[ext_resource type="Script" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
 [ext_resource type="PackedScene" uid="uid://plg8islfp68x" path="res://Character/Scenes/health_bar.tscn" id="18_oxori"]
 [ext_resource type="PackedScene" uid="uid://cg8ladjyhwu8q" path="res://Character/Scenes/recipe_display.tscn" id="19_3duy4"]
 [ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
@@ -667,6 +671,22 @@ shape = SubResource("BoxShape3D_esjsu")
 
 [node name="Inventory" parent="PlayerHUD" unique_id=217252950 instance=ExtResource("8_ie5jk")]
 
+[node name="MinigameDisplay" type="Node2D" parent="PlayerHUD" unique_id=73537288]
+
+[node name="Cutting" parent="PlayerHUD/MinigameDisplay" unique_id=1589990561 instance=ExtResource("18_3duy4")]
+visible = false
+position = Vector2(800, 20)
+scale = Vector2(0.3, 0.3)
+
+[node name="Pouring" parent="PlayerHUD/MinigameDisplay" unique_id=938641310 instance=ExtResource("19_inqwm")]
+visible = false
+position = Vector2(850, 25)
+scale = Vector2(0.25, 0.25)
+
+[node name="Peeling" parent="PlayerHUD/MinigameDisplay" unique_id=2068586171 instance=ExtResource("20_inqwm")]
+visible = false
+position = Vector2(850, 25)
+scale = Vector2(0.25, 0.25)
 [node name="HealthBar" parent="PlayerHUD" unique_id=1816094719 instance=ExtResource("18_oxori")]
 
 [node name="RecipeDisplay" parent="PlayerHUD" unique_id=313717743 instance=ExtResource("19_3duy4")]

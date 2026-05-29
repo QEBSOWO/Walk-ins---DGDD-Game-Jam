@@ -15,6 +15,8 @@ var using_mug = false
 var in_bucket = false
 var in_cauldron = false
 
+signal minigame_finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enter(true)
@@ -25,12 +27,14 @@ func enter(has_mug):
 	if(has_mug):
 		pourer = mug
 		pourer.play("default")
-		spoon.visible = false
+		spoon.hide()
+		mug.show()
 		pour_weight = 3
 	else:
 		pourer = self.spoon
 		pourer.play("default")
-		mug.visible = false
+		spoon.show()
+		mug.hide()
 		pour_weight = 1
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,15 +61,16 @@ func _handle_input():
 			if cauldron_treshold >= 3: 
 				cauldron.adjust_water_level()
 				cauldron_treshold = 0
+			if cauldron.water_state >= 3:
+				exit()
 		else:
-			pourer.play("default")
-			pourer_full = false
+			pass
 
 func _set_spoon_pos():
 	if using_mug:
-		pourer.position = get_global_mouse_position() + Vector2(30, 100)
+		pourer.global_position = get_global_mouse_position()
 	else:
-		pourer.position = get_global_mouse_position() + Vector2(0, 135)
+		pourer.global_position = get_global_mouse_position()
 
 func _connect_signals():
 	bucket_area.mouse_entered.connect(_on_bucket_area_mouse_entered)
@@ -84,3 +89,13 @@ func _on_cauldron_area_mouse_entered():
 
 func _on_cauldron_area_mouse_exited():
 	in_cauldron = false
+	
+func exit():
+	var exit_timer = $ExitTimer
+	exit_timer.timeout.connect(func(): 
+		self.hide()
+		bucket.reset()
+		cauldron.reset()
+		)
+	exit_timer.start()
+	minigame_finished.emit()
