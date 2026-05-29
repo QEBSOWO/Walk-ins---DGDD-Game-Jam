@@ -12,6 +12,6 @@ func _connect_signals():
 	
 func _on_button_pressed():
 	var instance = gameworld.instantiate()
-	get_parent().add_child(instance)
+	get_tree().root.add_child(instance)
 	self.queue_free()
 	
