@@ -10,6 +10,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 		await get_tree().create_timer(3).timeout
 	
 	can_chase_player = true
+	print("Start chasing")
 
 func physics_update(_delta: float) -> void:
 	enemy.handle_movement()

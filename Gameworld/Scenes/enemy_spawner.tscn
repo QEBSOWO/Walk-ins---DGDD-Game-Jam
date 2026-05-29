@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b8niy5wrapbuk"]
+
+[ext_resource type="Script" uid="uid://cd0nnq6466xde" path="res://Gameworld/Scripts/enemy_spawner.gd" id="1_60cri"]
+
+[node name="EnemySpawner" type="Marker3D" unique_id=1841068851]
+script = ExtResource("1_60cri")
+
+[node name="MobTimer" type="Timer" parent="." unique_id=1241962414]
+wait_time = 2.0
+one_shot = true
+autostart = true

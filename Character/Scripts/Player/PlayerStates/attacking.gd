@@ -36,6 +36,7 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	await get_tree().create_timer(player.attack_cooldown).timeout
 	player.can_attack = true
 
+
 func exit() -> void:
 	player.zone_sprite.modulate = player.zone_aiming
 	if has_hit:
