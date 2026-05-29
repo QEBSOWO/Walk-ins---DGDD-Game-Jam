@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dam7672bm1nlh"]
 
-[ext_resource type="Script" uid="uid://3jxs5ss1sier" path="res://Gameworld/Scripts/Interactables/mug.gd" id="1_5bw2p"]
+[ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_5bw2p"]
 [ext_resource type="Texture2D" uid="uid://bunvxamj5lcyj" path="res://Character/Assets/Equipment/Textures/colormap.png" id="2_danem"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3rxu"]

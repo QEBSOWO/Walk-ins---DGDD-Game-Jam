@@ -8,8 +8,8 @@ script/source = "class_name Recipe extends Resource
 #var berries: Ingredient = preload(\"res://Gameworld/Scenes/berries.tscn\").instantiate()
 
 var slime_sandwich = [\"slime_ingredient\", \"bread\"]
-var dungeon_crab_stew = [\"crab\", \"mug\", \"pot\", \"spice\", \"water\", \"water2\"]
-var partial_stew = [\"crab\", \"pot\", \"spice\", \"water\", \"water2\"]
+var dungeon_crab_stew = [\"crab\", \"mug\", \"pot\", \"spice\", \"water\", \"water\"]
+var partial_stew = [\"crab\", \"pot\", \"spice\", \"water\", \"water\"]
 var moss_salad = [\"moss\", \"1l-oil\", \"Berries\"]
 var all_recipes: Dictionary = {
 	\"salad\" = moss_salad, 
@@ -34,7 +34,7 @@ func check_recipe(items_on_table: Array[Ingredient]):
 	var current_ingredients: Array = []
 	for item in items_on_table:
 		if item != null:
-			current_ingredients.append(str(item.name))
+			current_ingredients.append(str(item.get_child(0).name))
 	current_ingredients.sort()
 	
 	for recipe in all_recipes.values():
@@ -48,8 +48,8 @@ func check_recipe(items_on_table: Array[Ingredient]):
 			break
 	
 	if is_valid_recipe and not partial_recipe:
-		for ingredient in items_on_table:
-			items_on_table_string.insert(items_on_table.find(ingredient), ingredient.name)
+		for ingredient in current_ingredients:
+			items_on_table_string.insert(current_ingredients.find(ingredient), ingredient)
 		for recipe in all_recipes.values():
 			items_on_table_string.sort()
 			recipe.sort()
@@ -58,11 +58,19 @@ func check_recipe(items_on_table: Array[Ingredient]):
 	elif not partial_recipe:
 		built_recipe = \"\"
 		items_on_table_string.clear()
+	print(built_recipe)
 	return is_valid_recipe
 	
 func get_cooked_dish():
-	print(built_recipe)
-	return built_recipe
+	var temp = built_recipe
+	reset()
+	return temp
+	
+func reset():
+	built_recipe = \"\"
+	is_valid_recipe = false
+	partial_recipe = false
+	
 	
 "
 
