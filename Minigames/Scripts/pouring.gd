@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var spoon : AnimatedSprite2D = $Spoon
-@onready var ladle : AnimatedSprite2D = $Ladle
+@onready var mug : AnimatedSprite2D = $Mug
 @onready var bucket : AnimatedSprite2D = $Bucket
 @onready var bucket_area : Area2D = $Bucket/Area2D
 @onready var cauldron : AnimatedSprite2D = $Cauldron
@@ -11,26 +11,26 @@ var pourer_full = false
 var pour_weight = 1
 var bucket_treshold = 0
 var cauldron_treshold = 0
-var using_ladle = false
+var using_mug = false
 var in_bucket = false
 var in_cauldron = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	enter(false)
+	enter(true)
 	_connect_signals()
 
-func enter(is_ladle):
-	using_ladle = is_ladle
-	if(is_ladle):
-		pourer = ladle
+func enter(has_mug):
+	using_mug = has_mug
+	if(has_mug):
+		pourer = mug
 		pourer.play("default")
 		spoon.visible = false
 		pour_weight = 3
 	else:
 		pourer = self.spoon
 		pourer.play("default")
-		ladle.visible = false
+		mug.visible = false
 		pour_weight = 1
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,8 +62,8 @@ func _handle_input():
 			pourer_full = false
 
 func _set_spoon_pos():
-	if using_ladle:
-		pourer.position = get_global_mouse_position() + Vector2(50, -100)
+	if using_mug:
+		pourer.position = get_global_mouse_position() + Vector2(30, 100)
 	else:
 		pourer.position = get_global_mouse_position() + Vector2(0, 135)
 
