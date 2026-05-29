@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="1_4cw5s"]
 [ext_resource type="Script" uid="uid://br2mn6weiveer" path="res://Gameworld/Scripts/Interactables/fire_station.gd" id="1_kdr7i"]
+[ext_resource type="Resource" uid="uid://bn5cmo1uoe3w" path="res://Gameworld/Scripts/Interactables/recipe.tres" id="2_4ygnl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tur5q"]
 resource_name = "colormap"
@@ -128,6 +129,7 @@ size = Vector3(0.6, 0.5, 0.6)
 collision_layer = 3
 freeze = true
 script = ExtResource("1_kdr7i")
+recipes = ExtResource("2_4ygnl")
 
 [node name="campfire-pit" type="MeshInstance3D" parent="." unique_id=1998178424]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
