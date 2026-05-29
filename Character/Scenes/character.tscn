@@ -668,6 +668,12 @@ shape = SubResource("BoxShape3D_esjsu")
 
 [node name="HealthBar" parent="PlayerHUD" unique_id=1816094719 instance=ExtResource("18_oxori")]
 
+[node name="PendingRecipes" type="Control" parent="PlayerHUD" unique_id=200569400]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="StateMachine" type="Node" parent="." unique_id=799247560 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8bgmc")
 initial_state = NodePath("Idle")
