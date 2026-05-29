@@ -35,7 +35,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if Input.is_action_pressed("aim"):
+	if Input.is_action_just_pressed("aim"):
 		if can_attack && active_weapon.visible:
 			zone_sprite.visible = true
 			is_aiming = true
