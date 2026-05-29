@@ -17,7 +17,7 @@ var in_cauldron = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	enter(true)
+	enter(false)
 	_connect_signals()
 
 func enter(is_ladle):
@@ -62,7 +62,7 @@ func _handle_input():
 			pourer_full = false
 
 func _set_spoon_pos():
-	if ladle:
+	if using_ladle:
 		pourer.position = get_global_mouse_position() + Vector2(50, -100)
 	else:
 		pourer.position = get_global_mouse_position() + Vector2(0, 135)
