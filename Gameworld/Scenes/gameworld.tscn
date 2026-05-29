@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
+[ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -94,3 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46306, 0.049999952, 0.45015
 
 [node name="fire_station" parent="." unique_id=1807396969 instance=ExtResource("8_ke4fj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5144477, 0.05000019, 0.480453)
+
+[node name="Crab" parent="." unique_id=737882985 instance=ExtResource("9_ratt4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.071, 0, 4.291)
