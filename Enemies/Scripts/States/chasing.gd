@@ -14,5 +14,5 @@ func physics_update(_delta: float) -> void:
 		if enemy.is_player_in_attack_range && !enemy.is_attacked && enemy.can_grapple:
 			finished.emit(GRAPPLING)
 	elif !enemy.player.can_be_grappled:
-		#TODO: Have returning state for enemy to go back to origin point
+		finished.emit(PATROLLING)
 		pass

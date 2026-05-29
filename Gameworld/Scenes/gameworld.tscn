@@ -43,7 +43,6 @@ shadow_enabled = true
 
 [node name="Character" parent="." unique_id=473502338 instance=ExtResource("1_d2dbi")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 4.908)
-max_hp = 1
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1858002470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.582708, 15.333119)

@@ -17,8 +17,10 @@ func physics_update(_delta: float) -> void:
 	if enemy_recovered:
 		if enemy.current_hp <= 0:
 			finished.emit(DIE)
-		else:
+		elif enemy.player.can_be_grappled:
 			finished.emit(CHASING)
+		elif !enemy.player.can_be_grappled:
+			finished.emit(PATROLLING)
 
 func exit() -> void:
 	enemy_recovered = false
