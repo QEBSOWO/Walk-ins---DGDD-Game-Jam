@@ -4,6 +4,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	#print("Grappled")
 	player.is_aiming = false
 	player.can_move = false
+	player.can_be_grappled = false
 	player.anim_player.play("RESET")
 	player.model_animator.play("Player/Hit_A")
 	player.velocity.x = 0.0
@@ -23,3 +24,6 @@ func physics_update(_delta: float) -> void:
 func exit() -> void:
 	player.can_attack = true
 	player.can_move = true
+	
+	if !(player.current_hp <= 0): # If player is still alive
+		player.can_be_grappled = true

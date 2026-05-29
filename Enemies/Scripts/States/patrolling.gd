@@ -1,6 +1,8 @@
 extends EnemyState
 
 # Test for movement and collision
+func enter(previous_state_path: String, data := {}) -> void:
+	print("Patrolling")
 
 func physics_update(_delta: float) -> void:
 	enemy.handle_movement()
