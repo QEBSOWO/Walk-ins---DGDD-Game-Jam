@@ -1,11 +1,17 @@
 extends Control
 
+@onready var button = $Button
+@onready var gameworld = load("res://Gameworld/Scenes/gameworld.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_connect_signals()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _connect_signals():
+	button.pressed.connect(_on_button_pressed)
+	
+func _on_button_pressed():
+	var instance = gameworld.instantiate()
+	get_parent().add_child(instance)
+	self.queue_free()
+	

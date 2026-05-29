@@ -13,5 +13,8 @@ script = ExtResource("1_8urfj")
 
 [node name="Button" type="Button" parent="." unique_id=1879637991]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 408.0
+offset_top = 218.0
+offset_right = 760.0
+offset_bottom = 427.0
+text = "YAY"
