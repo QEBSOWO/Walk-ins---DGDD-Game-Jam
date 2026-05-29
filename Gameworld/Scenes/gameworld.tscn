@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6it37vpblnon" path="res://Gameworld/Scenes/barrel.tscn" id="6_p7xed"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
-[ext_resource type="PackedScene" path="res://Gameworld/Scenes/serve_station.tscn" id="9_ratt4"]
+[ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_ratt4"]
 [ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
 [ext_resource type="PackedScene" uid="uid://blv2uqmiofb4g" path="res://Gameworld/Scenes/berries.tscn" id="11_edv4u"]
 [ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
@@ -106,5 +106,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4506238, 0.05000022, 7.5904
 [node name="1l-oil" parent="." unique_id=1505580988 instance=ExtResource("12_edv4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2525184, 0.049999952, 7.6272945)
 
-[node name="berries" parent="." unique_id=1877346905 instance=ExtResource("11_edv4u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9113824, 0.07259931, 7.4276705)
+[node name="Berries" parent="." unique_id=1877346905 instance=ExtResource("11_edv4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3790796, 0.050000668, -1.2833605)

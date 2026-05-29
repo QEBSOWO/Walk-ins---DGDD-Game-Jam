@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://blv2uqmiofb4g"]
 
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_30s6q"]
-[ext_resource type="Script" uid="uid://dwj23300wbxck" path="res://Gameworld/Scripts/Interactables/Ingredients/berries.gd" id="1_q34va"]
+[ext_resource type="Script" uid="uid://dbm0um5kf63te" path="res://Gameworld/Scripts/Interactables/berries.gd" id="1_q34va"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_q34va"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgj2i"]
@@ -50,8 +50,8 @@ shadow_mesh = SubResource("ArrayMesh_bc6ca")
 [sub_resource type="BoxShape3D" id="BoxShape3D_dmms3"]
 size = Vector3(0.15, 0.19140625, 0.15)
 
-[node name="berries" type="RigidBody3D" unique_id=1877346905]
-collision_layer = 3
+[node name="Berries" type="RigidBody3D" unique_id=1877346905]
+collision_layer = 2
 script = ExtResource("1_q34va")
 
 [node name="cherries" type="MeshInstance3D" parent="." unique_id=1869576620]

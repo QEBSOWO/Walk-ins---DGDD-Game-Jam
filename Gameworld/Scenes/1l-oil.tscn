@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dsbxx4coth87h"]
 
-[ext_resource type="Script" uid="uid://5jv1vyb73rky" path="res://Gameworld/Scripts/Interactables/Ingredients/1l_oil.gd" id="1_0bt0t"]
+[ext_resource type="Script" uid="uid://6fs468eh7tls" path="res://Gameworld/Scripts/Interactables/1l_oil.gd" id="1_0bt0t"]
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_760uy"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_0bt0t"]
 
@@ -51,7 +51,7 @@ shadow_mesh = SubResource("ArrayMesh_dodx0")
 size = Vector3(0.20996094, 0.59973145, 0.18164063)
 
 [node name="1l-oil" type="RigidBody3D" unique_id=1505580988]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_0bt0t")
 
 [node name="bottle-oil" type="MeshInstance3D" parent="." unique_id=1927541088]

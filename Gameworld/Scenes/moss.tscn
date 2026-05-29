@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bxixgtfu3h8uq"]
 
-[ext_resource type="Script" uid="uid://dmx4rts1nspt4" path="res://Gameworld/Scripts/Interactables/Ingredients/moss.gd" id="1_jm4ar"]
+[ext_resource type="Script" uid="uid://b2mddp6xhlbye" path="res://Gameworld/Scripts/Interactables/moss.gd" id="1_jm4ar"]
 [ext_resource type="Texture2D" uid="uid://bw17bbx88pagu" path="res://Gameworld/Assets/Textures/broccoli_0.png" id="1_okdht"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvph3"]
@@ -48,9 +48,10 @@ shadow_mesh = SubResource("ArrayMesh_rrxyc")
 [sub_resource type="BoxShape3D" id="BoxShape3D_grl4h"]
 size = Vector3(0.3, 0.3, 0.3)
 
-[node name="moss" type="RigidBody3D" unique_id=1944833147]
-collision_layer = 3
+[node name="Moss" type="RigidBody3D" unique_id=1896776227]
+collision_layer = 2
 script = ExtResource("1_jm4ar")
+metadata/_custom_type_script = "uid://dsldj22pn1ety"
 
 [node name="broccoli" type="MeshInstance3D" parent="." unique_id=261274928]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0.5, 0)
