@@ -1,7 +1,7 @@
 extends Control
 
 @onready var button = $Button
-@onready var gameworld = load("res://Gameworld/Scenes/gameworld.tscn")
+@onready var gameworld = load("res://Gameworld/Scenes/FinalWorld.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
