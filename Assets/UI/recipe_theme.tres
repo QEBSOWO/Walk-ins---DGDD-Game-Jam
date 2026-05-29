@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://cn30lt12w1nx8"]
+
+[ext_resource type="Texture2D" uid="uid://f6ui3ienx47l" path="res://Assets/UI/UI books & more.png" id="1_cus1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inqwm"]
+atlas = ExtResource("1_cus1c")
+region = Rect2(561, 98, 46, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qs62i"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+texture = SubResource("AtlasTexture_inqwm")
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = null
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_qs62i")

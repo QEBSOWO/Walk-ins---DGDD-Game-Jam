@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cg8ladjyhwu8q"]
+
+[ext_resource type="Texture2D" uid="uid://f6ui3ienx47l" path="res://Assets/UI/UI books & more.png" id="1_c1upp"]
+[ext_resource type="Theme" uid="uid://cn30lt12w1nx8" path="res://Assets/UI/recipe_theme.tres" id="1_i8jdt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inqwm"]
+atlas = ExtResource("1_c1upp")
+region = Rect2(561, 98, 46, 45)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qs62i"]
+texture = SubResource("AtlasTexture_inqwm")
+
+[sub_resource type="Theme" id="Theme_wwmld"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_qs62i")
+
+[node name="RecipeSheet" type="HBoxContainer" unique_id=313717743]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_i8jdt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=426647858]
+custom_minimum_size = Vector2(150, 170)
+layout_mode = 2
+theme = SubResource("Theme_wwmld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=546640022]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1598341880]
+layout_mode = 2
+text = "Recipe Name"
+horizontal_alignment = 1
+
+[node name="Ingredient1" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=403914405]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/Ingredient1" unique_id=1492800914]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Ingredient1" unique_id=1968203430]
+layout_mode = 2
+text = "Ingredient"
+
+[node name="Ingredient2" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1883535213]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/Ingredient2" unique_id=1059434493]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Ingredient2" unique_id=1911047708]
+layout_mode = 2
+text = "Ingredient"
+
+[node name="Ingredient3" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1511757654]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/Ingredient3" unique_id=2109271370]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Ingredient3" unique_id=1419998073]
+layout_mode = 2
+text = "Ingredient"
+
+[node name="Ingredient4" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1771990576]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/Ingredient4" unique_id=950111639]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Ingredient4" unique_id=989995230]
+layout_mode = 2
+text = "Ingredient"
