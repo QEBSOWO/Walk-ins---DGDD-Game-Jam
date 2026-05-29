@@ -18,6 +18,10 @@ var player: Player
 @export var knockback_duration: float = 0.2
 @export var stagger_duration: float = 0.5
 
+# Patrolling variables
+var patrol_point_array: Array[Marker3D]
+var patrol_point_focus: Marker3D
+
 # State handling
 var is_attacked: bool = false
 var is_player_detected: bool = false
@@ -37,6 +41,11 @@ func initialize():
 	player = get_tree().root.get_child(0).get_node("Character") as Player
 	assert(player != null, "Player could not be found during actor_setup")
 	
+	# Populate waypoints
+	for waypoint in get_tree().root.get_node("Gameworld").get_node("PatrolPaths").get_children():
+		patrol_point_array.append(waypoint)
+	
+	
 	actor_setup.call_deferred()
 
 
@@ -45,7 +54,7 @@ func actor_setup():
 	await get_tree().physics_frame
 	
 	# Now navigation map is no longer empty, set movement target
-	set_movement_target(movement_target_position)
+	set_movement_target(select_random_waypoint())
 
 
 func set_movement_target(movement_target: Vector3):
@@ -54,6 +63,7 @@ func set_movement_target(movement_target: Vector3):
 
 func handle_movement():
 	if nav_agent.is_navigation_finished():
+		set_movement_target(select_random_waypoint())
 		return
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
@@ -100,3 +110,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func get_player_position() -> Vector3:
 	return player.position
+
+
+func select_random_waypoint() -> Vector3:
+	var rand_waypoint = randi_range(0, 7)
+	patrol_point_focus = patrol_point_array[rand_waypoint]
+	return Vector3(patrol_point_focus.position.x, 0, patrol_point_focus.position.z)

@@ -29,7 +29,7 @@ signal health_changed
 
 func _ready() -> void:
 	current_hp = max_hp
-	camera = owner.get_node("Node3D").get_node("Camera3D")
+	camera = get_node("Node3D").get_node("Camera3D")
 	zone_sprite.modulate = zone_aiming
 	
 
