@@ -1,6 +1,7 @@
 extends PlayerState
 
 var aiming_speed: float
+var has_hit: bool = false
 
 func enter(previous_state_path: String, data := {}) -> void:
 	aiming_speed = player.speed/2
@@ -14,6 +15,7 @@ func physics_update(_delta: float) -> void:
 	for body in player.attack_zone.get_overlapping_bodies():
 		if body is Enemy && body.can_be_damaged:
 			body.take_damage()
+			has_hit = true
 	
 	if player.is_grappled:
 		finished.emit(GRAPPLED)
@@ -28,6 +30,9 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 		finished.emit(AIMING)
 	else:
 		finished.emit(IDLE)
+	
+	if has_hit:
+		player.inventory.decrease_equipped_durability()
 	
 	await get_tree().create_timer(player.attack_cooldown).timeout
 	player.can_attack = true

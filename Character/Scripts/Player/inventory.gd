@@ -42,3 +42,17 @@ func _process(_delta: float) -> void:
 		equip_slot(0)
 	elif Input.is_action_pressed("equip_second"):
 		equip_slot(1)
+
+
+func decrease_equipped_durability() -> void:
+	player.active_weapon.durability -= 1
+	if player.active_weapon.durability <= 0:
+		var to_remove: int = weapon_array.find(player.active_weapon)
+		weapon_array[to_remove].visible = false
+		weapon_collected_array[to_remove] = false
+		
+		if weapon_collected_array[to_remove-1]:
+			if to_remove == 0:
+				equip_slot(1)
+			elif to_remove == 1:
+				equip_slot(0)
