@@ -8,7 +8,7 @@ script/source = "class_name Recipe extends Resource
 #var berries: Ingredient = preload(\"res://Gameworld/Scenes/berries.tscn\").instantiate()
 
 var slime_sandwich = [\"slime_ingredient\", \"bread\"]
-var dungeon_crab_stew = [\"crab\", \"water\", \"water2\", \"pot\", \"spice\"]
+var dungeon_crab_stew = [\"crab\", \"water\", \"water2\", \"pot\", \"spice\", \"mug\"]
 var moss_salad = [\"moss\", \"1l-oil\", \"Berries\"]
 var all_recipes: Dictionary = {
 	\"salad\" = moss_salad, 

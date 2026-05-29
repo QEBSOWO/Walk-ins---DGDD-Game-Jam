@@ -9,15 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_22prr"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_ke4fj"]
 [ext_resource type="PackedScene" path="res://Enemies/Scenes/dungeon_crab.tscn" id="9_ratt4"]
-[ext_resource type="PackedScene" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
+[ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_cw2yi"]
 [ext_resource type="PackedScene" path="res://Gameworld/Scenes/serve_station.tscn" id="10_v3fmh"]
+[ext_resource type="PackedScene" uid="uid://dam7672bm1nlh" path="res://Gameworld/Scenes/mug.tscn" id="11_cw2yi"]
 [ext_resource type="PackedScene" uid="uid://be3yr2qtuqew5" path="res://Gameworld/Scenes/berries.tscn" id="11_edv4u"]
-[ext_resource type="PackedScene" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
-[ext_resource type="PackedScene" uid="uid://dbw1kxqy7ygca" path="res://Gameworld/Scenes/bread.tscn" id="14_83nf5"]
-[ext_resource type="PackedScene" uid="uid://dkw3ckkan8cpp" path="res://Gameworld/Scenes/slime_ingredient.tscn" id="15_6jn8n"]
-[ext_resource type="PackedScene" uid="uid://dkv1q7xceuqgo" path="res://Gameworld/Scenes/crab.tscn" id="16_csh10"]
-[ext_resource type="PackedScene" uid="uid://b83vsc7gl1ka4" path="res://Gameworld/Scenes/water.tscn" id="17_jmapi"]
-[ext_resource type="PackedScene" uid="uid://b85bgggxmnqwo" path="res://Gameworld/Scenes/spice.tscn" id="18_jmapi"]
+[ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="12_edv4u"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/bread.tscn" id="14_83nf5"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/slime_ingredient.tscn" id="15_6jn8n"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/crab.tscn" id="16_csh10"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/water.tscn" id="17_jmapi"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/spice.tscn" id="18_jmapi"]
 [ext_resource type="PackedScene" uid="uid://vyi5d8i5tx8s" path="res://Gameworld/Scenes/pot.tscn" id="18_vom33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
@@ -141,3 +142,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3729258, 0.049999714, -2.2
 
 [node name="pot" parent="." unique_id=553347901 instance=ExtResource("18_vom33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2646646, 0.049999952, -3.6459174)
+
+[node name="mug" parent="." unique_id=1380579326 instance=ExtResource("11_cw2yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1397114, 0.049999833, 3.1273189)
