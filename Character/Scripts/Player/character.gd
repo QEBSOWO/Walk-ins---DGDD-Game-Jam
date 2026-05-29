@@ -55,30 +55,5 @@ func handle_rotation() -> void:
 	pivot.look_at(global_position - Vector3(input_dir.x, 0, input_dir.y))
 
 
-func look_at_cursor() -> void:
-	var mouse_position = get_viewport().get_mouse_position()
-	var ray_origin = camera.project_ray_origin(mouse_position)
-	var ray_target = ray_origin + camera.project_ray_normal(mouse_position) * 2000
-	
-	var intersection = _handle_space_state(ray_origin, ray_target)
-	
-	if not intersection.is_empty():
-		var pos = intersection.position
-		var look_at_me = Vector3(pos.x, pivot.position.y, pos.z)
-		pivot.look_at(-look_at_me, Vector3.UP)
-
-
 func is_active_weapon_armor_piercing() -> bool:
 	return active_weapon.is_armor_piercing
-
-
-func _handle_space_state(ray_origin, ray_target) -> Dictionary:
-	var space_state = get_world_3d().direct_space_state
-	var params = PhysicsRayQueryParameters3D.new()
-	params.from = ray_origin
-	params.to = ray_target
-	params.exclude = []
-	params.collision_mask = 1
-	var result = space_state.intersect_ray(params)
-	
-	return result
