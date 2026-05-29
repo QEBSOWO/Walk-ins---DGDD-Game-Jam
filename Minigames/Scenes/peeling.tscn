@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b842d3d4g3o0" path="res://Assets/Peeling/crab_peeled.png" id="2_3mn3u"]
 [ext_resource type="Texture2D" uid="uid://c3hapttx7m4rm" path="res://Assets/Peeling/hammer_minigame.png" id="3_3mn3u"]
 [ext_resource type="Script" uid="uid://cerhlb8krs2of" path="res://Minigames/Scripts/crab.gd" id="4_dpx02"]
+[ext_resource type="AudioStream" uid="uid://ds47tn6lfmm41" path="res://Assets/Peeling/crack.wav" id="5_x524g"]
 [ext_resource type="Texture2D" uid="uid://836gogviilcw" path="res://Assets/Peeling/hammer_peeling.png" id="6_d4l65"]
+[ext_resource type="AudioStream" uid="uid://cdojspljghq77" path="res://Assets/Peeling/tiny_crack.wav" id="6_mtjrj"]
 [ext_resource type="Texture2D" uid="uid://c12xttk8r72qj" path="res://Assets/Peeling/hammer_peeling_down.png" id="7_ulmpe"]
 [ext_resource type="Script" uid="uid://dosqlnutk33ae" path="res://Minigames/Scripts/hammer.gd" id="8_dpx02"]
 [ext_resource type="Texture2D" uid="uid://bxus4px4mbfv0" path="res://Assets/Cutting/knife_tween.png" id="9_47xk0"]
@@ -110,6 +112,12 @@ script = ExtResource("4_dpx02")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab/Area2D" unique_id=2106698457]
 position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_tdfp7")
+
+[node name="CrackPlayer" type="AudioStreamPlayer2D" parent="Crab" unique_id=507080447]
+stream = ExtResource("5_x524g")
+
+[node name="SmallCrackPlayer" type="AudioStreamPlayer2D" parent="Crab" unique_id=1044073149]
+stream = ExtResource("6_mtjrj")
 
 [node name="Hammer" type="AnimatedSprite2D" parent="." unique_id=1114641792]
 position = Vector2(578, 331)

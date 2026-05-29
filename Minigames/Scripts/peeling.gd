@@ -2,14 +2,13 @@ extends Node2D
 
 var peeled = false
 var peeler: AnimatedSprite2D
-var over_peelee = true
 @onready var hammer = $Hammer
 @onready var peelee = $Crab
 @onready var knife = $Knife
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	enter(false)
+	enter(true)
 
 func enter(using_hammer):
 	if(using_hammer): 
@@ -27,7 +26,7 @@ func _process(delta):
 func _handle_input():
 	if Input.is_action_just_pressed("cut"):
 		var damage = peeler.use()
-		if(over_peelee):
+		if damage > 0:
 			peelee.peel(damage)
 			
 
