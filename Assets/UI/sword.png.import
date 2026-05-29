@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0clh4wxg0xbf"
-path="res://.godot/imported/cauldron_half.png-36b3a4d8e792270a223c2a1d7e89d169.ctex"
+uid="uid://c7ue2rvo20kvm"
+path="res://.godot/imported/sword.png-2a94537bbf35ac4d2335dbd190e27b7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cauldron_half.png"
-dest_files=["res://.godot/imported/cauldron_half.png-36b3a4d8e792270a223c2a1d7e89d169.ctex"]
+source_file="res://Assets/UI/sword.png"
+dest_files=["res://.godot/imported/sword.png-2a94537bbf35ac4d2335dbd190e27b7e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnje0n5bhis3a"
-path="res://.godot/imported/cauldron_half.png-429c6cd3e24317a8497c79f31d44a28e.ctex"
+uid="uid://c0clh4wxg0xbf"
+path="res://.godot/imported/cauldron_half.png-36b3a4d8e792270a223c2a1d7e89d169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pouring/cauldron_half.png"
-dest_files=["res://.godot/imported/cauldron_half.png-429c6cd3e24317a8497c79f31d44a28e.ctex"]
+source_file="res://Assets/cauldron_half.png"
+dest_files=["res://.godot/imported/cauldron_half.png-36b3a4d8e792270a223c2a1d7e89d169.ctex"]
 
 [params]
 

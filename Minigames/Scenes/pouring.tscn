@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dndnrx3tht4vx" path="res://Assets/Pouring/cauldron.png" id="9_o6tst"]
 [ext_resource type="Texture2D" uid="uid://4t8wf5ltxi1d" path="res://Assets/Pouring/cauldron_full.png" id="10_6xv0r"]
 [ext_resource type="Script" uid="uid://crk0oy7664a7y" path="res://Minigames/Scripts/cauldron.gd" id="11_6xv0r"]
-[ext_resource type="Texture2D" uid="uid://dnje0n5bhis3a" path="res://Assets/Pouring/cauldron_half.png" id="11_itdui"]
+[ext_resource type="Texture2D" uid="uid://c0clh4wxg0xbf" path="res://Assets/Pouring/cauldron_half.png" id="11_itdui"]
 [ext_resource type="Texture2D" uid="uid://6ilarlyq5fhs" path="res://Assets/Pouring/cauldron_third.png" id="12_og3gg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5726d"]
