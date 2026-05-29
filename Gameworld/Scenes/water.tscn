@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://b83vsc7gl1ka4"]
+
+[ext_resource type="Script" uid="uid://bxk4ikrk3cvlq" path="res://Gameworld/Scripts/Interactables/water.gd" id="1_63elu"]
+[ext_resource type="Texture2D" uid="uid://bkyl6mc4f56nh" path="res://Gameworld/Assets/Textures/colormap3.png" id="1_524kk"]
+[ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_63elu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8g4gw"]
+albedo_texture = ExtResource("1_524kk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qby8v"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_63elu")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cciwm"]
+_surfaces = [{
+"aabb": AABB(-0.0798129, 0, -0.09216, 0.1596258, 0.28514302, 0.18432),
+"format": 34359742465,
+"index_count": 132,
+"index_data": PackedByteArray("BAANAAYABgANAAMAAwANAAQAAwAHAAYABgAHAA4ABwADAAkACQAOAAcADgAPAAYABgAPAAQADwAOAAEABAAQAAMADwARAAQAEAAEABEADwAFABEAAQAFAA8AAAARAAUABQABAAAAEQAAABAAEgABAA4ACQASAA4AEgAIAAEAAAABABMACAATAAEAEAAAABMAFAAIABIAEwAIABQAFQASAAkAEgAVABQAFAALABMACwAUABUAEwALABYAFgALABUAEAATABcAFgAXABMAEAAXAAIAAwAQAAIAAgAJAAMACQAKABUACgAJAAIADAAWABUAFQAKAAwAFwAWAAwAAgAMAAoADAACABcA"),
+"lods": [0.123345815, PackedByteArray("BgAFAAQAAwAGAAQABwAFAAYAAwAHAAYABQAHAAEAAAAEAAUABAAAAAMABQABAAAACAABAAcAAAABAAgABwADAAkACQAIAAcAAwAAAAIAAgAJAAMAAAAIAAIACgAIAAkACgAJAAIACwACAAgACAAKAAsAAgAMAAoADAALAAoAAgALAAwA"), 0.26587352, PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAwABAAQABAAAAAMABQABAAAAAQAFAAQAAAAEAAUA")],
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("8nSjvUT+kT5ivjw98nSjvUT+kT5ivjy9WwWEPUT+kT7TcRg98nSjPUT+kT5ivjw9vw6cJQAAAABRSZ09yjaIvQAAAABRSR29yjaIPQAAAABRSR298nSjPUT+kT5ivjy9WwWEvUT+kT7TcRi9WwWEPUT+kT7TcRi9GitlPclnCT14TwS9GitlvclnCT14TwQ9GitlPclnCT14TwQ9yjaIPQAAAABRSR09AAAAgET+kT5ivry9vw6cJQAAAABRSZ29AAAAgET+kT5ivrw9yjaIvQAAAABRSR09qRPQpET+kT7TcZi9WwWEvUT+kT7TcRg9GitlvclnCT14TwS9AAAAgMlnCT14T4S9qRPQJclnCT14T4Q9qRPQJUT+kT7TcZg9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u63gb"]
+resource_name = "glass_glass"
+_surfaces = [{
+"aabb": AABB(-0.0798129, 0, -0.09216, 0.1596258, 0.28514302, 0.18432),
+"attribute_data": PackedByteArray("AAB4P2ZmRj8AAHg/ZmZGPwAAeD9mZkY/AAB4P2ZmRj8AAHg/ZmZGPwAAeD9mZkY/AAB4P5qZeT8AAHg/ZmZGPwAAeD+amXk/AAB4P5qZeT8AAHg/mpl5PwAAeD+amXk/AAB4P5STcz8AAHg/lJNzPwAAeD+Uk3M/AAB4P2ZmRj8AAHg/ZmZGPwAAeD9mZkY/AAB4P5STcz8AAHg/ZmZGPwAAeD9mZkY/AAB4P5STcz8AAHg/lJNzPwAAeD9mZkY/AAB4P2ZmRj8AAHg/mpl5PwAAeD+amXk/AAB4P5qZeT8AAHg/mpl5PwAAeD+Uk3M/AAB4P5STcz8AAHg/lJNzPwAAeD9mZkY/AAB4P2ZmRj8AAHg/ZmZGPwAAeD9mZkY/AAB4P2ZmRj8AAHg/ZmZGPwAAeD+Uk3M/AAB4P5STcz8AAHg/ZmZGPwAAeD9mZkY/AAB4P5STcz8AAHg/ZmZGPwAAeD+amXk/AAB4P5qZeT8AAHg/ZmZGPwAAeD+amXk/"),
+"format": 34359742487,
+"index_count": 132,
+"index_data": PackedByteArray("CwAaAAkACQAbAAsAGwAcAAsAGwAKABwAHQAOAAwADAAeAB0AHgANAB0ADQAfAB0AIAAAACEAAAABACEAIAAhACIADwAhAAEAIAAiAAIAIwAPAAEAAwAgAAIAIwABACQAAgARAAMAEQAjACQAEAADABEAEQAkABAAJQASACYAJwASACUAJgAoACUAJQAUACcAKAAmABUAJwAUACkAFQATACgAKQAqACcAEwAVABYAKgApABcAFgAXABMAFwAWACoAGQAYACsABAAYABkAKwAsABkAGQAtAAQALAArAAUABAAtAAYABQAIACwABgAuAAQACAAFAAcALgAGAC8ABwAvAAgALwAHAC4A"),
+"lods": [0.123345815, PackedByteArray("CQAKAAsADAANAA4AAAABAA8ADwABABAAAAAPAAIAEQAPABAAAwAAAAIAAgARAAMAEAADABEAEgATABQAEwASABUAFAAWABIAEwAVABYAFgAUABcAFgAXABMABAAYABkABAAZAAYAGAAIABkABgAHAAQABwAGAAgACAAYAAUACAAFAAcA"), 0.26587352, PackedByteArray("AAABAAIAAQADAAIAAwAAAAIABAAFAAYABgAHAAQACAAFAAcABQAIAAYABwAGAAgA")],
+"material": SubResource("StandardMaterial3D_qby8v"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("8nSjvUT+kT5ivjw98nSjvUT+kT5ivjy9WwWEPUT+kT7TcRg98nSjPUT+kT5ivjw98nSjPUT+kT5ivjw98nSjvUT+kT5ivjy9vw6cJQAAAABRSZ098nSjvUT+kT5ivjw9yjaIvQAAAABRSR29yjaIPQAAAABRSR29yjaIvQAAAABRSR29vw6cJQAAAABRSZ09GitlPclnCT14TwQ9GitlvclnCT14TwQ9GitlPclnCT14TwS9WwWEvUT+kT7TcRi98nSjPUT+kT5ivjy9WwWEPUT+kT7TcRi9GitlvclnCT14TwQ9WwWEPUT+kT7TcRg9WwWEvUT+kT7TcRi9GitlPclnCT14TwQ9GitlPclnCT14TwS9WwWEPUT+kT7TcRi98nSjPUT+kT5ivjy9yjaIPQAAAABRSR29yjaIPQAAAABRSR09vw6cJQAAAABRSZ29yjaIvQAAAABRSR09AAAAgMlnCT14T4S9qRPQJclnCT14T4Q9GitlvclnCT14TwS9AAAAgET+kT5ivrw9WwWEvUT+kT7TcRg9qRPQJUT+kT7TcZg9qRPQpET+kT7TcZi9AAAAgET+kT5ivry9WwWEvUT+kT7TcRg9qRPQJclnCT14T4Q9GitlvclnCT14TwS9qRPQJUT+kT7TcZg9qRPQpET+kT7TcZi9AAAAgMlnCT14T4S9AAAAgET+kT5ivry9vw6cJQAAAABRSZ29yjaIPQAAAABRSR09AAAAgET+kT5ivrw9yjaIvQAAAABRSR09/3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78RziR7AAD/v9sEEU4AAP+//390eQAA/7/tMSR7AAD/v9sEEU4AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+/b/wasQAA/7+PAxqxAAD/v+POjoMAAP+/jwMasQAA/78bMY6DAAD/vxsxjoMAAP+/I/sRTgAA/78j+xFOAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/79v/BqxAAD/vy77//8AAP+/486OgwAA/78u+///AAD/v/9/z4QAAP+//3/PhAAA/790+QAAAAD/v3T5AAAAAP+/Ec4kewAA/7//f3R5AAD/v+0xJHsAAP+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cciwm")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ogxrg"]
+height = 0.3
+radius = 0.2
+
+[node name="water" type="RigidBody3D" unique_id=1809958840]
+collision_layer = 2
+script = ExtResource("1_63elu")
+
+[node name="glass" type="MeshInstance3D" parent="." unique_id=1559025174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.095899284, 0)
+material_override = SubResource("StandardMaterial3D_8g4gw")
+mesh = SubResource("ArrayMesh_u63gb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=896986763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2675168, 0)
+shape = SubResource("CylinderShape3D_ogxrg")
