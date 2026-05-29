@@ -25,6 +25,8 @@ var camera: Camera3D
 var is_attacking: bool = false
 var can_attack: bool = true
 
+signal health_changed
+
 func _ready() -> void:
 	current_hp = max_hp
 	camera = owner.get_node("Node3D").get_node("Camera3D")
@@ -52,6 +54,7 @@ func _process(_delta: float) -> void:
 
 func take_damage(dmg: int):
 	current_hp -= dmg
+	health_changed.emit()
 
 
 func handle_movement(move_speed: float = self.speed):
