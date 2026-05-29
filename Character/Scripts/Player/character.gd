@@ -18,6 +18,9 @@ var camera: Camera3D
 
 # Attacking related variables
 @onready var attack_zone: Area3D = $Pivot/AttackZone
+@onready var zone_sprite := $Pivot/AttackZone/CollisionShape3D/ZoneSprite
+@export var zone_aiming: Color = Color("3e94c9")
+@export var zone_attacking: Color = Color("e60050")
 @export var attack_cooldown: float = 0.5
 var is_attacking: bool = false
 var can_attack: bool = true
@@ -30,8 +33,10 @@ func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if Input.is_action_pressed("aim") && can_attack && active_weapon.visible:
+		zone_sprite.visible = true
 		is_aiming = true
 	elif Input.is_action_just_released("aim"):
+		zone_sprite.visible = false
 		is_aiming = false
 	
 	if Input.is_action_pressed("attack") && can_attack && is_aiming && active_weapon.visible:

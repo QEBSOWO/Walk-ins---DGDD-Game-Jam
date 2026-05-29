@@ -4,6 +4,7 @@ var aiming_speed: float
 var has_hit: bool
 
 func enter(previous_state_path: String, data := {}) -> void:
+	player.zone_sprite.modulate = player.zone_attacking
 	aiming_speed = player.speed/2
 	player.anim_player.play("attack")
 	has_hit = false
