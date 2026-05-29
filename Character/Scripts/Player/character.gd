@@ -35,9 +35,13 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("aim") && can_attack && active_weapon.visible:
 		zone_sprite.visible = true
 		is_aiming = true
+	elif Input.is_action_pressed("aim") && !active_weapon.visible:
+		zone_sprite.visible = false
+		is_aiming = false
 	elif Input.is_action_just_released("aim"):
 		zone_sprite.visible = false
 		is_aiming = false
+		
 	
 	if Input.is_action_pressed("attack") && can_attack && is_aiming && active_weapon.visible:
 		can_attack = false

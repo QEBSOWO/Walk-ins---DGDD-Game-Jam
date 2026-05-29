@@ -37,5 +37,6 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	player.can_attack = true
 
 func exit() -> void:
+	player.zone_sprite.modulate = player.zone_aiming
 	if has_hit:
 		player.inventory.decrease_equipped_durability()
