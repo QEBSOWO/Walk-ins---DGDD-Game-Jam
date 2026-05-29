@@ -1,4 +1,4 @@
-extends Marker3D
+class_name EnemySpawner extends Marker3D
 
 @onready var mob_timer: Timer = $MobTimer
 
