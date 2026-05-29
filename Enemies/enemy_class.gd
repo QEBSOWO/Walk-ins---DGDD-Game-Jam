@@ -59,7 +59,7 @@ func handle_movement():
 	var next_path_position: Vector3 = nav_agent.get_next_path_position()
 	
 	velocity = current_agent_position.direction_to(next_path_position) * speed
-	look_at(next_path_position)
+	look_at(Vector3(next_path_position.x, 0, next_path_position.z))
 	move_and_slide()
 
 
