@@ -15,7 +15,7 @@ func physics_update(_delta: float) -> void:
 	if player.is_grappled:
 		player.can_attack = false
 		finished.emit(GRAPPLED)
-	if player.is_aiming:
+	elif player.is_aiming:
 		if player.is_attacking:
 			finished.emit(ATTACKING)
 	else:

@@ -17,6 +17,7 @@ var camera: Camera3D
 
 # Attacking related variables
 @onready var attack_zone: Area3D = $Pivot/AttackZone
+@export var attack_cooldown: float = 0.5
 var is_attacking: bool = false
 var can_attack: bool = true
 
