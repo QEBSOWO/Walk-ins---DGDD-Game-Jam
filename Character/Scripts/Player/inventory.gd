@@ -5,7 +5,7 @@ var panel_container_array: Array[PanelContainer]
 
 var player: Player
 var weapon_array: Array[Weapon]
-var weapon_collected_array: Array[bool] = [true, true] # Array for which weapons that are in inventory
+var weapon_collected_array: Array[bool] = [false, false] # Array for which weapons that are in inventory
 
 func _ready() -> void:
 	player = owner as Player
@@ -44,6 +44,14 @@ func _process(_delta: float) -> void:
 			equip_slot(0)
 		elif Input.is_action_pressed("equip_second"):
 			equip_slot(1)
+	
+	var i: int = 0
+	for panel in panel_container_array:
+		if weapon_collected_array[i]:
+			panel.get_node("WeaponIcon").modulate = Color("ffffff")
+		else:
+			panel.get_node("WeaponIcon").modulate = Color("020229")
+		i += 1
 
 
 func decrease_equipped_durability() -> void:
