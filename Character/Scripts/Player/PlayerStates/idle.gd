@@ -3,10 +3,13 @@ extends PlayerState
 func enter(previous_state_path: String, data := {}) -> void:
 	player.velocity.x = 0.0
 	player.velocity.z = 0.0
+	player.anim_player.play("RESET")
 
 func physics_update(_delta: float) -> void:
-	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
 	# Handle State change
-	if input_dir.x != 0 or input_dir.y != 0:
+	if player.input_dir.x != 0 or player.input_dir.y != 0:
 		finished.emit(MOVING)
+	elif player.is_grappled:
+		finished.emit(GRAPPLED)
+	elif player.is_aiming:
+		finished.emit(AIMING)

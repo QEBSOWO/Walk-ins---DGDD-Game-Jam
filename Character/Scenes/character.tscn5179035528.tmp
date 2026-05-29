@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://d3l14muabbs2"]
+
+[ext_resource type="Script" uid="uid://cpiehtvaugwby" path="res://Character/Scripts/Player/character.gd" id="1_cbaar"]
+[ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="2_8bgmc"]
+[ext_resource type="Script" uid="uid://bruvjm404sc3l" path="res://Character/Scripts/Player/PlayerStates/playerstate_class.gd" id="3_e3ner"]
+[ext_resource type="Script" uid="uid://dvb83jdxiwy7r" path="res://Character/Scripts/Player/PlayerStates/idle.gd" id="3_esjsu"]
+[ext_resource type="Script" uid="uid://c812dkgj28ylf" path="res://Character/Scripts/Player/PlayerStates/moving.gd" id="4_esjsu"]
+[ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="4_r3i75"]
+[ext_resource type="PackedScene" uid="uid://1v6a3fnl3ibm" path="res://Character/Scenes/Equipment/hammer.tscn" id="5_dw6it"]
+[ext_resource type="Script" uid="uid://blenetnalwb3s" path="res://Character/Scenes/grappled.gd" id="6_v4uwq"]
+[ext_resource type="Script" uid="uid://bwf8bxskc114r" path="res://Character/Scripts/Player/interact_area.gd" id="7_rhp1d"]
+[ext_resource type="PackedScene" uid="uid://dsxb56x3g4jle" path="res://Character/Scenes/inventory.tscn" id="8_ie5jk"]
+[ext_resource type="Script" uid="uid://rvc8u2y761ja" path="res://Character/Scripts/Player/PlayerStates/aiming.gd" id="10_dw6it"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53kqe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cbaar"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3i75"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dw6it"]
+material = SubResource("StandardMaterial3D_r3i75")
+size = Vector3(0.7, 0.2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esjsu"]
+size = Vector3(2, 4, 2)
+
+[node name="Character" type="CharacterBody3D" unique_id=473502338]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_cbaar")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=720059377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_53kqe")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1730721635]
+
+[node name="WeaponHolder" type="Node3D" parent="Pivot" unique_id=158003473]
+transform = Transform3D(-3.090862e-08, 3.090862e-08, 1, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -4.371139e-08, -0.7, 1, 0)
+
+[node name="sword" parent="Pivot/WeaponHolder" unique_id=1845533604 instance=ExtResource("4_r3i75")]
+
+[node name="hammer" parent="Pivot/WeaponHolder" unique_id=372298452 instance=ExtResource("5_dw6it")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=578957644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_cbaar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/MeshInstance3D" unique_id=1936373471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.3)
+mesh = SubResource("BoxMesh_dw6it")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=498216232]
+collision_mask = 2
+script = ExtResource("7_rhp1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=429420749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_esjsu")
+
+[node name="PlayerHUD" type="CanvasLayer" parent="." unique_id=241342495]
+
+[node name="Inventory" parent="PlayerHUD" unique_id=217252950 instance=ExtResource("8_ie5jk")]
+
+[node name="StateMachine" type="Node" parent="." unique_id=799247560 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_8bgmc")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://drfbp3k16v0sj"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=679697641]
+script = ExtResource("3_esjsu")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Moving" type="Node" parent="StateMachine" unique_id=1956856636]
+script = ExtResource("4_esjsu")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Cooking" type="Node" parent="StateMachine" unique_id=1634254362]
+script = ExtResource("3_e3ner")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Aiming" type="Node" parent="StateMachine" unique_id=1746072991]
+script = ExtResource("10_dw6it")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Grappled" type="Node" parent="StateMachine" unique_id=2076557621]
+script = ExtResource("6_v4uwq")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Attacking" type="Node" parent="StateMachine" unique_id=148179914]
+script = ExtResource("3_e3ner")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
+
+[node name="Die" type="Node" parent="StateMachine" unique_id=1155444877]
+script = ExtResource("3_e3ner")
+metadata/_custom_type_script = "uid://bruvjm404sc3l"
