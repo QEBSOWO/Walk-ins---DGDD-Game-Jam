@@ -1,23 +1,25 @@
-[gd_scene format=3 uid="uid://dsawqkomt422"]
+[gd_scene format=3 uid="uid://da275gjljs710"]
 
 [ext_resource type="PackedScene" uid="uid://d3l14muabbs2" path="res://Character/Scenes/character.tscn" id="1_5yf38"]
 [ext_resource type="Script" uid="uid://c0ah203yue0rc" path="res://Gameworld/Scripts/game_master.gd" id="1_c8vtl"]
 [ext_resource type="MeshLibrary" uid="uid://dfn0jaoopchsk" path="res://Gameworld/Assets/MeshLibraries/FloorMeshLibrary.meshlib" id="2_7k8i1"]
 [ext_resource type="MeshLibrary" uid="uid://ypskavi3u15s" path="res://Gameworld/Assets/MeshLibraries/DecorationsMeshLibrary.meshlib" id="3_eh2ty"]
 [ext_resource type="MeshLibrary" uid="uid://ciy7t63q237dj" path="res://Gameworld/Assets/MeshLibraries/UpdatedWallsMeshLibrary.meshlib" id="4_kx58s"]
-[ext_resource type="PackedScene" uid="uid://cclr1jcqoty8" path="res://Enemies/Scenes/dungeon_crab.tscn" id="5_eo0wl"]
+[ext_resource type="PackedScene" uid="uid://ddrt6fmjelei" path="res://Enemies/Scenes/dungeon_crab.tscn" id="5_eo0wl"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_wik8m"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_2taah"]
 [ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_uwp47"]
 [ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_qm1e7"]
 [ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="11_gqke5"]
-[ext_resource type="PackedScene" uid="uid://208hjqpoj1na" path="res://Gameworld/Scenes/pan.tscn" id="12_gmxls"]
 [ext_resource type="PackedScene" uid="uid://be3yr2qtuqew5" path="res://Gameworld/Scenes/berries.tscn" id="12_q7d7u"]
 [ext_resource type="PackedScene" uid="uid://dbw1kxqy7ygca" path="res://Gameworld/Scenes/bread.tscn" id="13_qxfdc"]
 [ext_resource type="PackedScene" uid="uid://b83vsc7gl1ka4" path="res://Gameworld/Scenes/water.tscn" id="16_u4jab"]
 [ext_resource type="PackedScene" uid="uid://b85bgggxmnqwo" path="res://Gameworld/Scenes/spice.tscn" id="17_xlf2g"]
+[ext_resource type="PackedScene" uid="uid://cxonsrcaiure4" path="res://Gameworld/Scenes/weapon_spawner.tscn" id="18_8clno"]
 [ext_resource type="PackedScene" uid="uid://vyi5d8i5tx8s" path="res://Gameworld/Scenes/pot.tscn" id="18_rhfb6"]
+[ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="19_5yf38"]
 [ext_resource type="PackedScene" uid="uid://b8niy5wrapbuk" path="res://Gameworld/Scenes/enemy_spawner.tscn" id="19_etynj"]
+[ext_resource type="PackedScene" uid="uid://1v6a3fnl3ibm" path="res://Character/Scenes/Equipment/hammer.tscn" id="20_7k8i1"]
 [ext_resource type="PackedScene" uid="uid://bp4ga5dtxn5pp" path="res://Enemies/Scenes/slime.tscn" id="20_dnsdd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2dbi"]
@@ -134,10 +136,6 @@ freeze = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 17.5)
 freeze = true
 
-[node name="pan" parent="IngredientSpawners" unique_id=615307035 instance=ExtResource("12_gmxls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 7)
-freeze = true
-
 [node name="pot" parent="IngredientSpawners" unique_id=553347901 instance=ExtResource("18_rhfb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 freeze = true
@@ -192,3 +190,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 5.5)
 
 [node name="Point8" type="Marker3D" parent="PatrolPaths" unique_id=10764337]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, -1.5)
+
+[node name="WeaponSpawners" type="Node3D" parent="." unique_id=1939886047]
+
+[node name="WeaponSpawner" parent="WeaponSpawners" unique_id=648690292 instance=ExtResource("18_8clno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011461735, 0.05000019, 9.920639)
+weapon = ExtResource("19_5yf38")
+
+[node name="WeaponSpawner2" parent="WeaponSpawners" unique_id=802480139 instance=ExtResource("18_8clno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.45572, 0.050000668, -1.185236)
+weapon = ExtResource("19_5yf38")
+
+[node name="WeaponSpawner3" parent="WeaponSpawners" unique_id=1625593964 instance=ExtResource("18_8clno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.664648, 0.05000019, 7.025306)
+weapon = ExtResource("20_7k8i1")

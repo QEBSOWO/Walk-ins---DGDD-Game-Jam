@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bu4vbi04iw6gf"]
+
+[ext_resource type="Script" uid="uid://cclq07l6v5502" path="res://Gameworld/Scripts/weapon_spawner.gd" id="1_sqvrh"]
+
+[node name="WeaponSpawner" type="Marker3D" unique_id=648690292]
+script = ExtResource("1_sqvrh")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=2062496565]
+wait_time = 30.0
+one_shot = true
+autostart = true

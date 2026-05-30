@@ -1,8 +1,8 @@
-[gd_scene format=4 uid="uid://cclr1jcqoty8"]
+[gd_scene format=4 uid="uid://ddrt6fmjelei"]
 
 [ext_resource type="Script" uid="uid://b87rt6ryphl0w" path="res://Enemies/enemy_class.gd" id="1_kmpg0"]
-[ext_resource type="Script" uid="uid://dxg4s8x028qxi" path="res://Enemies/Scripts/enemy_interact_area.gd" id="2_u5oqf"]
-[ext_resource type="Script" uid="uid://sbw8wb8vy516" path="res://Enemies/Scripts/qte_display.gd" id="3_27oda"]
+[ext_resource type="Script" path="res://Enemies/Scripts/enemy_interact_area.gd" id="2_u5oqf"]
+[ext_resource type="Script" path="res://Enemies/Scripts/qte_display.gd" id="3_27oda"]
 [ext_resource type="PackedScene" uid="uid://dnodtfdyd44o0" path="res://Enemies/Scenes/grapple_qte.tscn" id="4_nb0am"]
 [ext_resource type="Script" uid="uid://drfbp3k16v0sj" path="res://Gameworld/Scripts/StateMachine/statemachine_class.gd" id="5_bmgi2"]
 [ext_resource type="Script" uid="uid://de8mkqb6kma6n" path="res://Enemies/Scripts/States/spawning.gd" id="6_rvhs8"]

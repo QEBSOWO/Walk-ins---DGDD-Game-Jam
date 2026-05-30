@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 	
 	var i: int = 0
 	for panel in panel_container_array:
-		if weapon_collected_array[i]:
+		if weapon_collected_array[panel_container_array.find(panel)]:
 			panel.get_node("WeaponIcon").modulate = Color("ffffff")
 		else:
 			panel.get_node("WeaponIcon").modulate = Color("020229")
@@ -66,3 +66,8 @@ func decrease_equipped_durability() -> void:
 				equip_slot(1)
 			elif to_remove == 1:
 				equip_slot(0)
+				
+func collect_weapon(weapon: int):
+	weapon_collected_array[weapon] = true
+	print(weapon_collected_array)
+	_ready()
