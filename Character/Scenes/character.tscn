@@ -35,6 +35,7 @@
 [ext_resource type="Script" uid="uid://dv3abfs6704tl" path="res://Character/Scripts/footstep_player.gd" id="33_dgihw"]
 [ext_resource type="AudioStream" uid="uid://bdub403tar5bm" path="res://Character/Assets/pan_hit.mp3" id="34_010yx"]
 [ext_resource type="Script" uid="uid://w4b42aren1q6" path="res://Character/Scripts/weapon_player.gd" id="34_dgihw"]
+[ext_resource type="AudioStream" uid="uid://ypeeg3archcx" path="res://Character/Assets/Character/item_equip.mp3" id="36_tnls4"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667
@@ -766,3 +767,6 @@ script = ExtResource("33_dgihw")
 stream = ExtResource("34_010yx")
 volume_db = -7.769
 script = ExtResource("34_dgihw")
+
+[node name="IngredientPlayer" type="AudioStreamPlayer2D" parent="." unique_id=77272811]
+stream = ExtResource("36_tnls4")

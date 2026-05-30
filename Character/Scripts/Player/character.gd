@@ -7,6 +7,7 @@ class_name Player extends CharacterBody3D
 @onready var inventory = $PlayerHUD/Inventory
 @onready var footstep_player = $FootstepPlayer
 @onready var weapon_player = $WeaponPlayer
+@onready var ingredient_player = $IngredientPlayer
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
@@ -81,6 +82,10 @@ func play_footstep_audio():
 func play_hit_audio():
 	if !weapon_player.playing:
 		weapon_player.play()
+	
+func play_ingredient_audio():
+	if !ingredient_player.playing:
+		ingredient_player.play()
 
 func handle_rotation() -> void:
 	pivot.look_at(global_position - Vector3(input_dir.x, 0, input_dir.y))
