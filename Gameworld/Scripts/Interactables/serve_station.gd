@@ -23,7 +23,6 @@ var ingredient_icons: Dictionary = {
 	"Bread" = "res://Assets/UI/Icons/bread_item.png",
 	"Slime" = "res://Assets/UI/Icons/slime.png"
 }
-
 signal all_orders_complete
 
 # Called when the node enters the scene tree for the first time.
@@ -40,8 +39,10 @@ func add_order(new_order: String):
 func interact(player_area: Area3D):
 	var held_dish = player_area.holding
 	if held_dish:
-		if held_dish in order_list:
-			order_list.pop_at(order_list.find(held_dish))
+		var held_dish_name = held_dish.get_child(0).name
+		if held_dish_name in order_list:
+			order_list.pop_at(order_list.find(held_dish_name))
+			held_dish.queue_free()
 	
 	if order_list.is_empty():
 		all_orders_complete.emit()

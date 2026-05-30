@@ -1,11 +1,11 @@
-[gd_scene format=4 uid="uid://svrns2kkxa86"]
+[gd_scene format=4 uid="uid://8o3eoh2p3uvs"]
 
 [ext_resource type="Script" uid="uid://c1luice4pdej" path="res://Gameworld/Scripts/Interactables/serve_station.gd" id="1_sogsh"]
 [ext_resource type="Texture2D" uid="uid://bkyl6mc4f56nh" path="res://Gameworld/Assets/Textures/colormap3.png" id="1_xrx5m"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_sogsh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvblx"]
-size = Vector3(0.6, 1, 0.9)
+size = Vector3(0.6, 1.3666992, 0.9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxrgs"]
 albedo_texture = ExtResource("1_xrx5m")
@@ -55,7 +55,7 @@ freeze = true
 script = ExtResource("1_sogsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1976715127]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6833496, 0)
 shape = SubResource("BoxShape3D_nvblx")
 
 [node name="stall-red" type="MeshInstance3D" parent="." unique_id=779917063]
