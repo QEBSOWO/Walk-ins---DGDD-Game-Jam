@@ -9,7 +9,7 @@ const MAX_ORDERS: int = 8
 
 var num_orders: int = 2
 var current_round: int = 1
-var round_duration: float = 120
+var round_duration: float = 180
 var enemy_spawner_array: Array[EnemySpawner]
 var round_label : Label
 
