@@ -37,10 +37,6 @@ func initialize():
 	nav_agent.target_desired_distance = 0.5
 	current_hp = max_hp
 	
-	# Get reference to player
-	player = get_tree().root.get_child(0).get_node("Character") as Player
-	assert(player != null, "Player could not be found during actor_setup")
-	
 	# Populate waypoints
 	for waypoint in get_tree().root.get_node("Gameworld").get_node("PatrolPaths").get_children():
 		patrol_point_array.append(waypoint)
@@ -52,6 +48,9 @@ func actor_setup():
 	# Wait for first physics frame so NavigationServer can sync
 	await get_tree().physics_frame
 	
+	# Get reference to player
+	player = get_tree().root.get_child(0).get_node("Character") as Player
+	assert(player != null, "Player could not be found during actor_setup")
 	# Now navigation map is no longer empty, set movement target
 	set_movement_target(select_random_waypoint())
 
@@ -79,7 +78,10 @@ func grapple_player():
 	player.is_grappled = true
 	print("Player grappled")
 	await get_tree().create_timer(grapple_windup).timeout
-	grapple_qte.start_qte()
+	if player.current_hp > 0:
+		grapple_qte.start_qte()
+	else:
+		release_grappled_player()
 
 
 func release_grappled_player():
