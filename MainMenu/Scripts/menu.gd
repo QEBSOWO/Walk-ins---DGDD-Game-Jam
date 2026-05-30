@@ -1,0 +1,29 @@
+extends Control
+
+@onready var return_button = $Button
+@onready var main_menu_scene = load("res://MainMenu/Scenes/main_menu.tscn")
+var open = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	_connect_signals()
+
+func _process(delta):
+	_handle_input()
+
+func _connect_signals():
+	return_button.pressed.connect(_on_return_button_pressed)
+
+func _handle_input():
+	if Input.is_action_just_pressed("open_menu"):
+		if open:
+			self.hide()
+			open = false
+		else:
+			self.show()
+			open = true
+
+func _on_return_button_pressed():
+	var instance = main_menu_scene.instantiate()
+	get_tree().root.add_child(instance)
+	get_tree().root.get_child(0).queue_free()

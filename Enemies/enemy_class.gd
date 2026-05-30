@@ -32,13 +32,14 @@ var knockback_complete: bool = false
 
 
 func initialize():
+	await owner.ready
 	# To be adjusted later for actor speed and navigation layout
 	nav_agent.path_desired_distance = 0.5
 	nav_agent.target_desired_distance = 0.5
 	current_hp = max_hp
 	
 	# Get reference to player
-	player = get_tree().root.get_child(0).get_node("Character") as Player
+	player = owner.get_node("Character") as Player
 	assert(player != null, "Player could not be found during actor_setup")
 	
 	# Populate waypoints

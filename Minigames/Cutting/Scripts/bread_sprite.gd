@@ -6,6 +6,8 @@ var health = 10
 
 @onready var cut_1 = $CutArea1
 @onready var cut_2 = $CutArea2
+@onready var cut_sword = $cut_sword
+@onready var cut_knife = $cut_knife
 var in_cut_1 = false
 var in_cut_2 = false
 
@@ -30,6 +32,9 @@ func change_current_sprite(damage):
 			if(current_sprite > 3):
 				current_sprite = 0
 			play(sprite_arr[current_sprite])
+		if damage >= 10: cut_sword.play()
+		else: cut_knife.play()
+			
 	
 func _connect_signals():
 	cut_1.mouse_entered.connect(_on_cut_1_mouse_entered)
@@ -39,7 +44,6 @@ func _connect_signals():
 
 func _on_cut_1_mouse_entered():
 	in_cut_1 = true
-	print("amazing")
 
 func _on_cut_1_mouse_exited():
 	in_cut_1 = false

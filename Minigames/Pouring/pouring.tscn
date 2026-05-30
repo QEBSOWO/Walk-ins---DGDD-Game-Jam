@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1hyhjsvrxw1" path="res://Assets/Pouring/cauldron_third.png" id="12_og3gg"]
 [ext_resource type="Texture2D" uid="uid://j6y7jk7v4oam" path="res://Assets/Pouring/Mug.png" id="14_og3gg"]
 [ext_resource type="Texture2D" uid="uid://qsiwh6cfq84h" path="res://Assets/Pouring/Mug_Water.png" id="15_r6h3m"]
+[ext_resource type="AudioStream" uid="uid://bifu6uqpbpkqe" path="res://Assets/Pouring/water_pour.wav" id="16_h7lsh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5726d"]
 animations = [{
@@ -168,3 +169,9 @@ sprite_frames = SubResource("SpriteFrames_o6tst")
 [node name="ExitTimer" type="Timer" parent="." unique_id=101623262]
 wait_time = 2.0
 one_shot = true
+
+[node name="water_mug" type="AudioStreamPlayer2D" parent="." unique_id=1481889632]
+stream = ExtResource("16_h7lsh")
+
+[node name="water_spoon" type="AudioStreamPlayer2D" parent="." unique_id=429696183]
+stream = ExtResource("16_h7lsh")

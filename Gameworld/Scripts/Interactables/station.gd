@@ -56,7 +56,8 @@ func interact(player_area: Area3D):
 				pouring.hide()
 				peeling.hide()
 				
-				cutting.enter(inventory.weapon_collected_array[0])
+				if(cutting is Cutting):
+					cutting.enter(inventory.weapon_collected_array[0])
 				
 			if self is FireStation and cooked_dish == "stew":
 				var station_has_mug = false
