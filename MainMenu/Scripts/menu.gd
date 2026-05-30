@@ -19,9 +19,11 @@ func _handle_input():
 		if open:
 			self.hide()
 			open = false
+			Engine.time_scale = 1
 		else:
 			self.show()
 			open = true
+			Engine.time_scale = 0
 
 func _on_return_button_pressed():
 	var instance = main_menu_scene.instantiate()

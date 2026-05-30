@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bvee8n6t5wtgy" path="res://MainMenu/Scripts/menu.gd" id="1_do2ns"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do2ns"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+bg_color = Color(0.22529352, 0, 0.0063850917, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="Menu" type="Control" unique_id=23803340]
 layout_mode = 3
 anchors_preset = 15
@@ -11,17 +23,53 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_do2ns")
 
+[node name="EndScreen" type="PanelContainer" parent="." unique_id=1150560241]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_do2ns")
+
+[node name="ReasonLabel" type="Label" parent="EndScreen" unique_id=785781805]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "You Ran Out of Time"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen" unique_id=1895205234]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LastedTillPt1" type="Label" parent="EndScreen/VBoxContainer" unique_id=1821900352]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "You Lasted"
+
+[node name="RoundsLabel" type="Label" parent="EndScreen/VBoxContainer" unique_id=947976574]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="LastedTillPt2" type="Label" parent="EndScreen/VBoxContainer" unique_id=651564964]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Rounds"
+
 [node name="Button" type="Button" parent="." unique_id=602690879]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -94.5
-offset_right = 144.0
-offset_bottom = 94.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -170.0
+offset_right = 125.0
+offset_bottom = -20.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
 text = "Return to Main Menu"
