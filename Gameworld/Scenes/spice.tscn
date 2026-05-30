@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b85bgggxmnqwo"]
+[gd_scene format=4 uid="uid://3lumpswk88g3"]
 
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_b7h5m"]
 [ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_srurh"]
@@ -48,14 +48,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eb488")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cta8m"]
-height = 0.5233154
-radius = 0.10498047
+height = 0.573
+radius = 0.135
 
 [node name="spice" type="RigidBody3D" unique_id=1494959242]
 collision_layer = 2
 script = ExtResource("1_srurh")
 
 [node name="spice" type="MeshInstance3D" parent="." unique_id=1487188327]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8nln4")
 mesh = SubResource("ArrayMesh_2t8ur")
 

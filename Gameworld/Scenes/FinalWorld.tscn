@@ -8,13 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://ddrt6fmjelei" path="res://Enemies/Scenes/dungeon_crab.tscn" id="5_eo0wl"]
 [ext_resource type="PackedScene" uid="uid://bwktnj1rkp8al" path="res://Gameworld/Scenes/cutting_station.tscn" id="7_wik8m"]
 [ext_resource type="PackedScene" uid="uid://np41twpfhp06" path="res://Gameworld/Scenes/fire_station.tscn" id="8_2taah"]
-[ext_resource type="PackedScene" uid="uid://svrns2kkxa86" path="res://Gameworld/Scenes/serve_station.tscn" id="9_uwp47"]
-[ext_resource type="PackedScene" uid="uid://bxixgtfu3h8uq" path="res://Gameworld/Scenes/moss.tscn" id="10_qm1e7"]
-[ext_resource type="PackedScene" uid="uid://dsbxx4coth87h" path="res://Gameworld/Scenes/1l-oil.tscn" id="11_gqke5"]
-[ext_resource type="PackedScene" uid="uid://be3yr2qtuqew5" path="res://Gameworld/Scenes/berries.tscn" id="12_q7d7u"]
-[ext_resource type="PackedScene" uid="uid://dbw1kxqy7ygca" path="res://Gameworld/Scenes/bread.tscn" id="13_qxfdc"]
-[ext_resource type="PackedScene" uid="uid://b83vsc7gl1ka4" path="res://Gameworld/Scenes/water.tscn" id="16_u4jab"]
-[ext_resource type="PackedScene" uid="uid://b85bgggxmnqwo" path="res://Gameworld/Scenes/spice.tscn" id="17_xlf2g"]
+[ext_resource type="PackedScene" uid="uid://8o3eoh2p3uvs" path="res://Gameworld/Scenes/serve_station.tscn" id="9_uwp47"]
+[ext_resource type="PackedScene" uid="uid://c15ud2oy4q657" path="res://Gameworld/Scenes/moss.tscn" id="10_qm1e7"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/1l-oil.tscn" id="11_gqke5"]
+[ext_resource type="PackedScene" uid="uid://d3ec5ef0uwo7m" path="res://Gameworld/Scenes/berries.tscn" id="12_q7d7u"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/bread.tscn" id="13_qxfdc"]
+[ext_resource type="PackedScene" uid="uid://dam7672bm1nlh" path="res://Gameworld/Scenes/mug.tscn" id="16_eh2ty"]
+[ext_resource type="PackedScene" uid="uid://0bi83ke2hulx" path="res://Gameworld/Scenes/water.tscn" id="16_u4jab"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/spice.tscn" id="17_xlf2g"]
 [ext_resource type="PackedScene" uid="uid://bu4vbi04iw6gf" path="res://Gameworld/Scenes/weapon_spawner.tscn" id="18_8clno"]
 [ext_resource type="PackedScene" uid="uid://vyi5d8i5tx8s" path="res://Gameworld/Scenes/pot.tscn" id="18_rhfb6"]
 [ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="19_5yf38"]
@@ -146,6 +147,10 @@ freeze = true
 
 [node name="water" parent="IngredientSpawners" unique_id=1809958840 instance=ExtResource("16_u4jab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, 18)
+freeze = true
+
+[node name="mug" parent="IngredientSpawners" unique_id=1380579326 instance=ExtResource("16_eh2ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.865023, 0.05000019, 6.8809605)
 freeze = true
 
 [node name="EnemySpawners" type="Node3D" parent="." unique_id=388451224]

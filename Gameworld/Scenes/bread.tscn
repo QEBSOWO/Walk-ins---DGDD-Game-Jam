@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dbw1kxqy7ygca"]
+[gd_scene format=4 uid="uid://bvamn7fedcoo"]
 
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="1_0lswl"]
 [ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_or3qo"]
@@ -44,13 +44,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k8jbi")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_or3qo"]
-size = Vector3(0.9033203, 0.4645996, 0.6542969)
+size = Vector3(0.73339844, 0.36914063, 0.5126953)
 
 [node name="bread" type="RigidBody3D" unique_id=903826411]
 collision_layer = 2
 script = ExtResource("1_or3qo")
 
 [node name="bread" type="MeshInstance3D" parent="." unique_id=371747793]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vu3nk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=532088278]
