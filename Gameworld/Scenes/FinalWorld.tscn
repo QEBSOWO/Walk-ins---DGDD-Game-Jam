@@ -56,7 +56,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Character" parent="." unique_id=473502338 instance=ExtResource("1_5yf38")]
-max_hp = 1
 
 [node name="GridMaps" type="Node3D" parent="." unique_id=935892337]
 

@@ -386,6 +386,16 @@ radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_esjsu"]
 size = Vector3(2, 4, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwmld"]
+bg_color = Color(0.03292991, 0.03942283, 0.17098418, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wejwv"]
+bg_color = Color(0.7820569, 0, 0.16550264, 1)
+
+[sub_resource type="Theme" id="Theme_cmj7m"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_wwmld")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_wejwv")
+
 [node name="Character" type="CharacterBody3D" unique_id=473502338]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_cbaar")
@@ -673,6 +683,7 @@ offset_bottom = 198.0
 custom_minimum_size = Vector2(1152, 0)
 offset_right = 4.0
 offset_bottom = 27.0
+theme = SubResource("Theme_cmj7m")
 value = 100.0
 show_percentage = false
 script = ExtResource("22_wwmld")
