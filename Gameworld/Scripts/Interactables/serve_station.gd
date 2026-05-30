@@ -24,9 +24,12 @@ var ingredient_icons: Dictionary = {
 	"Slime" = "res://Assets/UI/Icons/slime.png"
 }
 
+signal all_orders_complete
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_tree().root.get_child(0).find_child("Character")
+	await owner.ready
+	player = owner.find_child("Character")
 	player_HUD = player.find_child("PlayerHUD")
 	recipe_container = player_HUD.find_child("RecipeContainer")
 
@@ -39,10 +42,10 @@ func interact(player_area: Area3D):
 	if held_dish:
 		if held_dish in order_list:
 			order_list.pop_at(order_list.find(held_dish))
-	add_order("Salad")
-	add_order("Stew")
-	add_order("Sandwich")
-			
+	
+	if order_list.is_empty():
+		all_orders_complete.emit()
+
 func create_new_order_tab(order: String):
 	var new_tab = recipe_tab.instantiate()
 	recipe_container.add_child(new_tab)
@@ -70,5 +73,4 @@ func create_new_order_tab(order: String):
 			new_ingredient.ingredient_name = ingred
 			new_ingredient.image = load(ingredient_icons[ingred])
 			new_ingredient.initialize()
-
 			

@@ -26,6 +26,7 @@ var is_attacking: bool = false
 var can_attack: bool = true
 
 signal health_changed
+signal died
 
 func _ready() -> void:
 	current_hp = max_hp
