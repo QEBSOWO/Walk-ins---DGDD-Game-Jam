@@ -28,9 +28,13 @@
 [ext_resource type="PackedScene" uid="uid://plg8islfp68x" path="res://Character/Scenes/health_bar.tscn" id="18_oxori"]
 [ext_resource type="PackedScene" uid="uid://ctopwfw7weu8c" path="res://Minigames/Pouring/pouring.tscn" id="19_inqwm"]
 [ext_resource type="PackedScene" uid="uid://b8g4n6yuvgpbl" path="res://Minigames/Peeling/peeling.tscn" id="20_inqwm"]
-[ext_resource type="Script" uid="uid://bor35rlckrmtg" path="res://Gameworld/Scripts/time_remaining.gd" id="22_wwmld"]
+[ext_resource type="Script" path="res://Gameworld/Scripts/time_remaining.gd" id="22_wwmld"]
 [ext_resource type="PackedScene" uid="uid://cx3ynl0k7goaj" path="res://MainMenu/Scenes/menu.tscn" id="23_wejwv"]
 [ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
+[ext_resource type="AudioStream" uid="uid://ba0jliggstdb4" path="res://Character/Assets/player_footsteps.wav" id="32_niney"]
+[ext_resource type="Script" uid="uid://dv3abfs6704tl" path="res://Character/Scripts/footstep_player.gd" id="33_dgihw"]
+[ext_resource type="AudioStream" uid="uid://bdub403tar5bm" path="res://Character/Assets/pan_hit.mp3" id="34_010yx"]
+[ext_resource type="Script" uid="uid://w4b42aren1q6" path="res://Character/Scripts/weapon_player.gd" id="34_dgihw"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
 length = 0.06666667
@@ -753,3 +757,12 @@ transform = Transform3D(1, 0, 0, 0, 0.6135137, 0.78968406, 0, -0.78968406, 0.613
 projection = 1
 fov = 88.2
 size = 13.0
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=427982612]
+stream = ExtResource("32_niney")
+script = ExtResource("33_dgihw")
+
+[node name="WeaponPlayer" type="AudioStreamPlayer2D" parent="." unique_id=672512157]
+stream = ExtResource("34_010yx")
+volume_db = -7.769
+script = ExtResource("34_dgihw")

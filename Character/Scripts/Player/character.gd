@@ -5,6 +5,8 @@ class_name Player extends CharacterBody3D
 @onready var anim_player = $AnimationPlayer
 @onready var model_animator = $Pivot/AnimationModel/AnimationPlayer
 @onready var inventory = $PlayerHUD/Inventory
+@onready var footstep_player = $FootstepPlayer
+@onready var weapon_player = $WeaponPlayer
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
@@ -64,12 +66,21 @@ func handle_movement(move_speed: float = self.speed):
 	if direction:
 		velocity.x = direction.x * move_speed
 		velocity.z = direction.z * move_speed
+		play_footstep_audio()
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 		velocity.z = move_toward(velocity.z, 0, move_speed)
+		footstep_player.stop()
 	
 	move_and_slide()
 
+func play_footstep_audio():
+	if !footstep_player.playing:
+		footstep_player.play()
+
+func play_hit_audio():
+	if !weapon_player.playing:
+		weapon_player.play()
 
 func handle_rotation() -> void:
 	pivot.look_at(global_position - Vector3(input_dir.x, 0, input_dir.y))
