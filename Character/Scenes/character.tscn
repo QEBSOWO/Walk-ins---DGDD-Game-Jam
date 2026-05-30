@@ -688,6 +688,26 @@ value = 100.0
 show_percentage = false
 script = ExtResource("22_wwmld")
 
+[node name="RoundNumber" type="PanelContainer" parent="PlayerHUD" unique_id=1632893558]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -60.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="RoundLabel" type="Label" parent="PlayerHUD/RoundNumber" unique_id=1165322238]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 1
+
 [node name="StateMachine" type="Node" parent="." unique_id=799247560 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8bgmc")
 initial_state = NodePath("Idle")
