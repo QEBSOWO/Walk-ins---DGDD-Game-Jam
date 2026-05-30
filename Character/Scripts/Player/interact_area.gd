@@ -46,6 +46,9 @@ func _process(delta):
 				
 		if interactable is Weapon:
 			interactable.interact(self)
+			
+		if interactable is ServeStation:
+			interactable.interact(self)
 				
 	if Input.is_action_pressed("interact"):
 		var interactable = get_closest_interactable()

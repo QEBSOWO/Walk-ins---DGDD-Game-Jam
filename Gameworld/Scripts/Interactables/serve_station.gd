@@ -23,6 +23,7 @@ var ingredient_icons: Dictionary = {
 	"Bread" = "res://Assets/UI/Icons/bread_item.png",
 	"Slime" = "res://Assets/UI/Icons/slime.png"
 }
+@onready var success: AudioStreamPlayer = $Success
 
 signal all_orders_complete
 
@@ -40,11 +41,16 @@ func add_order(new_order: String):
 func interact(player_area: Area3D):
 	var held_dish = player_area.holding
 	if held_dish:
-		if held_dish in order_list:
-			order_list.pop_at(order_list.find(held_dish))
+		var held_dish_name = held_dish.get_child(0).name
+		if held_dish_name in order_list:
+			order_list.pop_at(order_list.find(held_dish_name))
+			held_dish.queue_free()
+			play_success()
 	
 	if order_list.is_empty():
 		all_orders_complete.emit()
+		for recipe in recipe_container.get_children():
+			recipe.queue_free()
 
 func create_new_order_tab(order: String):
 	var new_tab = recipe_tab.instantiate()
@@ -74,3 +80,6 @@ func create_new_order_tab(order: String):
 			new_ingredient.image = load(ingredient_icons[ingred])
 			new_ingredient.initialize()
 			
+func play_success():
+	if not success.playing:
+		success.play()
