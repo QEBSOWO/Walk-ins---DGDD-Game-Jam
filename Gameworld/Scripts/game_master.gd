@@ -7,7 +7,7 @@ class_name GameMaster extends Node3D
 
 const MAX_ORDERS: int = 8
 
-var num_orders: int = 2
+var num_orders: int = 0
 var current_round: int = 1
 var round_duration: float = 120
 var enemy_spawner_array: Array[EnemySpawner]

@@ -79,7 +79,10 @@ func grapple_player():
 	player.is_grappled = true
 	print("Player grappled")
 	await get_tree().create_timer(grapple_windup).timeout
-	grapple_qte.start_qte()
+	if player.current_hp > 0:
+		grapple_qte.start_qte()
+	else:
+		release_grappled_player()
 
 
 func release_grappled_player():
