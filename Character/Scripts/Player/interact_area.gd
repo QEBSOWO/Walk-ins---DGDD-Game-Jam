@@ -4,6 +4,7 @@ var interactables_in_range: Array[Interactable]
 var holding: Interactable 	# to be used as reference for what player is holding
 var held_interact_counter: float
 var held_interact: bool
+@onready var ingredient_player : AudioStreamPlayer2D = $"../IngredientPlayer"
 var player: Player
 var player_inventory
 
@@ -30,6 +31,7 @@ func _process(delta):
 		if interactable is Ingredient:
 			if not holding: 
 				interactable.interact(self)
+				_play_ingredient_audio()
 			else:
 				if interactable.is_grabbed == true:
 					interactable.interact(self)
@@ -88,3 +90,7 @@ func _entered_interactable_area(body):
 func _exited_interactable_area(body):
 	if body is Interactable:
 		interactables_in_range.erase(body)
+
+func _play_ingredient_audio():
+	if !ingredient_player.playing:
+		ingredient_player.play()
