@@ -7,8 +7,7 @@
 size = Vector3(0.6143036, 1.7954712, 0.1026001)
 
 [node name="sword" type="RigidBody3D" unique_id=1845533604]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 2
 freeze = true
 script = ExtResource("1_yg2af")
 
