@@ -7,7 +7,7 @@ class_name GameMaster extends Node3D
 
 const MAX_ORDERS: int = 8
 
-var num_orders: int = 0
+var num_orders: int = 2
 var current_round: int = 1
 var round_duration: float = 120
 var enemy_spawner_array: Array[EnemySpawner]
@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 	round_label = player.get_node("PlayerHUD").get_node("RoundNumber").get_node("RoundLabel")
 	
-	await owner.ready
+	await get_tree().physics_frame
 	start_new_round()
 
 
