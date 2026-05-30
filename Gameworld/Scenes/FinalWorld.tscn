@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dsawqkomt422"]
+[gd_scene format=3 uid="uid://npujnm7f077o"]
 
 [ext_resource type="PackedScene" uid="uid://d3l14muabbs2" path="res://Character/Scenes/character.tscn" id="1_5yf38"]
 [ext_resource type="Script" uid="uid://c0ah203yue0rc" path="res://Gameworld/Scripts/game_master.gd" id="1_c8vtl"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bu4vbi04iw6gf" path="res://Gameworld/Scenes/weapon_spawner.tscn" id="18_8clno"]
 [ext_resource type="PackedScene" uid="uid://vyi5d8i5tx8s" path="res://Gameworld/Scenes/pot.tscn" id="18_rhfb6"]
 [ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="19_5yf38"]
-[ext_resource type="PackedScene" uid="uid://b8niy5wrapbuk" path="res://Gameworld/Scenes/enemy_spawner.tscn" id="19_etynj"]
+[ext_resource type="PackedScene" path="res://Gameworld/Scenes/enemy_spawner.tscn" id="19_etynj"]
 [ext_resource type="PackedScene" uid="uid://1v6a3fnl3ibm" path="res://Character/Scenes/Equipment/hammer.tscn" id="20_7k8i1"]
 [ext_resource type="PackedScene" uid="uid://bp4ga5dtxn5pp" path="res://Enemies/Scenes/slime.tscn" id="20_dnsdd"]
 

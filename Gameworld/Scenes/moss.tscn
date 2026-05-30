@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bxixgtfu3h8uq"]
+[gd_scene format=4 uid="uid://c15ud2oy4q657"]
 
 [ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_jm4ar"]
 [ext_resource type="Texture2D" uid="uid://bw17bbx88pagu" path="res://Gameworld/Assets/Textures/broccoli_0.png" id="1_okdht"]
@@ -46,7 +46,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rrxyc")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_grl4h"]
-size = Vector3(0.3, 0.3, 0.3)
+size = Vector3(0.5, 0.4, 0.5)
 
 [node name="Moss" type="RigidBody3D" unique_id=1896776227]
 collision_layer = 2
@@ -54,9 +54,9 @@ script = ExtResource("1_jm4ar")
 metadata/_custom_type_script = "uid://dsldj22pn1ety"
 
 [node name="moss" type="MeshInstance3D" parent="." unique_id=261274928]
-transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(-1.2, 1.8119498e-07, 0, -1.8119498e-07, -1.2, 0, 0, 0, 1.2, 0, 0.7, 0)
 mesh = SubResource("ArrayMesh_4n0q1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=617127263]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 shape = SubResource("BoxShape3D_grl4h")

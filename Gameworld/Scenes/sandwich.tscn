@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://cl50y65o8axuq"]
+[gd_scene format=4 uid="uid://b52ey6cqe6goj"]
 
-[ext_resource type="Script" uid="uid://dn7128b4uxf2f" path="res://Gameworld/Scripts/Interactables/dish.gd" id="1_vr17p"]
+[ext_resource type="Script" path="res://Gameworld/Scripts/Interactables/dish.gd" id="1_vr17p"]
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="2_5fmcb"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_182yt"]
 
@@ -168,22 +168,22 @@ script = ExtResource("1_vr17p")
 [node name="Sandwich" type="Node3D" parent="." unique_id=1591771464]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.116838604, 0)
 
-[node name="lettuce" type="MeshInstance3D" parent="model" unique_id=1395940216]
+[node name="lettuce" type="MeshInstance3D" parent="Sandwich" unique_id=1395940216]
 transform = Transform3D(1.68, 0, 0, 0, 1.5, 0, 0, 0, 1.68, -0.01, 0.067999996, 0.01)
 material_override = SubResource("StandardMaterial3D_fwbv0")
 mesh = SubResource("ArrayMesh_l2s14")
 
-[node name="meat" type="MeshInstance3D" parent="model" unique_id=307791999]
+[node name="meat" type="MeshInstance3D" parent="Sandwich" unique_id=307791999]
 transform = Transform3D(1.68, 0, 0, 0, 1.5, 0, 0, 0, 1.68, 7.219114e-16, 0.08017584, 2.52669e-15)
 material_override = SubResource("StandardMaterial3D_vchye")
 mesh = SubResource("ArrayMesh_m6y4f")
 
-[node name="bun" type="MeshInstance3D" parent="model" unique_id=744869207]
+[node name="bun" type="MeshInstance3D" parent="Sandwich" unique_id=744869207]
 transform = Transform3D(-7.343513e-08, 0, -1.68, 0, 1.5, 0, 1.68, 0, -7.343513e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_sxsti")
 mesh = SubResource("ArrayMesh_bl7k3")
 
-[node name="bun2" type="MeshInstance3D" parent="model" unique_id=175231542]
+[node name="bun2" type="MeshInstance3D" parent="Sandwich" unique_id=175231542]
 transform = Transform3D(-7.343513e-08, 0, -1.68, 0, 1.5, 0, 1.68, 0, -7.343513e-08, 0, 0.120000005, -1.4438228e-15)
 material_override = SubResource("StandardMaterial3D_t60bf")
 mesh = SubResource("ArrayMesh_171sq")

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://be3yr2qtuqew5"]
+[gd_scene format=4 uid="uid://d3ec5ef0uwo7m"]
 
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_30s6q"]
 [ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_q34va"]
@@ -48,14 +48,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bc6ca")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dmms3"]
-size = Vector3(0.15, 0.19140625, 0.15)
+size = Vector3(0.22050782, 0.21179199, 0.21972656)
 
 [node name="Berries" type="RigidBody3D" unique_id=1877346905]
 collision_layer = 2
+linear_damp_mode = 1
 script = ExtResource("1_q34va")
 
 [node name="Berries" type="MeshInstance3D" parent="." unique_id=1869576620]
-transform = Transform3D(1.947944, 0.45333663, 0, -0.45333663, 1.947944, 0, 0, 0, 2, -0.057, 0.1, 0)
+transform = Transform3D(2.921916, 0.68000495, 0, -0.68000495, 2.921916, 0, 0, 0, 3, -0.057, 0.1, 0)
 material_override = SubResource("StandardMaterial3D_lgj2i")
 mesh = SubResource("ArrayMesh_xrurc")
 
@@ -65,5 +66,5 @@ material_override = SubResource("StandardMaterial3D_lgj2i")
 mesh = SubResource("ArrayMesh_xrurc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759800984]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.25, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.07050781, 0.27038574, 0)
 shape = SubResource("BoxShape3D_dmms3")
