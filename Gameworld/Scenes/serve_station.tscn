@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c1luice4pdej" path="res://Gameworld/Scripts/Interactables/serve_station.gd" id="1_sogsh"]
 [ext_resource type="Texture2D" uid="uid://bkyl6mc4f56nh" path="res://Gameworld/Assets/Textures/colormap3.png" id="1_xrx5m"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_sogsh"]
+[ext_resource type="AudioStream" uid="uid://dhls06dryrgbo" path="res://Gameworld/Audio/success.wav" id="4_nvblx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvblx"]
 size = Vector3(0.6, 1.3666992, 0.9)
@@ -61,3 +62,6 @@ shape = SubResource("BoxShape3D_nvblx")
 [node name="stall-red" type="MeshInstance3D" parent="." unique_id=779917063]
 material_override = SubResource("StandardMaterial3D_vxrgs")
 mesh = SubResource("ArrayMesh_ski4h")
+
+[node name="Success" type="AudioStreamPlayer" parent="." unique_id=931981499]
+stream = ExtResource("4_nvblx")

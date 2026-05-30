@@ -23,6 +23,8 @@ var ingredient_icons: Dictionary = {
 	"Bread" = "res://Assets/UI/Icons/bread_item.png",
 	"Slime" = "res://Assets/UI/Icons/slime.png"
 }
+@onready var success: AudioStreamPlayer = $Success
+
 signal all_orders_complete
 
 # Called when the node enters the scene tree for the first time.
@@ -46,6 +48,9 @@ func interact(player_area: Area3D):
 	
 	if order_list.is_empty():
 		all_orders_complete.emit()
+		for recipe in recipe_container.get_children():
+			recipe.queue_free()
+		play_success()
 
 func create_new_order_tab(order: String):
 	var new_tab = recipe_tab.instantiate()
@@ -75,3 +80,6 @@ func create_new_order_tab(order: String):
 			new_ingredient.image = load(ingredient_icons[ingred])
 			new_ingredient.initialize()
 			
+func play_success():
+	if not success.playing:
+		success.play()
