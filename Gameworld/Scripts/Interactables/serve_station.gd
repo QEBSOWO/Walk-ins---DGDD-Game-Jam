@@ -45,12 +45,12 @@ func interact(player_area: Area3D):
 		if held_dish_name in order_list:
 			order_list.pop_at(order_list.find(held_dish_name))
 			held_dish.queue_free()
+			play_success()
 	
 	if order_list.is_empty():
 		all_orders_complete.emit()
 		for recipe in recipe_container.get_children():
 			recipe.queue_free()
-		play_success()
 
 func create_new_order_tab(order: String):
 	var new_tab = recipe_tab.instantiate()
