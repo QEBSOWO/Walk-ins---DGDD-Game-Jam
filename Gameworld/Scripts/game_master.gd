@@ -42,6 +42,11 @@ func start_new_round() -> void:
 	for i in range(num_orders):
 		_setup_orders()
 	
+	for spawner in enemy_spawners.get_children():
+		for child in spawner.get_children():
+			if child is Timer:
+				child.start()
+	
 	round_timer.start()
 
 
@@ -49,8 +54,11 @@ func _end_round() -> void:
 	if !round_timer.is_stopped():
 		round_timer.stop()
 		for spawner in enemy_spawners.get_children():
-			for enemy in spawner.get_children():
-				enemy.queue_free()
+			for child in spawner.get_children():
+				if child is Enemy:
+					child.queue_free()
+				elif child is Timer:
+					child.stop()
 		
 		current_round += 1
 		await get_tree().create_timer(3).timeout

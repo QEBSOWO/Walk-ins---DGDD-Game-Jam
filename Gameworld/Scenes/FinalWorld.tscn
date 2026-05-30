@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://da275gjljs710"]
+[gd_scene format=3 uid="uid://dsawqkomt422"]
 
 [ext_resource type="PackedScene" uid="uid://d3l14muabbs2" path="res://Character/Scenes/character.tscn" id="1_5yf38"]
 [ext_resource type="Script" uid="uid://c0ah203yue0rc" path="res://Gameworld/Scripts/game_master.gd" id="1_c8vtl"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dbw1kxqy7ygca" path="res://Gameworld/Scenes/bread.tscn" id="13_qxfdc"]
 [ext_resource type="PackedScene" uid="uid://b83vsc7gl1ka4" path="res://Gameworld/Scenes/water.tscn" id="16_u4jab"]
 [ext_resource type="PackedScene" uid="uid://b85bgggxmnqwo" path="res://Gameworld/Scenes/spice.tscn" id="17_xlf2g"]
-[ext_resource type="PackedScene" uid="uid://cxonsrcaiure4" path="res://Gameworld/Scenes/weapon_spawner.tscn" id="18_8clno"]
+[ext_resource type="PackedScene" uid="uid://bu4vbi04iw6gf" path="res://Gameworld/Scenes/weapon_spawner.tscn" id="18_8clno"]
 [ext_resource type="PackedScene" uid="uid://vyi5d8i5tx8s" path="res://Gameworld/Scenes/pot.tscn" id="18_rhfb6"]
 [ext_resource type="PackedScene" uid="uid://duex0tmvldsm6" path="res://Character/Scenes/Equipment/sword.tscn" id="19_5yf38"]
 [ext_resource type="PackedScene" uid="uid://b8niy5wrapbuk" path="res://Gameworld/Scenes/enemy_spawner.tscn" id="19_etynj"]
