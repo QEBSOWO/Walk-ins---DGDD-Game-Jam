@@ -17,6 +17,7 @@ func physics_update(_delta: float) -> void:
 	for body in player.attack_zone.get_overlapping_bodies():
 		if body is Enemy && body.can_be_damaged:
 			body.take_damage()
+			player.play_hit_audio()
 			has_hit = true
 	
 	if player.is_grappled:

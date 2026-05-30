@@ -1106,6 +1106,13 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_6jihr")
+speed = null
+is_armored = null
+max_hp = null
+grapple_windup = null
+grapple_escape_force = null
+knockback_duration = null
+stagger_duration = null
 
 [node name="Enemy" type="Node3D" parent="." unique_id=1464165135]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 0, 0, 0)
