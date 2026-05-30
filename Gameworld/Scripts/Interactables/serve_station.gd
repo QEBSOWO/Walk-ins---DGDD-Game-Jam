@@ -28,7 +28,8 @@ signal all_orders_complete
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_tree().root.get_child(0).find_child("Character")
+	await owner.ready
+	player = owner.find_child("Character")
 	player_HUD = player.find_child("PlayerHUD")
 	recipe_container = player_HUD.find_child("RecipeContainer")
 
