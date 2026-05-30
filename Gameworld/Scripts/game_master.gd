@@ -3,6 +3,7 @@ class_name GameMaster extends Node3D
 @onready var serve_station = $"../ServeStations/serve_station"
 @onready var enemy_spawners = $"../EnemySpawners"
 @onready var round_timer = $RoundTimer
+@onready var player = $"../Character"
 
 var current_round: int = 1
 var round_duration: float = 200
@@ -12,9 +13,20 @@ func _ready() -> void:
 	for spawner in enemy_spawners.get_children():
 		enemy_spawner_array.append(spawner)
 	
+	await owner.ready
+	start_new_round()
+
+
+func _process(delta: float) -> void:
+	pass
 
 func start_new_round() -> void:
 	round_timer.wait_time = round_duration
+	if current_round > 1:
+		adjust_enemy_spawners()
+	
+	round_timer.start()
+
 
 func adjust_enemy_spawners() -> void:
 	for spawner in enemy_spawner_array:

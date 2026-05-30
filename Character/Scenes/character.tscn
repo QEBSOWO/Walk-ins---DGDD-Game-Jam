@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://plg8islfp68x" path="res://Character/Scenes/health_bar.tscn" id="18_oxori"]
 [ext_resource type="PackedScene" uid="uid://ctopwfw7weu8c" path="res://Minigames/Pouring/pouring.tscn" id="19_inqwm"]
 [ext_resource type="PackedScene" uid="uid://b8g4n6yuvgpbl" path="res://Minigames/Peeling/peeling.tscn" id="20_inqwm"]
+[ext_resource type="Script" uid="uid://bor35rlckrmtg" path="res://Gameworld/Scripts/time_remaining.gd" id="22_wwmld"]
 [ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
 
 [sub_resource type="Animation" id="Animation_dw6it"]
@@ -664,8 +665,17 @@ scale = Vector2(0.25, 0.25)
 [node name="HealthBar" parent="PlayerHUD" unique_id=1816094719 instance=ExtResource("18_oxori")]
 
 [node name="RecipeContainer" type="HBoxContainer" parent="PlayerHUD" unique_id=339460610]
+offset_top = 28.0
 offset_right = 1153.0
-offset_bottom = 170.0
+offset_bottom = 198.0
+
+[node name="TimerBar" type="ProgressBar" parent="PlayerHUD" unique_id=37520163]
+custom_minimum_size = Vector2(1152, 0)
+offset_right = 4.0
+offset_bottom = 27.0
+value = 100.0
+show_percentage = false
+script = ExtResource("22_wwmld")
 
 [node name="StateMachine" type="Node" parent="." unique_id=799247560 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8bgmc")

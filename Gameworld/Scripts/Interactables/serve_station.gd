@@ -70,5 +70,4 @@ func create_new_order_tab(order: String):
 			new_ingredient.ingredient_name = ingred
 			new_ingredient.image = load(ingredient_icons[ingred])
 			new_ingredient.initialize()
-
 			
