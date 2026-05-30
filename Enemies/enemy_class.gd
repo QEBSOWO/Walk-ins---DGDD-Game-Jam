@@ -45,7 +45,6 @@ func initialize():
 	for waypoint in get_tree().root.get_node("Gameworld").get_node("PatrolPaths").get_children():
 		patrol_point_array.append(waypoint)
 	
-	
 	actor_setup.call_deferred()
 
 
