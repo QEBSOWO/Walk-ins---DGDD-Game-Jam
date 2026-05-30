@@ -159,14 +159,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7a380")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vr17p"]
-size = Vector3(0.41210938, 0.23451233, 0.43164063)
+size = Vector3(0.39257813, 0.12890625, 0.3909912)
 
 [node name="sandwich" type="RigidBody3D" unique_id=1104305234]
 collision_layer = 2
 script = ExtResource("1_vr17p")
 
 [node name="Sandwich" type="Node3D" parent="." unique_id=1591771464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39773843, 0)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.116838604, 0)
 
 [node name="lettuce" type="MeshInstance3D" parent="Sandwich" unique_id=1395940216]
 transform = Transform3D(1.68, 0, 0, 0, 1.5, 0, 0, 0, 1.68, -0.01, 0.067999996, 0.01)
@@ -189,5 +189,5 @@ material_override = SubResource("StandardMaterial3D_t60bf")
 mesh = SubResource("ArrayMesh_171sq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1031081968]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.45502374, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0146484375, 0.1836454, -0.019500732)
 shape = SubResource("BoxShape3D_vr17p")

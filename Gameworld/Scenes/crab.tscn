@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dkv1q7xceuqgo"]
+[gd_scene format=4 uid="uid://cy2dlby220mgy"]
 
 [ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_pnm4e"]
 
@@ -124,11 +124,11 @@ collision_layer = 2
 script = ExtResource("1_pnm4e")
 
 [node name="crab" type="MeshInstance3D" parent="." unique_id=1184764983]
-transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09, 0, 0.1375638, -0.10029477)
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 0.1375638, -0.10029477)
 mesh = SubResource("ArrayMesh_q6476")
 skin = SubResource("Skin_bgrib")
 skeleton = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=424391090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1430381, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.1430381, 0)
 shape = SubResource("BoxShape3D_p6slb")

@@ -7,6 +7,9 @@ var is_grabbed: bool
 func _ready() -> void:
 	is_spawner = true
 	is_grabbed = false
+	
+	if get_child(0).name == "slime_ingredient" or get_child(0).name == "crab":
+		is_spawner = false
 
 func interact(player_area: Area3D):
 	self.player_area = player_area
@@ -21,6 +24,7 @@ func interact(player_area: Area3D):
 		new_ingredient.is_spawner = false
 		new_ingredient.is_grabbed = true
 		new_ingredient.collision_layer = 2
+		
 	
 	# Sets the ingredient to be grabbed by the player
 	# If grabbed, is placed on top of the player and follows 
@@ -38,6 +42,7 @@ func _process(delta):
 		self.global_position = player_area.global_position + Vector3(0, 1, 0)
 		
 func freeze_object():
+	linear_velocity = Vector3(0,3,0)
 	axis_lock_linear_x = true
 	axis_lock_linear_z = true
 	axis_lock_angular_x = true
@@ -45,6 +50,7 @@ func freeze_object():
 	axis_lock_angular_z = true
 	
 func unfreeze_object():
+	linear_velocity = Vector3(0,3,0)
 	axis_lock_linear_x = false
 	axis_lock_linear_z = false
 	axis_lock_angular_x = false
