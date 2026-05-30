@@ -5,12 +5,16 @@ var holding: Interactable 	# to be used as reference for what player is holding
 var held_interact_counter: float
 var held_interact: bool
 @onready var ingredient_player : AudioStreamPlayer2D = $"../IngredientPlayer"
+var player: Player
+var player_inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interactables_in_range = []
 	held_interact_counter = 0.0
 	held_interact = false
+	player = self.owner
+	player_inventory = player.get_node("PlayerHUD/Inventory")
 	
 	# Connecting Signals
 	self.body_entered.connect(_entered_interactable_area)
@@ -41,6 +45,12 @@ func _process(delta):
 				holding = null
 			else:
 				interactable.interact(self)
+				
+		if interactable is Weapon:
+			interactable.interact(self)
+			
+		if interactable is ServeStation:
+			interactable.interact(self)
 				
 	if Input.is_action_pressed("interact"):
 		var interactable = get_closest_interactable()

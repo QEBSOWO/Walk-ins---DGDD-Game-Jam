@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b83vsc7gl1ka4"]
+[gd_scene format=4 uid="uid://0bi83ke2hulx"]
 
 [ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_63elu"]
 [ext_resource type="Texture2D" uid="uid://bkyl6mc4f56nh" path="res://Gameworld/Assets/Textures/colormap3.png" id="1_524kk"]
@@ -48,18 +48,18 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cciwm")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ogxrg"]
-height = 0.3
-radius = 0.2
+height = 0.605
+radius = 0.22
 
 [node name="water" type="RigidBody3D" unique_id=1809958840]
 collision_layer = 2
 script = ExtResource("1_63elu")
 
 [node name="water" type="MeshInstance3D" parent="." unique_id=1559025174]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.095899284, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.095899284, 0)
 material_override = SubResource("StandardMaterial3D_8g4gw")
 mesh = SubResource("ArrayMesh_u63gb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=896986763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2675168, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.373, 0)
 shape = SubResource("CylinderShape3D_ogxrg")

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://208hjqpoj1na"]
 
+[ext_resource type="Script" uid="uid://dsldj22pn1ety" path="res://Gameworld/Scripts/Interactables/ingredient.gd" id="1_awtv1"]
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_q5k4g"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_awtv1"]
 
@@ -50,6 +51,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o344m")
 
 [node name="pan" type="RigidBody3D" unique_id=615307035]
+collision_layer = 3
+script = ExtResource("1_awtv1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=767795961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.10546875)

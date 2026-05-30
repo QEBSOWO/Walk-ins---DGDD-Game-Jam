@@ -7,10 +7,11 @@ class_name GameMaster extends Node3D
 
 const MAX_ORDERS: int = 8
 
-var num_orders: int = 0
+var num_orders: int = 2
 var current_round: int = 1
 var round_duration: float = 120
 var enemy_spawner_array: Array[EnemySpawner]
+var round_label : Label
 
 func _ready() -> void:
 	for spawner in enemy_spawners.get_children():
@@ -20,38 +21,52 @@ func _ready() -> void:
 	player.died.connect(_end_game)
 	serve_station.all_orders_complete.connect(_end_round)
 	
-	await owner.ready
+	round_label = player.get_node("PlayerHUD").get_node("RoundNumber").get_node("RoundLabel")
+	
+	await get_tree().physics_frame
 	start_new_round()
 
 
 func start_new_round() -> void:
-	round_timer.wait_time = round_duration
 	if current_round > 1:
 		adjust_enemy_spawners()
+		if num_orders < MAX_ORDERS:
+			num_orders += 1
+			round_duration += 10
+		else:
+			round_duration -= 15
+	
+	round_label.text = str(current_round)
+	round_timer.wait_time = round_duration
 	
 	for i in range(num_orders):
 		_setup_orders()
+	
+	for spawner in enemy_spawners.get_children():
+		for child in spawner.get_children():
+			if child is Timer:
+				child.start()
 	
 	round_timer.start()
 
 
 func _end_round() -> void:
-	if num_orders < MAX_ORDERS:
-		num_orders += 1
-		round_duration += 10
-	else:
-		round_duration -= 15
-	
-	for spawner in enemy_spawners.get_children():
-		for enemy in spawner.get_children():
-			enemy.queue_free()
-	
-	await get_tree().create_timer(3).timeout
-	start_new_round()
+	if !round_timer.is_stopped():
+		round_timer.stop()
+		for spawner in enemy_spawners.get_children():
+			for child in spawner.get_children():
+				if child is Enemy:
+					child.queue_free()
+				elif child is Timer:
+					child.stop()
+		
+		current_round += 1
+		await get_tree().create_timer(3).timeout
+		start_new_round()
 
 
 func _on_time_ran_out() -> void:
-	_end_game("You ran out of time")
+	_end_game("You ran out of time!")
 
 
 func _on_all_orders_complete() -> void:
@@ -98,5 +113,6 @@ func _setup_orders() -> void:
 			serve_station.add_order("Sandwich")
 
 
-func _end_game(end_message: String = "You died") -> void:
+func _end_game(end_message: String = "You died!") -> void:
 	Engine.time_scale = 0
+	player.end_game(current_round, end_message)

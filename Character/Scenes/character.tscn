@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://ctopwfw7weu8c" path="res://Minigames/Pouring/pouring.tscn" id="19_inqwm"]
 [ext_resource type="PackedScene" uid="uid://b8g4n6yuvgpbl" path="res://Minigames/Peeling/peeling.tscn" id="20_inqwm"]
 [ext_resource type="Script" path="res://Gameworld/Scripts/time_remaining.gd" id="22_wwmld"]
+[ext_resource type="Script" uid="uid://bor35rlckrmtg" path="res://Gameworld/Scripts/time_remaining.gd" id="22_wwmld"]
+[ext_resource type="Texture2D" uid="uid://f6ui3ienx47l" path="res://Assets/UI/UI books & more.png" id="23_cmj7m"]
 [ext_resource type="PackedScene" uid="uid://cx3ynl0k7goaj" path="res://MainMenu/Scenes/menu.tscn" id="23_wejwv"]
 [ext_resource type="Script" uid="uid://c14fyd5t0847d" path="res://Character/Scripts/Player/PlayerStates/die.gd" id="24_oth3v"]
 [ext_resource type="AudioStream" uid="uid://ba0jliggstdb4" path="res://Character/Assets/player_footsteps.wav" id="32_niney"]
@@ -402,6 +404,16 @@ bg_color = Color(0.7820569, 0, 0.16550264, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_wwmld")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_wejwv")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_niney"]
+atlas = ExtResource("23_cmj7m")
+region = Rect2(721, 65, 46, 46)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgihw"]
+texture = SubResource("AtlasTexture_niney")
+
+[sub_resource type="Theme" id="Theme_010yx"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_dgihw")
+
 [node name="Character" type="CharacterBody3D" unique_id=473502338]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_cbaar")
@@ -627,9 +639,11 @@ transform = Transform3D(-3.0908616e-08, 3.0908602e-08, 0.9999997, 0.7071067, 0.7
 
 [node name="sword" parent="Pivot/WeaponHolder" unique_id=1845533604 instance=ExtResource("4_r3i75")]
 transform = Transform3D(0.96909416, 0.08781597, 0.23053595, -0.07002795, 0.99398136, -0.084256664, -0.23654729, 0.06550801, 0.969411, 0.040880322, -0.19469398, -0.0952048)
+collision_layer = 4
 
 [node name="hammer" parent="Pivot/WeaponHolder" unique_id=372298452 instance=ExtResource("5_dw6it")]
 visible = false
+collision_layer = 4
 is_armor_piercing = true
 
 [node name="AttackZone" type="Area3D" parent="Pivot" unique_id=858559028]
@@ -695,22 +709,23 @@ show_percentage = false
 script = ExtResource("22_wwmld")
 
 [node name="RoundNumber" type="PanelContainer" parent="PlayerHUD" unique_id=1632893558]
+texture_filter = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
-offset_right = -60.0
-offset_bottom = -60.0
+offset_left = -90.0
+offset_top = -90.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(2, 2)
+theme = SubResource("Theme_010yx")
 
 [node name="RoundLabel" type="Label" parent="PlayerHUD/RoundNumber" unique_id=1165322238]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 text = "1"
 horizontal_alignment = 1
 

@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://dwwvbi8oo8uri"]
+[gd_scene format=4 uid="uid://boliv1llgtleh"]
 
 [ext_resource type="Texture2D" uid="uid://cyg2blj5khsim" path="res://Gameworld/Assets/Textures/colormap2.png" id="1_b18km"]
-[ext_resource type="Script" uid="uid://dn7128b4uxf2f" path="res://Gameworld/Scripts/Interactables/dish.gd" id="1_t3xb6"]
+[ext_resource type="Script" path="res://Gameworld/Scripts/Interactables/dish.gd" id="1_t3xb6"]
 [ext_resource type="Texture2D" uid="uid://dxy4k2htfsjml" path="res://Gameworld/Assets/Textures/colormap.png" id="2_t3xb6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk15d"]
@@ -55,7 +55,7 @@ radius = 0.35
 collision_layer = 2
 script = ExtResource("1_t3xb6")
 
-[node name="salad" type="MeshInstance3D" parent="." unique_id=2126324930]
+[node name="Salad" type="MeshInstance3D" parent="." unique_id=2126324930]
 material_override = SubResource("StandardMaterial3D_qk15d")
 mesh = SubResource("ArrayMesh_38043")
 

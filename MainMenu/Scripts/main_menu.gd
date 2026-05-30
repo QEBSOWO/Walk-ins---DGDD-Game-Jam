@@ -11,6 +11,7 @@ func _connect_signals():
 	button.pressed.connect(_on_button_pressed)
 	
 func _on_button_pressed():
+	Engine.time_scale = 1
 	var instance = gameworld.instantiate()
 	get_tree().root.add_child(instance)
 	self.queue_free()

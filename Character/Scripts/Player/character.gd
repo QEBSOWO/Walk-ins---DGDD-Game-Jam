@@ -8,6 +8,7 @@ class_name Player extends CharacterBody3D
 @onready var footstep_player = $FootstepPlayer
 @onready var weapon_player = $WeaponPlayer
 @onready var ingredient_player = $IngredientPlayer
+@onready var menu = $PlayerHUD/Menu
 @export var speed: float = 5.0
 @export var max_hp: int = 5
 var current_hp: int
@@ -38,23 +39,24 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	if Input.is_action_just_pressed("aim"):
-		if can_attack && active_weapon.visible:
-			zone_sprite.visible = true
-			is_aiming = true
-		elif !active_weapon.visible:
+	if Engine.time_scale > 0:
+		input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		
+		if Input.is_action_just_pressed("aim"):
+			if can_attack && active_weapon.visible:
+				zone_sprite.visible = true
+				is_aiming = true
+			elif !active_weapon.visible:
+				zone_sprite.visible = false
+				is_aiming = false
+		elif Input.is_action_just_released("aim"):
 			zone_sprite.visible = false
 			is_aiming = false
-	elif Input.is_action_just_released("aim"):
-		zone_sprite.visible = false
-		is_aiming = false
+			
 		
-	
-	if Input.is_action_pressed("attack") && can_attack && is_aiming && active_weapon.visible:
-		can_attack = false
-		is_attacking = true
+		if Input.is_action_pressed("attack") && can_attack && is_aiming && active_weapon.visible:
+			can_attack = false
+			is_attacking = true
 
 
 func take_damage(dmg: int):
@@ -93,3 +95,10 @@ func handle_rotation() -> void:
 
 func is_active_weapon_armor_piercing() -> bool:
 	return active_weapon.is_armor_piercing
+
+
+func end_game(rounds: int, end_message: String = "You died!") -> void:
+	menu.end_screen.visible = true
+	menu.reason_label.text = end_message
+	menu.rounds_label.text = str(rounds)
+	menu.show()
