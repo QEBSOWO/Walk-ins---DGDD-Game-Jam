@@ -13,12 +13,12 @@ func _ready() -> void:
 	for spawner in enemy_spawners.get_children():
 		enemy_spawner_array.append(spawner)
 	
+	round_timer.timeout.connect(_on_time_ran_out)
+	player.died.connect(_end_game)
+	
 	await owner.ready
 	start_new_round()
 
-
-func _process(delta: float) -> void:
-	pass
 
 func start_new_round() -> void:
 	round_timer.wait_time = round_duration
@@ -26,6 +26,10 @@ func start_new_round() -> void:
 		adjust_enemy_spawners()
 	
 	round_timer.start()
+
+
+func _on_time_ran_out() -> void:
+	_end_game("You ran out of time")
 
 
 func adjust_enemy_spawners() -> void:
@@ -59,3 +63,7 @@ func adjust_enemy_spawners() -> void:
 				spawner.max_num_instances += 1
 				if spawner.max_num_instances > 12:
 					spawner.max_num_instances = 12
+
+
+func _end_game(end_message: String = "You died") -> void:
+	Engine.time_scale = 0
