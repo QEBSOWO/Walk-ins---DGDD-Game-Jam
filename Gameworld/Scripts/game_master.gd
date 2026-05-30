@@ -7,7 +7,7 @@ class_name GameMaster extends Node3D
 
 const MAX_ORDERS: int = 8
 
-var num_orders: int = 0
+var num_orders: int = 2
 var current_round: int = 1
 var round_duration: float = 120
 var enemy_spawner_array: Array[EnemySpawner]
@@ -66,7 +66,7 @@ func _end_round() -> void:
 
 
 func _on_time_ran_out() -> void:
-	_end_game("You ran out of time")
+	_end_game("You ran out of time!")
 
 
 func _on_all_orders_complete() -> void:
@@ -113,5 +113,6 @@ func _setup_orders() -> void:
 			serve_station.add_order("Sandwich")
 
 
-func _end_game(end_message: String = "You died") -> void:
+func _end_game(end_message: String = "You died!") -> void:
 	Engine.time_scale = 0
+	player.end_game(current_round, end_message)
